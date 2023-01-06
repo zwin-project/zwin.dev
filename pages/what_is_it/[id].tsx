@@ -4,7 +4,7 @@ import Head from "next/head";
 import fs from 'fs'
 import markdownToHtml from "zenn-markdown-html";
 import { JSDOM } from 'jsdom'
-import styles from '../../styles/Home.module.css'
+import styles from '../../styles/Docs.module.scss'
 import { whatIsIt } from "../../content/content";
 import { DocsProps, TableOfContent } from "../../compontents/common";
 import TOC from "../../compontents/TOC";
@@ -65,11 +65,15 @@ const WhatIsIt: NextPage<DocsProps> = ({ html, tableOfContent }) => {
       </Head>
       <main className={styles.main}>
         <Header />
-        <Sidenav kind={SidenavPath.whatIsIt}/>
-        <div
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
-        <TOC toc={tableOfContent} />
+        <section className={styles.body}>
+          <Sidenav kind={SidenavPath.whatIsIt}/>
+          <article className={styles.article}>
+            <div className={styles.content}
+              dangerouslySetInnerHTML={{ __html: html }}
+            />
+            <TOC toc={tableOfContent} />
+          </article>
+        </section>
       </main>
     </div>
   )

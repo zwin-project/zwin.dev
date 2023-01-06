@@ -1,6 +1,7 @@
 import Link from "next/link";
 import router, { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
+import styles from '../styles/Header.module.scss'
 
 const Header = () => {
   const toggleLang = (newLocale: string) => {
@@ -11,20 +12,22 @@ const Header = () => {
   const router = useRouter()
 
   return (
-    <header>
-      <li><Link href="/">Z Window System</Link></li>
-      <li style={{color: router.pathname.split('/')[1] == 'what_is_it' ? '#f00' : '000'}}>
-        <Link href="/what_is_it/what_is_z_window_system">{t('what_is_it.what_is_it')}</Link>
-      </li>
-      <li style={{color: router.pathname.split('/')[1] == 'getting_started' ? '#f00' : '000'}}>
-        <Link href="/getting_started/system_requirement">{t('getting_started.getting_started')}</Link>
-      </li>
-      <li style={{color: router.pathname.split('/')[1] == 'roadmap' ? '#f00' : '000'}}>
-        <Link href="/roadmap">{t('roadmap')}</Link>
-      </li>
-      <div>
-        <button onClick={() => toggleLang('en')}>EN</button> / <button onClick={() => toggleLang('ja')}>JA</button>
-      </div>
+    <header className={styles.header}>
+      <p><Link href="/">Z Window System</Link></p>
+      <ul className={styles.nav}>
+        <li style={{color: router.pathname.split('/')[1] == 'what_is_it' ? '#f00' : '000'}}>
+          <Link href="/what_is_it/what_is_z_window_system">{t('what_is_it.what_is_it')}</Link>
+        </li>
+        <li style={{color: router.pathname.split('/')[1] == 'getting_started' ? '#f00' : '000'}}>
+          <Link href="/getting_started/system_requirement">{t('getting_started.getting_started')}</Link>
+        </li>
+        <li style={{color: router.pathname.split('/')[1] == 'roadmap' ? '#f00' : '000'}}>
+          <Link href="/roadmap">{t('roadmap')}</Link>
+        </li>
+        <div>
+          <button onClick={() => toggleLang('en')}>EN</button> / <button onClick={() => toggleLang('ja')}>JA</button>
+        </div>
+      </ul>
     </header>
   )
 }

@@ -2,6 +2,7 @@ import Link from "next/link"
 import { useRouter } from "next/router"
 import { useTranslation } from "next-i18next"
 import { whatIsIt, gettingStarted } from "../content/content"
+import styles from '../styles/Sidenav.module.scss'
 
 export enum SidenavPath {
   whatIsIt,
@@ -20,7 +21,7 @@ const Sidenav = (props: {kind: SidenavPath}) => {
   const { id } = router.query
 
   return (
-    <div>
+    <div className={styles.sidenav}>
       {...content.subsections.map(subsection => (
         <div key={subsection}>
           <p style={{opacity: 0.3}}>

@@ -1,0 +1,21 @@
+.main {
+  padding-top: 80px;
+}
+
+.body {
+  width: 100vw;
+  display: flex;
+}
+
+.article {
+  display: flex;
+  flex: 1;
+}
+
+.content {
+  flex: 1;
+
+  img {
+    width: 360px;
+  }
+}

@@ -10,6 +10,8 @@ import { DocsProps, TableOfContent } from "../../compontents/common";
 import TOC from "../../compontents/TOC";
 import Header from "../../compontents/Header";
 import Sidenav, { SidenavPath } from "../../compontents/Sidenav";
+import DocsNav from "../../compontents/DocsNav";
+import { useTranslation } from "next-i18next";
 
 type PathParams = {
   id: string
@@ -32,9 +34,7 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
   const content = fs.readFileSync(
     `content/what_is_it/${params!.id}/${locale}.md`, 'utf-8')
   const rawHtmlContent = markdownToHtml(content)
-
   const htmlContent = rawHtmlContent.replaceAll('<img src="', `<img src="/images/what_is_it/${params!.id}/`)
-
   const domHtml = new JSDOM(htmlContent).window.document
 
   const headings = domHtml.querySelectorAll<HTMLElement>("h2")
@@ -46,16 +46,24 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
     tableOfContent.push({ level: level, title: title, href: href })
   })
 
+  const contentIndex = whatIsIt.articles.findIndex((e) => e.path == params!.id)
+  const nextContent = contentIndex == whatIsIt.articles.length - 1 ? null :  whatIsIt.articles[contentIndex + 1].path
+  const previousContent = contentIndex == 0 ? null : whatIsIt.articles[contentIndex - 1].path
+
   return {
     props: {
       ...(await serverSideTranslations(locale!, ['common'])),
       html: htmlContent,
-      tableOfContent: tableOfContent
+      tableOfContent: tableOfContent,
+      nextContent: nextContent,
+      previousContent: previousContent
     }
   }
 }
 
-const WhatIsIt: NextPage<DocsProps> = ({ html, tableOfContent }) => {
+const WhatIsIt: NextPage<DocsProps> = ({ html, tableOfContent, nextContent, previousContent }) => {
+  const { t } = useTranslation('common')
+
   return (
     <div className={styles.container}>
       <Head>
@@ -68,9 +76,21 @@ const WhatIsIt: NextPage<DocsProps> = ({ html, tableOfContent }) => {
         <section className={styles.body}>
           <Sidenav kind={SidenavPath.whatIsIt}/>
           <article className={styles.article}>
-            <div className={styles.content}
-              dangerouslySetInnerHTML={{ __html: html }}
-            />
+            <div className={styles.content}>
+              <div className={styles.markdowninjection}
+                dangerouslySetInnerHTML={{ __html: html }}
+              />
+              <DocsNav
+                next={nextContent == null ? undefined : {
+                  path: nextContent,
+                  title: t(['what_is_it', 'articles', nextContent].join('.'))
+                }}
+                previous={previousContent == null ? undefined : {
+                  path: previousContent,
+                  title: t(['what_is_it', 'articles', previousContent].join('.'))
+                }}
+              />
+            </div>
             <TOC toc={tableOfContent} />
           </article>
         </section>

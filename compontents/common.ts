@@ -7,6 +7,8 @@ export type TableOfContent = {
 
 export type DocsProps = {
   html: string,
-  tableOfContent: TableOfContent[]
+  tableOfContent: TableOfContent[],
+  nextContent: string | null,
+  previousContent: string | null
 }
 

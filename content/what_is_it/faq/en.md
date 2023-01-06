@@ -1,4 +1,4 @@
-# 3D Window
+# FAQ
 
 **TL;DR: It’s a compositor and a protocol for an XR windowing system built on top of Wayland.**
 

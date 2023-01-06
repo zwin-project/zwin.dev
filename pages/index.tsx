@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import styles from '../styles/Home.module.css'
 import { useTranslation } from 'next-i18next'
+import { useRouter } from 'next/router'
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
@@ -15,6 +16,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 
 const Home: NextPage = () => {
   const { t } = useTranslation('common')
+  const router = useRouter()
 
   return (
     <div className={styles.container}>
@@ -32,6 +34,8 @@ const Home: NextPage = () => {
         <p className={styles.description}>
           Get started by editing{' '}
           <code className={styles.code}>pages/index.tsx</code>
+          <br />
+          current locale is {router.locale}
         </p>
 
         <div className={styles.grid}>

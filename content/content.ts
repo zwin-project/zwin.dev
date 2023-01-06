@@ -46,9 +46,9 @@ export const whatIsIt: Folder = {
 }
 
 export const gettingStarted: Folder = {
-  path: 'what_is_it',
-  nameEn: 'What is it?',
-  nameJa: 'Z Window Systemとは',  
+  path: 'getting_started',
+  nameEn: 'Getting started',
+  nameJa: 'はじめる',  
   children: [{
     path: 'system_requirements',
     nameEn: 'System requirements',

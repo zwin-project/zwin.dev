@@ -5,6 +5,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import styles from '../styles/Home.module.css'
 import { useTranslation } from 'next-i18next'
 import { useRouter } from 'next/router'
+import Header from '../compontents/Header'
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
@@ -27,6 +28,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
+        <Header />
         <h1 className={styles.title}>
           {t('hello')}
         </h1>

@@ -18,20 +18,14 @@ For a windowing system to work, at least three components must exist; **client a
 Finally, **a protocol** is a language in which the client apps and a compositor talk. Think of it like HTTP on the web; the server and your browser talk in HTTP.
 
 
-![alt_text](images/image1.png "image_tooltip")
-
 
 Your OS must have the above software. For example, on Ubuntu with Wayland protocol, it looks like this:
-
-![alt_text](images/image2.png "image_tooltip")
 
 
 
 ## Z Window System core concepts
 
 To realize an XR windowing system, we built **ZIGEN** (a protocol) and **Zen** (a compositor).
-
-![alt_text](images/image3.png "image_tooltip")
 
 
 ZIGEN is a protocol. Zen does all the actual work, including communication with 2D Wayland apps. **So if you want to try out our windowing system, Zen is what you should install.** You can switch your compositor easily; you can keep your existing OS (Ubuntu/Arch Linux).

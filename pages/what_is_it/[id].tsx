@@ -8,6 +8,7 @@ import styles from '../../styles/Home.module.css'
 import { whatIsIt } from "../../content/content";
 import { DocsProps, TableOfContent } from "../../compontents/common";
 import TOC from "../../compontents/TOC";
+import Header from "../../compontents/Header";
 
 type PathParams = {
   id: string
@@ -31,7 +32,7 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
     `content/what_is_it/${params!.id}/${locale}.md`, 'utf-8')
   const rawHtmlContent = markdownToHtml(content)
 
-  const htmlContent = rawHtmlContent.replaceAll('<img src="', '<img src="/images/roadmap/')
+  const htmlContent = rawHtmlContent.replaceAll('<img src="', `<img src="/images/what_is_it/${params!.id}/`)
 
   const domHtml = new JSDOM(htmlContent).window.document
 
@@ -62,6 +63,7 @@ const WhatIsIt: NextPage<DocsProps> = ({ html, tableOfContent }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
+        <Header />
         <div
           dangerouslySetInnerHTML={{ __html: html }}
         />

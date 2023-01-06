@@ -9,6 +9,7 @@ import { whatIsIt } from "../../content/content";
 import { DocsProps, TableOfContent } from "../../compontents/common";
 import TOC from "../../compontents/TOC";
 import Header from "../../compontents/Header";
+import Sidenav, { SidenavPath } from "../../compontents/Sidenav";
 
 type PathParams = {
   id: string
@@ -16,7 +17,7 @@ type PathParams = {
 
 export const getStaticPaths: GetStaticPaths<PathParams> = async ({ locales }) => {
   let paths: any = []
-  whatIsIt.children.forEach((e) => {
+  whatIsIt.articles.forEach((e) => {
     locales?.forEach((l) => {
       paths.push({ params: { id: e.path }, locale: l })
     })
@@ -64,6 +65,7 @@ const WhatIsIt: NextPage<DocsProps> = ({ html, tableOfContent }) => {
       </Head>
       <main className={styles.main}>
         <Header />
+        <Sidenav kind={SidenavPath.whatIsIt}/>
         <div
           dangerouslySetInnerHTML={{ __html: html }}
         />

@@ -1,3 +1,29 @@
 {
-  "hello": "こんにちは、世界！"
+  "hello": "こんにちは、世界！",
+  "what_is_it": {
+    "what_is_it": "Z Window Systemとは",
+    "subsections": {
+      "basic_concept": "基本概念",
+      "z_window_system": "Z Window System",
+      "zen": "Zen",
+      "others": "その他"
+    },
+    "articles": {
+      "what_is_z_window_system": "Z Window Systemとは？",
+      "rendering_scheme": "レンダリング方式",
+      "3d_window": "3Dウィンドウ",
+      "interactions_on_zen": "Zenでのインタラクション",
+      "faq": "FAQ"
+    }
+  },
+  "getting_started": {
+    "getting_started": "はじめる",
+    "subsections": {
+      "setup": "セットアップ"
+    },
+    "articles": {
+      "system_requirements": "システム要件"
+    }
+  },
+  "roadmap": "ロードマップ"
 }

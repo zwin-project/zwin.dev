@@ -1,73 +1,55 @@
 
 interface Article {
   path: string,
-  nameEn: string,
-  nameJa: string
+  subsection?: string
 }
 
 interface Folder {
   path: string,
-  nameEn: string,
-  nameJa: string,
-  children: Article[]
+  subsections: string[],
+  articles: Article[]
 }
 
 export const whatIsIt: Folder = {
   path: 'what_is_it',
-  nameEn: 'What is it?',
-  nameJa: 'Z Window Systemとは',
-  children: [
+  subsections: [
+    'basic_concept', 'z_window_system', 'zen', 'others'
+  ],
+  articles: [
     {
       path: 'what_is_z_window_system',
-      nameEn: 'What is Z Window System?',
-      nameJa: 'Z Window Systemとは？'
+      subsection: 'basic_concept'
     },
     {
       path: 'rendering_scheme',
-      nameEn: 'Rendering scheme',
-      nameJa: 'レンダリング方式'
+      subsection: 'z_window_system'
     },
     {
       path: '3d_window',
-      nameEn: '3D Window',
-      nameJa: '3Dウィンドウ'
+      subsection: 'z_window_system'
     },
     {
       path: 'interactions_on_zen',
-      nameEn: 'Interactions on Zen',
-      nameJa: 'Zenでのインタラクション'
+      subsection: 'zen'
     },
     {
       path: 'faq',
-      nameEn: 'FAQ',
-      nameJa: 'FAQ'
+      subsection: 'others'
     },
   ]
 }
 
 export const gettingStarted: Folder = {
   path: 'getting_started',
-  nameEn: 'Getting started',
-  nameJa: 'はじめる',  
-  children: [{
+  subsections: [
+    'setup'
+  ],
+  articles: [{
     path: 'system_requirements',
-    nameEn: 'System requirements',
-    nameJa: 'システム要件'
+    subsection: 'setup'
   }]
 }
 
 export const roadMap: Article = {
-  path: 'roadmap',
-  nameEn: 'Roadmap',
-  nameJa: 'ロードマップ'
+  path: 'roadmap'
 }
-
-// export const content: (Folder | Article)[] = [
-//   whatIsIt,
-//   gettingStarted,
-//   {
-//     path: 'roadmap',
-//     nameEn: 'Roadmap',
-//     nameJa: 'ロードマップ'
-//   },
-// ]

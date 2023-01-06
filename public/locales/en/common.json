@@ -1,3 +1,29 @@
 {
-  "hello": "hello, world!"
+  "hello": "hello, world!",
+  "what_is_it": {
+    "what_is_it": "What is it?",
+    "subsections": {
+      "basic_concept": "Basic Concept",
+      "z_window_system": "Z Window System",
+      "zen": "Zen",
+      "others": "Others"
+    },
+    "articles": {
+      "what_is_z_window_system": "What is Z Window System?",
+      "rendering_scheme": "Rendering scheme",
+      "3d_window": "3D Window",
+      "interactions_on_zen": "Interactions on Zen",
+      "faq": "FAQ"
+    }
+  },
+  "getting_started": {
+    "getting_started": "Getting Started",
+    "subsections": {
+      "setup": "Setup"
+    },
+    "articles": {
+      "system_requirements": "System requirements"
+    }
+  },
+  "roadmap": "Roadmap"
 }

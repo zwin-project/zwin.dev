@@ -18,4 +18,4 @@ To add a new page, you have to
 - add markdown files (en, ja) to `content/{folder}/{title_of_page_in_snake_case}`
 - add images to `public/images/{folder}/{title_of_page_in_snake_case}`
 - add properties to `content/content.ts`
-- add to sidenav by adding it to `components/sidenav.tsx`
+- add titles/translations to `public/locales/{locale}/common.json`

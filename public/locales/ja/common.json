@@ -25,5 +25,11 @@
       "system_requirements": "システム要件"
     }
   },
-  "roadmap": "ロードマップ"
+  "roadmap": "ロードマップ",
+  "tableofcontents": "目次",
+  "sidenav": {
+    "discord_title": "お困りですか？",
+    "discord_desc": "Discordでぜひご質問ください。",
+    "discord_button": "参加する"
+  }
 }

@@ -41,12 +41,12 @@ const Sidenav = (props: { kind: SidenavPath }) => {
         ))}
         <div className={styles.divider} />
         <div className={styles.discordsection}>
-          <h4>Need help?</h4>
-          <p className={styles.desc}>Join our Discord to ask questions!</p>
+          <h4>{t('sidenav.discord_title')}</h4>
+          <p className={styles.desc}>{t('sidenav.discord_desc')}</p>
           <Link className={styles.wraplink} href="http://discord.gg/PPJEFrdE9f">
             <div className={styles.discordbutton}>
               <DiscordIcon className={styles.discord} />
-              <p>Take a look</p>
+              <p>{t('sidenav.discord_button')}</p>
               <ChevronRight className={styles.chevron} />
             </div>
           </Link>

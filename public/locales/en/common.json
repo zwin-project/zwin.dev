@@ -25,5 +25,11 @@
       "system_requirements": "System requirements"
     }
   },
-  "roadmap": "Roadmap"
+  "roadmap": "Roadmap",
+  "tableofcontents": "Table of contents",
+  "sidenav": {
+    "discord_title": "Need help?",
+    "discord_desc": "Join our Discord to ask questions!",
+    "discord_button": "Take a look"
+  }
 }

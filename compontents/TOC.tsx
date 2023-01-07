@@ -1,11 +1,14 @@
 import { TableOfContent } from "./common"
 import styles from "../styles/TOC.module.scss"
+import { useTranslation } from "next-i18next"
 
 const TOC = (props: { toc: TableOfContent[] }) => {
+  const { t } = useTranslation('common')
+
   return (
     <div className={styles.tocwrap}>
       <div className={styles.toc}>
-        <h4>Table of Contents</h4>
+        <h4>{t('tableofcontents')}</h4>
         <ul className={styles.toccontent}>
           {props.toc.map((elm: TableOfContent) => {
             return <li key={elm.href}>

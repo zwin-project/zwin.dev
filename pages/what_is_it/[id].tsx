@@ -4,15 +4,18 @@ import Head from "next/head";
 import fs from 'fs'
 import markdownToHtml from "zenn-markdown-html";
 import { JSDOM } from 'jsdom'
+import { useMediaQuery } from "react-responsive";
+import useSize from '@react-hook/size'
 import styles from '../../styles/Docs.module.scss'
 import { whatIsIt } from "../../content/content";
-import { DocsProps, TableOfContent } from "../../compontents/common";
+import { breakpointArticle, breakpointSidebar, DocsProps, TableOfContent } from "../../compontents/common";
 import TOC from "../../compontents/TOC";
 import Header from "../../compontents/Header";
 import Sidenav, { SidenavPath } from "../../compontents/Sidenav";
 import DocsNav from "../../compontents/DocsNav";
 import { useTranslation } from "next-i18next";
 import Footer from "../../compontents/Footer";
+import { useEffect, useRef } from "react";
 
 type PathParams = {
   id: string
@@ -64,6 +67,11 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
 
 const WhatIsIt: NextPage<DocsProps> = ({ html, tableOfContent, nextContent, previousContent }) => {
   const { t } = useTranslation('common')
+  const isLarge = useMediaQuery({
+    query: `(min-width: ${breakpointSidebar}px)`
+  })
+  const articleRef = useRef(null)
+  const [articleWidth, _] = useSize(articleRef);
 
   return (
     <div>
@@ -77,8 +85,8 @@ const WhatIsIt: NextPage<DocsProps> = ({ html, tableOfContent, nextContent, prev
 
         <main className={styles.main}>
           <section className={styles.body}>
-            <Sidenav kind={SidenavPath.whatIsIt} />
-            <article className={styles.article}>
+            {isLarge && <Sidenav kind={SidenavPath.whatIsIt} />}
+            <article className={styles.article} ref={articleRef}>
               <div className={styles.content}>
                 <div className={styles.markdowninjection}
                   dangerouslySetInnerHTML={{ __html: html }}
@@ -94,7 +102,7 @@ const WhatIsIt: NextPage<DocsProps> = ({ html, tableOfContent, nextContent, prev
                   }}
                 />
               </div>
-              <TOC toc={tableOfContent} />
+              {articleWidth > breakpointArticle && <TOC toc={tableOfContent} />}
             </article>
           </section>
         </main>

@@ -5,11 +5,13 @@ import { whatIsIt, gettingStarted } from "../content/content"
 import styles from '../styles/Sidenav.module.scss'
 import DiscordIcon from '../public/icons/discord.svg'
 import ChevronRight from '../public/icons/chevron_right.svg'
+import NavItem from "./NavItem"
 
 export enum SidenavPath {
   whatIsIt,
   gettingStarted
 }
+
 
 const Sidenav = (props: { kind: SidenavPath }) => {
   const content =
@@ -31,11 +33,13 @@ const Sidenav = (props: { kind: SidenavPath }) => {
               {t([path, 'subsections', subsection].join('.'))}
             </p>
             {...content.articles.filter((article) => article.subsection == subsection).map(article => (
-              <li key={article.path} className={styles.article + ' ' + (id == article.path ? styles.active : '')}>
-                <Link className={styles.wraplink} href={article.path}>
-                  {t([path, 'articles', article.path].join('.'))}
-                </Link>
-              </li>
+              <NavItem
+                key={article.path}
+                isLarge={false}
+                active={id == article.path}
+                href={article.path}
+                text={t([path, 'articles', article.path].join('.'))}
+              />
             ))}
           </div>
         ))}

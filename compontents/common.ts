@@ -12,3 +12,5 @@ export type DocsProps = {
   previousContent: string | null
 }
 
+export const breakpointSidebar = 780;
+export const breakpointArticle = 800;

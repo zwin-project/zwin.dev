@@ -34,28 +34,6 @@
   color: $grey-text;
 }
 
-.article {
-  margin: 0 -8px 4px -8px;
-  padding: 6px 8px;
-  border-radius: 4px;
-
-  list-style: none;
-  font-size: 14px;
-  line-height: 1.6em;
-
-  transition: $transition-short;
-
-  &:hover {
-    background-color: $navy-100;
-  }
-
-  &.active {
-    color: $primary;
-    font-weight: bold;
-    background-color: $navy-200;
-  }
-}
-
 .divider {
   border-top: 1px solid;
   border-color: $grey-border;

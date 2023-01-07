@@ -13,20 +13,28 @@
   left: 0;
   z-index: 99;
   height: $header-height;
-
-  padding: 0 $global-padding;
+  overflow: hidden;
 
   background-color: rgba($white, .6);
   border-bottom: 1px solid;
   border-color: $grey-border;
   backdrop-filter: blur(12px);
+
+  transition: $transition-long;
+
+  &.open {
+    height: 100vh;
+    overflow: scroll;
+    background-color: rgba($white, .8);
+  }
 }
 
 .header {
   width: 100%;
-  height: 100%;
+  height: $header-height;
   max-width: $max-width;
   margin: 0 auto;
+  padding: 0 $global-padding;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -34,6 +42,19 @@
 
 .logo {
   height: 24px;
+}
+
+
+.github,
+.menu,
+.close {
+  height: 24px;
+  fill: $text;
+  transition: $transition-short;
+
+  &:hover {
+    fill: $grey-500t;
+  }
 }
 
 .nav {
@@ -50,64 +71,93 @@
     display: flex;
     align-items: center;
   }
+}
 
-  .navbutton {
-    border-radius: 8px;
+.navbutton {
+  border-radius: 8px;
+  transition: $transition-short;
+
+  &:hover {
+    background-color: $navy-100t;
+  }
+
+  &:active {
+    background-color: $navy-200t;
+  }
+
+  &.active {
+    font-weight: bold;
+    background-color: $navy-200t;
+    color: $primary;
+    pointer-events: none;
+  }
+
+  .wraplink {
+    padding: 10px;
+  }
+}
+
+.langswitcher {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: $grey-text;
+
+  a {
+    cursor: pointer;
     transition: $transition-short;
 
     &:hover {
-      background-color: $navy-100t;
+      color: $text;
     }
 
     &:active {
-      background-color: $navy-200t;
+      color: $grey-text;
     }
 
     &.active {
       font-weight: bold;
-      background-color: $navy-200t;
-      color: $primary;
-      pointer-events: none;
-    }
-
-    .wraplink {
-      padding: 10px;
+      color: $text;
+      cursor: default;
     }
   }
 
-  .github {
-    height: 24px;
-    fill: $text;
-    transition: $transition-short;
+  p {
+    margin: 0;
+  }
+}
 
-    &:hover {
-      fill: $grey-500t;
-    }
+.mobilenav {
+  min-height: calc(100% - $header-height);
+
+  li {
+    list-style: none;
   }
 
-  .langswitcher {
+  .mobilenavinner {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 32px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .toprow {
     display: flex;
     align-items: center;
-    gap: 4px;
-    color: $grey-text;
+    justify-content: space-between;
+  }
 
-    a {
-      cursor: pointer;
-      transition: $transition-short;
+  .divider {
+    margin: 0 -8px;
+    border-top: 1px solid;
+    border-color: $grey-border;
+  }
 
-      &:hover {
-        color: $text;
-      }
-
-      &:active {
-        color: $grey-text;
-      }
-
-      &.active {
-        font-weight: bold;
-        color: $text;
-        cursor: default;
-      }
-    }
+  .section {
+    color: $navy-400t;
+    font-weight: bold;
   }
 }

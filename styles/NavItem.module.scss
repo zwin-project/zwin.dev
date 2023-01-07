@@ -1,0 +1,35 @@
+@import 'mixins.scss';
+
+.wraplink {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.article {
+  margin: 4px -8px;
+  padding: 6px 8px;
+  border-radius: 4px;
+
+  list-style: none;
+  font-size: 14px;
+  line-height: 1.6em;
+
+  transition: $transition-short;
+
+  &:hover {
+    background-color: $navy-100t;
+  }
+
+  &.active {
+    color: $primary;
+    font-weight: bold;
+    background-color: $navy-200t;
+  }
+
+  &.large {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+  }
+}

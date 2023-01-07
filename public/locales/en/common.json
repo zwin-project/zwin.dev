@@ -1,5 +1,6 @@
 {
   "hello": "hello, world!",
+  "top": "Top",
   "what_is_it": {
     "what_is_it": "What is it?",
     "subsections": {

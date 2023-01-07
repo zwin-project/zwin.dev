@@ -24,7 +24,7 @@ const Sidenav = (props: {kind: SidenavPath}) => {
     <div className={styles.sidenav}>
       {...content.subsections.map(subsection => (
         <div key={subsection}>
-          <p style={{opacity: 0.3}}>
+          <p className={styles.subsection}>
             {t([path, 'subsections', subsection].join('.'))}
           </p>
           {...content.articles.filter((article) => article.subsection == subsection).map(article => (

@@ -19,6 +19,7 @@
     "zenn-markdown-html": "^0.1.134"
   },
   "devDependencies": {
+    "@svgr/webpack": "^6.5.1",
     "@types/jsdom": "^20.0.1",
     "@types/node": "18.11.18",
     "@types/react": "18.0.26",

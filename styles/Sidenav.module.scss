@@ -1,4 +1,12 @@
+@import 'mixins.scss';
+
 .sidenav {
   padding: 24px;
   width: 240px;
+}
+
+.subsection {
+  font-weight: bold;
+  font-size: 14px;
+  color: $grey-text;
 }

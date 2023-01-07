@@ -1,19 +1,112 @@
-.header {
+@import 'mixins.scss';
+
+.headerwrap {
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
+  height: 64px;
+
+  padding: 0 $global-padding;
+
+  background-color: rgba($white, .6);
+  border-bottom: 1px solid;
+  border-color: $grey-border;
+  backdrop-filter: blur(12px);
+}
+
+.header {
+  width: 100%;
+  height: 100%;
+  max-width: $max-width;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 24px;
+}
+
+.wraplink {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.logo {
+  height: 24px;
 }
 
 .nav {
   display: flex;
+  align-items: center;
+  gap: 28px;
 
   li {
-    padding: 0 12px;
     list-style: none;
+  }
+
+  .navbuttons {
+    gap: 8px;
+    display: flex;
+    align-items: center;
+  }
+
+  .navbutton {
+    border-radius: 8px;
+    transition: $transition-short;
+
+    &:hover {
+      background-color: $navy-100t;
+    }
+
+    &:active {
+      background-color: $navy-200t;
+    }
+
+    &.active {
+      font-weight: bold;
+      background-color: $navy-200t;
+      color: $primary;
+      pointer-events: none;
+    }
+
+    .wraplink {
+      padding: 10px;
+    }
+  }
+
+  .github {
+    height: 24px;
+    fill: $text;
+    transition: $transition-short;
+
+    &:hover {
+      fill: $grey-500t;
+    }
+  }
+
+  .langswitcher {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: $grey-text;
+
+    a {
+      cursor: pointer;
+      transition: $transition-short;
+
+      &:hover {
+        color: $text;
+      }
+
+      &:active {
+        color: $grey-text;
+      }
+
+      &.active {
+        font-weight: bold;
+        color: $text;
+        cursor: default;
+      }
+    }
   }
 }

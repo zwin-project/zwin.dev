@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { isNativeError } from 'util/types'
 import styles from '../styles/DocsNav.module.scss'
+import ChevronRight from '../public/icons/chevron_right.svg'
 
 const Button = (props: {
   path: string,
@@ -8,10 +9,12 @@ const Button = (props: {
   isNext: boolean
 }) => {
   return (
-    <Link href={props.path}>
+    <Link className={styles.wraplink} href={props.path}>
       <div className={styles.button}>
         <p className={styles.desc}>{ props.isNext ? 'Next' : 'Previous' }</p>
         <p className={styles.buttontitle}>{props.title}</p>
+        {props.isNext && <ChevronRight className={styles.chevronright} />}
+        {!props.isNext && <ChevronRight className={styles.chevronleft} />}
       </div>
     </Link>
   )

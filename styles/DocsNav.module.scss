@@ -1,15 +1,64 @@
+@import 'mixins.scss';
+
+.wraplink {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
 .docsnav {
   display: flex;
   gap: 24px;
+  padding: 64px 0;
 }
 
-.button,
+.wraplink,
 .spacer {
   flex: 1;
 }
 
 .button {
-  padding: 24px;
+  flex: 1;
   border: 1px solid;
+  border-color: $grey-border;
   border-radius: 8px;
+  box-shadow: 0px 4px 20px 0px $grey-100t;
+  transition: $transition-short;
+  position: relative;
+
+  padding: 16px;
+
+  &:hover {
+    background-color: $grey-100t;
+    box-shadow: 0px 0px 0px 0px transparent;
+    transform: translateY(2px);
+  }
+
+  p {
+    margin: 0;
+    text-align: center;
+  }
+
+  .desc {
+    color: $grey-text;
+    margin-bottom: 8px;
+  }
+
+  .chevronright,
+  .chevronleft {
+    width: 24px;
+    fill: $grey-text;
+    position: absolute;
+    top: 50%;
+  }
+
+  .chevronright {
+    transform: translateY(-50%);
+    right: 16px;
+  }
+
+  .chevronleft {
+    transform: translateY(-50%) rotate(180deg);
+    left: 16px;
+  }
 }

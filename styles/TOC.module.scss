@@ -8,6 +8,8 @@
 
 .toc {
   background-color: $navy-100;
+  border: 1px solid;
+  border-color: $grey-border;
   position: sticky;
   top: calc($header-height + 32px);
 
@@ -17,7 +19,7 @@
   h4 {
     font-size: 13px;
     margin: 0;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     color: $grey-text;
   }
 
@@ -26,7 +28,7 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
   }
 
   li {

@@ -1,0 +1,40 @@
+@import 'mixins.scss';
+
+.wraplink {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.footerwrap {
+  width: 100vw;
+  padding: $global-padding;
+  background-color: $primary;
+}
+
+.footer {
+  width: 100%;
+  max-width: $max-width;
+  padding: 24px;
+  color: rgba($white, 0.7);
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.link {
+  display: flex;
+  gap: 24px;
+
+  .github,
+  .twitter,
+  .discord {
+    width: 24px;
+    fill: rgba($white, 0.7);
+    transition: $transition-short;
+
+    &:hover {
+      fill: $white;
+    }
+  }
+}

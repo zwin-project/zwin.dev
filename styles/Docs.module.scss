@@ -1,7 +1,7 @@
 @import 'mixins.scss';
 
 .container {
-  padding: 0 $global-padding;
+  padding: 0;
 }
 
 .main {
@@ -13,22 +13,53 @@
 .body {
   width: 100%;
   display: flex;
-  gap: 32px;
+  gap: 48px;
 }
 
 .article {
   display: flex;
   flex: 1;
-  padding: 32px 0;
-  gap: 32px;
+  padding: 32px $global-padding 32px 0;
+  gap: 48px;
   justify-content: center;
 }
 
 .content {
   flex: 1;
   max-width: $docs-content-max-width;
+}
+
+.markdowninjection {
+  h1 {
+    font-size: 40px;
+    line-height: 1.6em;
+    padding-bottom: 12px;
+    border-bottom: 1px solid;
+    border-color: $grey-border;
+  }
+
+  h2 {
+    font-size: 24px;
+    font-weight: normal;
+    margin-top: 64px;
+    margin-bottom: 32px;
+  }
+
+  p {
+    font-weight: lighter;
+    font-size: 16px;
+    line-height: 1.8em;
+    letter-spacing: 0.03em;
+    margin: 12px 0;
+  }
 
   img {
-    width: 360px;
+    width: 100%;
+    max-width: 480px;
+    border: 1px solid;
+    border-color: $grey-border;
+    border-radius: 4px;
+    box-shadow: 0px 4px 20px 0px $grey-100t;
+    margin: 24px auto;
   }
 }

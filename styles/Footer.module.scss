@@ -20,11 +20,19 @@
 
   display: flex;
   justify-content: space-between;
+
+  &.mobile {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 48px 24px;
+  }
 }
 
 .link {
   display: flex;
   gap: 24px;
+  padding: 0;
+  align-items: center;
 
   .github,
   .twitter,

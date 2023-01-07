@@ -36,7 +36,7 @@ const DocsNav = (props: {
     query: `(min-width: ${breakpointSidebar}px)`
   })
   return (
-    <div className={styles.docsnav}>
+    <div className={styles.docsnav + ' ' + (!isLarge ? styles.vertical : '')}>
       {props.previous != undefined &&
         <Button path={props.previous.path} title={props.previous.title} isNext={false}/> 
       }

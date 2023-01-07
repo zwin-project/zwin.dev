@@ -3,11 +3,16 @@ import GithubIcon from '../public/icons/github.svg'
 import TwitterIcon from '../public/icons/twitter.svg'
 import DiscordIcon from '../public/icons/discord.svg'
 import Link from 'next/link'
+import { useMediaQuery } from 'react-responsive'
+import { breakpointSidebar } from './common'
 
 const Footer = () => {
+  const isLarge = useMediaQuery({
+    query: `(min-width: ${breakpointSidebar}px)`
+  })
   return (
     <footer className={styles.footerwrap}>
-      <div className={styles.footer}>
+      <div className={styles.footer + ' ' + (!isLarge ? styles.mobile : '')}>
         <p className={styles.copyright}>© Z Window System, 2023</p>
         <ul className={styles.link}>
           <Link className={styles.wraplink} href="http://discord.gg/PPJEFrdE9f">

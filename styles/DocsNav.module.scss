@@ -10,6 +10,11 @@
   display: flex;
   gap: 24px;
   padding: 64px 0;
+
+  &.vertical {
+    flex-direction: column;
+    gap: 12px;
+  }
 }
 
 .wraplink,

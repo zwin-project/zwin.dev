@@ -1,39 +1,42 @@
 # Rendering scheme
 
-**TL;DR: It’s a compositor and a protocol for an XR windowing system built on top of Wayland.**
-
-If you understand the above, please jump to **Z Window System core concepts**. Otherwise, stay with us.
+Z Window System uses a different rendering method than the conventional VR solutions.
 
 
-## What is a windowing system?
+## Rendering of the application
 
-The windowing system is a framework that works on top of an OS. It displays the contents of apps on the screen. You use it every day, but you might not be aware since modern OS (like Windows, macOS, Ubuntu) comes with one by default. The windowing system is a concept from everyday 2D OS you are familiar with. It was not originally related to VR, but we adopted it.
+In a conventional VR solution, VR apps receive viewpoint information from the system, draw an object using their own virtual camera, and return the resulting two-dimensional image x 2 (for both eyes) to the system.
 
-For a windowing system to work, at least three components must exist; **client apps, a compositor, and a protocol.**
-
-**Client apps** are the apps you use on GUI, like Google Chrome, Blender, or File Explorer.
-
-**A compositor** is a program that communicates with client apps, listens for the content the apps want to show, and displays them into screens as overlapping windows. It also takes care of the windows' placement, how they are stacked, and which is active. So when you casually refer to "OS," often what you want to mean is "compositor." However, the compositor is not technically a part of the OS; it can be swapped in Linux operating systems (although it is fixed to the default one on Windows and macOS). While a compositor only takes care of visual aspects, the actual OS provides computational resources and foundations to the apps.
-
-Finally, **a protocol** is a language in which the client apps and a compositor talk. Think of it like HTTP on the web; the server and your browser talk in HTTP.
+![alt_text](image1.png "image_tooltip")
 
 
-![alt_text](images/image1.png "image_tooltip")
+In the Z Window System, on the other hand, each VR app does not render the image by itself. Instead, **the VR app sends the object's vertex data, mesh data, texture, shaders, etc., to the compositor.** The compositor's virtual camera then draws all the virtual objects together.
+
+![alt_text](image2.png "image_tooltip")
 
 
-Your OS must have the above software. For example, on Ubuntu with Wayland protocol, it looks like this:
+There are several advantages to this mechanism. For example, suppose an application suddenly stops responding. With the conventional rendering method, the app's camera is responsible for drawing and updating the image. If the app stops responding, moving your head will not update the perspective, causing discomfort.
 
-![alt_text](images/image2.png "image_tooltip")
-
-
-
-## Z Window System core concepts
-
-To realize an XR windowing system, we built **ZIGEN** (a protocol) and **Zen** (a compositor).
-
-![alt_text](images/image3.png "image_tooltip")
+On the other hand, in our method, **the compositor is responsible for drawing and updating the viewpoint.** So even if an app stops responding, the view on the headset will be updated according to the perspective (unless the compositor stops responding.) This ensures that the overall experience is not interrupted by "bad apps."
 
 
-ZIGEN is a protocol. Zen does all the actual work, including communication with 2D Wayland apps. **So if you want to try out our windowing system, Zen is what you should install.** You can switch your compositor easily; you can keep your existing OS (Ubuntu/Arch Linux).
+## Remote rendering
 
-Since ZIGEN is open-sourced, you can build 3D apps compatible with ZIGEN or develop another compositor which works like Zen.
+The flow for viewing the Zen view with Meta Quest is as follows; install an app for Meta Quest called **Zen Mirror** on your Quest, and set Zen on PC to VR mode with the app on the Quest open. The two will automatically start communicating within LAN, and Quest's Zen Mirror will display the view of Zen.
+
+There are some existing solutions for displaying PC VR applications to Quest like this, including Oculus Link and ALVR. But Zen/Z Window System takes a different approach here as well.
+
+In typical solutions, the VR headset sends viewpoint information to the PC every frame, and the stereo images rendered by the PC are sent over the network every frame. Therefore, the update of images may be delayed with bad networks, which may cause VR sickness.
+
+![alt_text](image3.png "image_tooltip")
+
+
+The Zen/Z Window System, on the other hand, sends the object's vertex data, mesh data, shaders, etc., passed from the application directly to the headset over the network. The headset is responsible for rendering each frame.
+
+![alt_text](image4.png "image_tooltip")
+
+Thanks to this mechanism, **even if the network quality is poor and there is a delay in communication, the headset alone can update the perspective every frame**. Information is sent over the network only when the application wants to update the shape or appearance of an object. At other times, it does not occupy network bandwidth.
+
+Also, since we use the GPU on the headset for camera rendering, there is no need for a powerful GPU on the PC side. This enables using Zen/Z Window System in VR even with a cheap laptop.
+
+The mechanism of the Z Window System enables a comfortable VR experience even with low-quality PCs, low-quality applications, and low-quality networks.

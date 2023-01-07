@@ -54,9 +54,37 @@
     margin: 12px 0;
   }
 
+  a {
+    color: $link;
+
+    &:hover {
+      color: lighten($link, 20%);
+    }
+  }
+
+  pre {
+    background-color: $grey-100;
+    border: 0.5px solid;
+    border-color: $grey-border;
+    border-radius: 2px;
+    font-family: 'Ubuntu Mono', monospace;
+
+    code {
+      background-color: transparent;
+      border: none;
+    }
+  }
+
+  code {
+    background-color: $grey-100;
+    border: 0.5px solid;
+    border-color: $grey-border;
+    border-radius: 2px;
+    font-family: 'Ubuntu Mono', monospace;
+  }
+
   img {
     width: 100%;
-    max-width: 480px;
     border: 1px solid;
     border-color: $grey-border;
     border-radius: 4px;

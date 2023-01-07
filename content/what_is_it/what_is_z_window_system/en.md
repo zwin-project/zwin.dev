@@ -2,7 +2,7 @@
 
 **TL;DR: It’s a compositor and a protocol for an XR windowing system built on top of Wayland.**
 
-If you understand the above, please jump to **Z Window System core concepts**. Otherwise, stay with us.
+If you understand the above, please jump to "Z Window System core concepts". Otherwise, stay with us.
 
 
 ## What is a windowing system?

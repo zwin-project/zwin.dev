@@ -1,39 +1,43 @@
 # Zenでのインタラクション
 
-**TL;DR: It’s a compositor and a protocol for an XR windowing system built on top of Wayland.**
-
-If you understand the above, please jump to **Z Window System core concepts**. Otherwise, stay with us.
-
-
-## What is a windowing system?
-
-The windowing system is a framework that works on top of an OS. It displays the contents of apps on the screen. You use it every day, but you might not be aware since modern OS (like Windows, macOS, Ubuntu) comes with one by default. The windowing system is a concept from everyday 2D OS you are familiar with. It was not originally related to VR, but we adopted it.
-
-For a windowing system to work, at least three components must exist; **client apps, a compositor, and a protocol.**
-
-**Client apps** are the apps you use on GUI, like Google Chrome, Blender, or File Explorer.
-
-**A compositor** is a program that communicates with client apps, listens for the content the apps want to show, and displays them into screens as overlapping windows. It also takes care of the windows' placement, how they are stacked, and which is active. So when you casually refer to "OS," often what you want to mean is "compositor." However, the compositor is not technically a part of the OS; it can be swapped in Linux operating systems (although it is fixed to the default one on Windows and macOS). While a compositor only takes care of visual aspects, the actual OS provides computational resources and foundations to the apps.
-
-Finally, **a protocol** is a language in which the client apps and a compositor talk. Think of it like HTTP on the web; the server and your browser talk in HTTP.
+ZenはZ Window Systemのリファレンスコンポジッターです([Z Window Systemとは？](/what_is_it/what_is_z_window_system)を参照)。
+長時間のマウス・キーボードでのVR作業に向けてデザインされています。
 
 
-![alt_text](images/image1.png "image_tooltip")
+## Ray
+
+[https://www.youtube.com/watch?v=bhkqvm2oHdc](https://www.youtube.com/watch?v=bhkqvm2oHdc)
+
+VRではRayを使って3Dオブジェクトを操作できます。VRの世界ではRayは一般的な手法ですが、よくあるRayと異なるのは、Zenではコントローラではなくマウス/トラックパッドを使ってRayを操作する点です。
+例えばマウスを右に動かすと、Rayも右に動きます。上に動かすと上に動きます。2DウィンドウにRayを向けている際には、Rayは普通のカーソルと同じような挙動になります。
 
 
-Your OS must have the above software. For example, on Ubuntu with Wayland protocol, it looks like this:
+## Board
 
-![alt_text](images/image2.png "image_tooltip")
+Boardは、これまでの2Dの世界と3Dの世界の間をつなぐ概念です。
 
+VRでは、Boardはバーチャルモニターのように振る舞います。2Dウィンドウが張り付く面のようなものです。Boardは自由に動かしたり、増やしたり減らしたり、リサイズしたりできます。
 
-
-## Z Window System core concepts
-
-To realize an XR windowing system, we built **ZIGEN** (a protocol) and **Zen** (a compositor).
-
-![alt_text](images/image3.png "image_tooltip")
+![alt_text](image1.png "image_tooltip")
 
 
-ZIGEN is a protocol. Zen does all the actual work, including communication with 2D Wayland apps. **So if you want to try out our windowing system, Zen is what you should install.** You can switch your compositor easily; you can keep your existing OS (Ubuntu/Arch Linux).
+一方2Dスクリーンでは、すべてのBoardが1つの画面の中にまとめて表示され、どのBoardを表示するかをその都度選択することができます。Windows/Ubuntuにおける仮想デスクトップ、macOSにおけるSpaceのように使うことができます。
 
-Since ZIGEN is open-sourced, you can build 3D apps compatible with ZIGEN or develop another compositor which works like Zen.
+
+![alt_text](image2.png "image_tooltip")
+
+（プロトタイプのデザイン；リリース版では見た目が異なる可能性があります）
+
+Boardによって、VRでも2Dスクリーンでも、簡単に2Dウィンドウを管理できます。
+
+またv0.1では実装されていませんが、Boardを最小化できるようにすることで、さらに容易にウィンドウを管理できるようにすることも検討しています。
+
+
+## Space (準備中)
+
+Spaceは複数のバーチャル環境を簡単に切り替えできるようにする概念です。1つのSpaceは、「ある環境/視界全体」に対応します。1つのSpaceの中では、1つのExpansive 3D Window、また多くのBounded 3D Windowを開くことができ、Spaceを切り替えることで周囲の風景・環境を完全に切り替えられます。
+
+Spaceはv0.1では実装されていません。Spaceの仕様は今後変更される可能性があります。
+
+
+![alt_text](image3.png "image_tooltip")

@@ -1,39 +1,45 @@
 # レンダリング方式
 
-**TL;DR: It’s a compositor and a protocol for an XR windowing system built on top of Wayland.**
-
-If you understand the above, please jump to **Z Window System core concepts**. Otherwise, stay with us.
+Z Window Systemでは、通常のVRソリューションと異なるレンダリング方式を採用しています。
 
 
-## What is a windowing system?
+## アプリの描画
 
-The windowing system is a framework that works on top of an OS. It displays the contents of apps on the screen. You use it every day, but you might not be aware since modern OS (like Windows, macOS, Ubuntu) comes with one by default. The windowing system is a concept from everyday 2D OS you are familiar with. It was not originally related to VR, but we adopted it.
+通常のVRソリューションでは、VRアプリはシステムから視点情報を受け取り、自らが持つ仮想カメラを使って物体を描画し、その結果の二次元画像×2（両目分）をシステムに返します。
 
-For a windowing system to work, at least three components must exist; **client apps, a compositor, and a protocol.**
-
-**Client apps** are the apps you use on GUI, like Google Chrome, Blender, or File Explorer.
-
-**A compositor** is a program that communicates with client apps, listens for the content the apps want to show, and displays them into screens as overlapping windows. It also takes care of the windows' placement, how they are stacked, and which is active. So when you casually refer to "OS," often what you want to mean is "compositor." However, the compositor is not technically a part of the OS; it can be swapped in Linux operating systems (although it is fixed to the default one on Windows and macOS). While a compositor only takes care of visual aspects, the actual OS provides computational resources and foundations to the apps.
-
-Finally, **a protocol** is a language in which the client apps and a compositor talk. Think of it like HTTP on the web; the server and your browser talk in HTTP.
+![alt_text](image1.png "image_tooltip")
 
 
-![alt_text](images/image1.png "image_tooltip")
+一方Z Window Systemでは、各VRアプリが自分で画像を描画することはありません。VRアプリは**表示したいオブジェクトの頂点情報やメッシュ情報、テクスチャ、シェーダーなどをコンポジッターに送ります**。そしてコンポジッターが持つ仮想カメラによってすべての物体の描画がまとめて行われます。
+
+![alt_text](image2.png "image_tooltip")
 
 
-Your OS must have the above software. For example, on Ubuntu with Wayland protocol, it looks like this:
+このような仕組みになっていることでいくつか利点があります。例えばあるアプリが突然応答しなくなってしまったとしましょう。通常のレンダリング方式では描画と更新はアプリが持つカメラに任されているので、アプリが応答を停止したら頭を動かしても見た目が更新されなくなり、不快感が生じます。
 
-![alt_text](images/image2.png "image_tooltip")
-
-
-
-## Z Window System core concepts
-
-To realize an XR windowing system, we built **ZIGEN** (a protocol) and **Zen** (a compositor).
-
-![alt_text](images/image3.png "image_tooltip")
+一方Z Window Systemのレンダリング方式では、**描画と視点の更新をするのはコンポジッター**なので、あるアプリが応答しなくなったとしてもコンポジッターが停止しない限り視点に応じて見た目が更新されます。「質の悪いアプリ」によって全体の体験が妨げられない仕組みになっています。
 
 
-ZIGEN is a protocol. Zen does all the actual work, including communication with 2D Wayland apps. **So if you want to try out our windowing system, Zen is what you should install.** You can switch your compositor easily; you can keep your existing OS (Ubuntu/Arch Linux).
+## リモートレンダリング
 
-Since ZIGEN is open-sourced, you can build 3D apps compatible with ZIGEN or develop another compositor which works like Zen.
+Zenの景色をMeta Questを使って見るときのフローは以下の通りです。
+
+Meta Questに**Zen Mirror**というQuest用アプリをインストールし、それを開いた状態でPCのZenをVRモードにすると、両者が自動的にLAN内で通信を始め、Zenの景色がMeta QuestのZen Mirrorで見られるようになります。
+
+このようにPCで動いているVRアプリをQuestで表示するソリューションとして、有名なのはOculus LinkやALVRなどです。しかしZen/Z Window Systemはここでも異なるアプローチをとっています。
+
+一般的なソリューションでは、VRヘッドセットが毎フレーム視点情報をPCに送信し、それをもとにPCでレンダリングされた両目分の画像が毎フレームネットワーク越しに送られます。このため、常に安定した回線がないと映像の更新が遅れたりして、VR酔いの原因になります。
+
+![alt_text](image3.png "image_tooltip")
+
+
+一方Zen/Z Window Systemでは、アプリから渡されたオブジェクトの頂点情報・メッシュ情報・シェーダーなどをそのままネットワーク越しにヘッドセットに送信し、ヘッドセットが毎フレームの描画を担当します。
+
+![alt_text](image4.png "image_tooltip")
+
+
+この仕組みのおかげで、**ネットワークの質が悪く通信に遅れが生じても、ヘッドセット単体で毎フレームの視点を更新できます**。ネットワーク越しに情報が送られるのは、アプリがオブジェクトの形状や見た目を更新したいときのみです。それ以外のタイミングではネットワーク帯域を占有しません。
+
+また計算コストのかかるカメラレンダリングにヘッドセット側のGPUを使うので、PC側に強力なGPUが必要ありません。PCを使ってVRをするにはゲーミングPCのように強力なGPUを積んだPCが必要になるのが一般的ですが、Zen/Z Window Systemでは貧弱なノートPCであってもVRが可能になります。
+
+このように、Z Window Systemでは質の悪いPC・質の悪いアプリ・質の悪いネットワークであっても、快適なVR体験が可能になる仕組みを採用しています。

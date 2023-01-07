@@ -43,10 +43,10 @@ const Header = () => {
   })
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
 
-  // useEffect(() => {
-  //   setIsDrawerOpen(false)  
-  //   console.log('pathname changed')
-  // }, [router.pathname])
+  useEffect(() => {
+    setIsDrawerOpen(false)  
+    console.log('pathname changed')
+  }, [router.pathname])
 
   return (
     <header className={styles.headerwrap + ' ' + (!isLarge && isDrawerOpen ? styles.open : '')}>

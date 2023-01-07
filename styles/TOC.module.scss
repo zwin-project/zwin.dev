@@ -1,4 +1,41 @@
-.toc {
-  padding: 24px;
+@import 'mixins.scss';
+
+.tocwrap {
   width: 240px;
+  height: 100%;
+  position: relative;
+}
+
+.toc {
+  background-color: $navy-100;
+  position: sticky;
+  top: calc($header-height + 32px);
+
+  padding: 20px 24px;
+  border-radius: 8px;
+
+  h4 {
+    font-size: 13px;
+    margin: 0;
+    margin-bottom: 8px;
+    color: $grey-text;
+  }
+
+  .toccontent {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  li {
+    list-style: none;
+    transition: $transition-short;
+
+    &:hover {
+      color: $grey-500t;
+    }
+  }
+
 }

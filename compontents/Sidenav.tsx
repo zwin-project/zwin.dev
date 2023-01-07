@@ -9,11 +9,11 @@ export enum SidenavPath {
   gettingStarted
 }
 
-const Sidenav = (props: {kind: SidenavPath}) => {
+const Sidenav = (props: { kind: SidenavPath }) => {
   const content =
     props.kind == SidenavPath.whatIsIt ? whatIsIt :
-    props.kind == SidenavPath.gettingStarted ? gettingStarted :
-    whatIsIt
+      props.kind == SidenavPath.gettingStarted ? gettingStarted :
+        whatIsIt
   const path = content.path
 
   const { t } = useTranslation('common')
@@ -21,21 +21,23 @@ const Sidenav = (props: {kind: SidenavPath}) => {
   const { id } = router.query
 
   return (
-    <div className={styles.sidenav}>
-      {...content.subsections.map(subsection => (
-        <div key={subsection}>
-          <p className={styles.subsection}>
-            {t([path, 'subsections', subsection].join('.'))}
-          </p>
-          {...content.articles.filter((article) => article.subsection == subsection).map(article => (
-            <li key={article.path} style={{color: id == article.path ? '#f00' : '#000'}}>
-              <Link href={article.path}>
-                {t([path, 'articles', article.path].join('.'))}
-              </Link>
-            </li>
-          ))}
-        </div>
-      ))}
+    <div className={styles.sidenavwrap}>
+      <div className={styles.sidenav}>
+        {...content.subsections.map(subsection => (
+          <div className={styles.subsection} key={subsection}>
+            <p className={styles.subsectiontitle}>
+              {t([path, 'subsections', subsection].join('.'))}
+            </p>
+            {...content.articles.filter((article) => article.subsection == subsection).map(article => (
+              <li key={article.path} className={styles.article + ' ' + (id == article.path ? styles.active : '')}>
+                <Link className={styles.wraplink} href={article.path}>
+                  {t([path, 'articles', article.path].join('.'))}
+                </Link>
+              </li>
+            ))}
+          </div>
+        ))}
+      </div>
     </div>
   )
 }

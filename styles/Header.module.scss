@@ -1,11 +1,17 @@
 @import 'mixins.scss';
 
+.wraplink {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
 .headerwrap {
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
-  height: 64px;
+  height: $header-height;
 
   padding: 0 $global-padding;
 
@@ -23,12 +29,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.wraplink {
-  display: flex;
-  height: 100%;
-  align-items: center;
 }
 
 .logo {

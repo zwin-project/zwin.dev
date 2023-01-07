@@ -1,19 +1,32 @@
+@import 'mixins.scss';
+
+.container {
+  padding: 0 $global-padding;
+}
+
 .main {
-  padding-top: 80px;
+  padding-top: $header-height;
+  max-width: $max-width;
+  margin: 0 auto;
 }
 
 .body {
-  width: 100vw;
+  width: 100%;
   display: flex;
+  gap: 32px;
 }
 
 .article {
   display: flex;
   flex: 1;
+  padding: 32px 0;
+  gap: 32px;
+  justify-content: center;
 }
 
 .content {
   flex: 1;
+  max-width: $docs-content-max-width;
 
   img {
     width: 360px;

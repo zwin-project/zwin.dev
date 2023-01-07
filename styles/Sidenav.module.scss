@@ -1,12 +1,55 @@
 @import 'mixins.scss';
 
-.sidenav {
-  padding: 24px;
+.wraplink {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.sidenavwrap {
+  position: relative;
   width: 240px;
+  height: 100;
+}
+
+.sidenav {
+  position: sticky;
+  top: $header-height;
+  padding: 32px 0;
 }
 
 .subsection {
+  padding-bottom: 24px;
+}
+
+.subsectiontitle {
+  margin: 0;
+  margin-bottom: 12px;
+
   font-weight: bold;
-  font-size: 14px;
+  font-size: 13px;
+  letter-spacing: 0.1em;
   color: $grey-text;
+}
+
+.article {
+  margin: 0 -8px 4px -8px;
+  padding: 6px 8px;
+  border-radius: 4px;
+
+  list-style: none;
+  font-size: 14px;
+  line-height: 1.6em;
+
+  transition: $transition-short;
+
+  &:hover {
+    background-color: $navy-100;
+  }
+
+  &.active {
+    color: $text;
+    font-weight: bold;
+    background-color: $navy-200;
+  }
 }

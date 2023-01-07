@@ -9,7 +9,7 @@ import MenuIcon from '../public/icons/menu.svg'
 import CloseIcon from '../public/icons/close.svg'
 import { useMediaQuery } from "react-responsive";
 import { breakpointSidebar } from "./common";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import NavItem from "./NavItem";
 
 const NavButton = (props: { active: boolean, text: string, href: string }) => {
@@ -42,13 +42,15 @@ const Header = () => {
     query: `(min-width: ${breakpointSidebar}px)`
   })
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
+  const headerRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
+    headerRef.current?.scrollTo(0, 0)
     setIsDrawerOpen(false)  
   }, [router.asPath])
 
   return (
-    <header className={styles.headerwrap + ' ' + (!isLarge && isDrawerOpen ? styles.open : '')}>
+    <header className={styles.headerwrap + ' ' + (!isLarge && isDrawerOpen ? styles.open : '')} ref={headerRef}>
       <div className={styles.header}>
         <Link className={styles.wraplink} href="/">
           <LogoLight className={styles.logo} />

@@ -3,15 +3,13 @@ import { useRouter } from "next/router"
 import { useTranslation } from "next-i18next"
 import { whatIsIt, gettingStarted } from "../content/content"
 import styles from '../styles/Sidenav.module.scss'
-import DiscordIcon from '../public/icons/discord.svg'
-import ChevronRight from '../public/icons/chevron_right.svg'
 import NavItem from "./NavItem"
+import DiscordSection from "./DiscordSection"
 
 export enum SidenavPath {
   whatIsIt,
   gettingStarted
 }
-
 
 const Sidenav = (props: { kind: SidenavPath }) => {
   const content =
@@ -44,17 +42,7 @@ const Sidenav = (props: { kind: SidenavPath }) => {
           </div>
         ))}
         <div className={styles.divider} />
-        <div className={styles.discordsection}>
-          <h4>{t('sidenav.discord_title')}</h4>
-          <p className={styles.desc}>{t('sidenav.discord_desc')}</p>
-          <Link className={styles.wraplink} href="http://discord.gg/PPJEFrdE9f">
-            <div className={styles.discordbutton}>
-              <DiscordIcon className={styles.discord} />
-              <p>{t('sidenav.discord_button')}</p>
-              <ChevronRight className={styles.chevron} />
-            </div>
-          </Link>
-        </div>
+        <DiscordSection alignCenter={false} />
       </div>
     </div>
   )

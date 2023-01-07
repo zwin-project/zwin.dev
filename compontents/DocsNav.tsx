@@ -2,6 +2,8 @@ import Link from 'next/link'
 import { isNativeError } from 'util/types'
 import styles from '../styles/DocsNav.module.scss'
 import ChevronRight from '../public/icons/chevron_right.svg'
+import { useMediaQuery } from 'react-responsive'
+import { breakpointSidebar } from './common'
 
 const Button = (props: {
   path: string,
@@ -30,18 +32,21 @@ const DocsNav = (props: {
     title: string
   }
 }) => {
+  const isLarge = useMediaQuery({
+    query: `(min-width: ${breakpointSidebar}px)`
+  })
   return (
     <div className={styles.docsnav}>
       {props.previous != undefined &&
         <Button path={props.previous.path} title={props.previous.title} isNext={false}/> 
       }
-      {props.previous == undefined &&
+      {(props.previous == undefined && isLarge) &&
         <div className={styles.spacer}></div>
       }
       {props.next != undefined &&
         <Button path={props.next.path} title={props.next.title} isNext={true}/> 
       }
-      {props.next == undefined &&
+      {(props.next == undefined && isLarge) &&
         <div className={styles.spacer}></div>
       }
     </div>

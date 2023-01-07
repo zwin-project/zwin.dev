@@ -16,6 +16,7 @@ import DocsNav from "../../compontents/DocsNav";
 import { useTranslation } from "next-i18next";
 import Footer from "../../compontents/Footer";
 import { useEffect, useRef } from "react";
+import DiscordSection from "../../compontents/DiscordSection";
 
 type PathParams = {
   id: string
@@ -101,6 +102,7 @@ const WhatIsIt: NextPage<DocsProps> = ({ html, tableOfContent, nextContent, prev
                     title: t(['what_is_it', 'articles', previousContent].join('.'))
                   }}
                 />
+                {!isLarge && <DiscordSection alignCenter={true}/>}
               </div>
               {articleWidth > breakpointArticle && <TOC toc={tableOfContent} />}
             </article>

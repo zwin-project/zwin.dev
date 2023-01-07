@@ -1,0 +1,56 @@
+@import 'mixins.scss';
+
+.discordsection {
+  padding: 24px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  &.center {
+    align-items: center;
+  }
+
+  h4 {
+    margin: 0;
+    margin-bottom: 8px;
+  }
+
+  .desc {
+    margin: 0;
+    margin-bottom: 8px;
+  }
+
+  .discordbutton {
+    margin-top: 8px;
+    border-radius: 16px;
+    background-color: $discord-purple;
+    color: $white;
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    gap: 12px;
+
+    transition: $transition-short;
+    box-shadow: 0px 4px 12px 0px rgba($discord-purple, 0.5);
+
+    &:hover {
+      background-color: saturate(lighten($discord-purple, 5%), 10%);
+      box-shadow: 0px 0px 0px 0px transparent;
+      transform: translateY(4px);
+    }
+
+    &:active {
+      background-color: saturate(lighten($discord-purple, 10%), 10%);
+    }
+
+    .discord,
+    .chevron {
+      width: 24px;
+      fill: $white;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+}

@@ -15,15 +15,15 @@ const Footer = () => {
       <div className={styles.footer + ' ' + (!isLarge ? styles.mobile : '')}>
         <p className={styles.copyright}>© Z Window System, 2023</p>
         <ul className={styles.link}>
-          <Link className={styles.wraplink} href="http://discord.gg/PPJEFrdE9f">
+          <a target="_blank" rel="noreferrer" className={styles.wraplink} href="http://discord.gg/PPJEFrdE9f">
             <DiscordIcon className={styles.discord} />
-          </Link>
-          <Link className={styles.wraplink} href="https://github.com/zigen-project">
+          </a>
+          <a target="_blank" rel="noreferrer" className={styles.wraplink} href="https://github.com/zigen-project">
             <GithubIcon className={styles.github} />
-          </Link>
-          <Link className={styles.wraplink} href="https://twitter.com/zigen_project">
+          </a>
+          <a target="_blank" rel="noreferrer" className={styles.wraplink} href="https://twitter.com/zigen_project">
             <TwitterIcon className={styles.twitter} />
-          </Link>
+          </a>
         </ul>
       </div>
     </footer>

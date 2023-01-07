@@ -71,9 +71,9 @@ const Header = () => {
               text={t('roadmap')}
             />
           </ul>
-          <Link className={styles.wraplink} href="https://github.com/zigen-project">
+          <a target="_blank" rel="noreferrer" className={styles.wraplink} href="https://github.com/zigen-project">
             <GithubIcon className={styles.github} />
-          </Link>
+          </a>
           <LangSwitcher />
         </div>}
         {!isLarge && <a className={styles.wraplink} onClick={() => setIsDrawerOpen(!isDrawerOpen)}>
@@ -97,9 +97,9 @@ const MobileNav = () => {
       <div className={styles.mobilenavinner}>
         <div className={styles.toprow}>
           <LangSwitcher />
-          <Link className={styles.wraplink} href="https://github.com/zigen-project">
+          <a target="_blank" rel="noreferrer" className={styles.wraplink} href="https://github.com/zigen-project">
             <GithubIcon className={styles.github} />
-          </Link>
+          </a>
         </div>
         <div className={styles.divider} />
         <div className={styles.navitemwrap}>

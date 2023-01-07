@@ -10,13 +10,13 @@ const DiscordSection = (props: { alignCenter: boolean }) => {
     <div className={styles.discordsection + ' ' + (props.alignCenter ? styles.center : '')}>
       <h4>{t('sidenav.discord_title')}</h4>
       <p className={styles.desc}>{t('sidenav.discord_desc')}</p>
-      <Link className={styles.wraplink} href="http://discord.gg/PPJEFrdE9f">
+      <a target="_blank" rel="noreferrer" className={styles.wraplink} href="http://discord.gg/PPJEFrdE9f">
         <div className={styles.discordbutton}>
           <DiscordIcon className={styles.discord} />
           <p>{t('sidenav.discord_button')}</p>
           <ChevronRight className={styles.chevron} />
         </div>
-      </Link>
+      </a>
     </div>
   )
 }

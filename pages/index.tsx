@@ -1,23 +1,131 @@
 import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
+import Link from 'next/link'
 import Image from 'next/image'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import styles from '../styles/Home.module.scss'
 import { useTranslation } from 'next-i18next'
-import { useRouter } from 'next/router'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Header from '../compontents/Header'
+import { useCallback, useEffect, useRef, useState } from 'react'
+import useSize from '@react-hook/size'
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
-      ...(await serverSideTranslations(locale!, ['common']))
+      ...(await serverSideTranslations(locale ?? 'en', ['common', 'toppage']))
     }
   }
 }
 
+const Cta = () => {
+  const { t } = useTranslation(['toppage'])
+  return (
+    <Link className={styles.wraplink} href='getting_started/system_requirements'>
+      <p className={styles.button + ' ' + styles.cta}>{t('fv.cta')}</p>
+    </Link>
+  )
+}
+
+interface Window {
+  Image: {
+    prototype: HTMLImageElement;
+    new(): HTMLImageElement;
+  };
+}
+
 const Home: NextPage = () => {
-  const { t } = useTranslation('common')
-  const router = useRouter()
+  const { t } = useTranslation(['toppage', 'common'])
+
+  const frameCount = 30
+  const currentFrame = (index: number) => (
+    `/top/hero/${index.toString().padStart(4, '0')}.jpg`
+  )
+  const canvasRef = useRef<HTMLCanvasElement>(null)
+  const stickyWrapRef = useRef<HTMLDivElement>(null)
+  const stickySpacerRef = useRef<HTMLDivElement>(null)
+  const [canvasWidth, canvasHeight] = useSize(canvasRef);
+  const [context, setContext] = useState<CanvasRenderingContext2D | null>(null)
+  const [currentIndex, setCurrentIndex] = useState<number>(1)
+
+  const preloadImages = useCallback(() => {
+    for (let i = 1; i < frameCount; i++) {
+      const img = new window.Image()
+      img.src = currentFrame(i)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!canvasRef.current) return
+    setContext(canvasRef.current.getContext("2d"))
+    setCurrentIndex(1)
+    preloadImages()
+  }, [preloadImages])
+
+  const setCanvasSize = useCallback(() => {
+    if (!canvasRef.current) return
+    canvasRef.current.width = canvasWidth
+    canvasRef.current.height = canvasHeight
+  }, [canvasHeight, canvasWidth])
+
+  useEffect(() => {
+    setCanvasSize()
+
+    if (!context) return
+    let img: HTMLImageElement = new window.Image()
+    img.src = currentFrame(currentIndex)
+    img.onload = () => {
+      const canvas = canvasRef.current
+      if (!canvas) return
+      context.drawImage(img,
+        canvas.width / 2 - img.width / 2,
+        canvas.height / 2 - img.height / 2)
+    }
+  }, [context, setCanvasSize])
+
+  const drawCurrentFrame = useCallback(() => {
+    if (!context) return
+    let img: HTMLImageElement = new window.Image()
+    img.src = currentFrame(currentIndex)
+    img.onload = () => {
+      const canvas = canvasRef.current
+      if (!canvas) return
+      context.drawImage(img,
+        canvas.width / 2 - img.width / 2,
+        canvas.height / 2 - img.height / 2)
+    }
+  }, [context, currentIndex])
+
+  useEffect(() => {
+    requestAnimationFrame(() => drawCurrentFrame())
+  }, [drawCurrentFrame])
+
+  const onScroll = useCallback(() => {
+    if (!canvasRef.current) return
+    if (!stickySpacerRef.current) return
+    if (!stickyWrapRef.current) return
+    const canvasRect = canvasRef.current.getBoundingClientRect()
+    if (Math.abs(canvasRect.top) > 50) return
+
+    const spacerHeight = stickySpacerRef.current.clientHeight
+    const wrapRect = stickyWrapRef.current.getBoundingClientRect()
+    const percentage = Math.min(-wrapRect.top / spacerHeight, 1)
+    const tempIndex = Math.max(1, Math.floor(percentage * frameCount))
+    console.log(tempIndex)
+    setCurrentIndex(tempIndex)
+  }, [])
+
+  useEffect(() => {
+    console.log('setting onscroll')
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [onScroll])
+
+  // useEffect(() => {
+  //   if (!canvasLoaded) return
+  // }, [canvasLoaded])
+
+  // useEffect(() => {
+  // })
 
   return (
     <div className={styles.container}>
@@ -29,60 +137,33 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <Header />
-        <h1 className={styles.title}>
-          {t('hello')}
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.tsx</code>
-          <br />
-          current locale is {router.locale}
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+        <section className={styles.fv}>
+          <h1 className={styles.title}>
+            {t('fv.h1')}
+          </h1>
+          <p className={styles.desc}>{t('fv.open')}</p>
+          <p className={styles.desc}>{t('fv.for')}</p>
+          <div className={styles.buttonwrap}>
+            <Cta />
+            <a target="_blank" rel="noreferrer" className={styles.wraplink} href="https://github.com/zigen-project">
+              <p className={styles.button}>{t('fv.github')}</p>
+            </a>
+          </div>
+        </section>
+        <div className={styles.stickybgwrap} ref={stickyWrapRef}>
+          <div className={styles.stickybg}>
+            <canvas ref={canvasRef}></canvas>
+          </div>
+          <div className={styles.stickyspacer} ref={stickySpacerRef} />
+          <div className={styles.nextsection}>
+            <h2>Next section</h2>
+            <p>lorem ipsum</p>
+          </div>
+        </div>
+        <div className={styles.aftersticky}>
+          <p>After sticky</p>
         </div>
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
     </div>
   )
 }

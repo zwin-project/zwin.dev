@@ -47,6 +47,9 @@ $text: $grey-700t;
 $grey-border: $grey-200t;
 $grey-text: $grey-400t;
 
+$gradient-navy-vertical: linear-gradient(0deg, $navy-800 0%, $navy-700 100%);
+$gradient-cta: linear-gradient(90deg, #E32020 0%, #C03D67 50%, #485A96 100%);
+
 $header-height: 64px;
 $max-width: 1440px;
 $docs-content-max-width: 700px;

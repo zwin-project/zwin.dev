@@ -1,0 +1,9 @@
+$breakpoints: (
+  "withsidebar": "screen and (min-width: 780px)",
+  ) !default;
+
+@mixin mq($breakpoint) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}

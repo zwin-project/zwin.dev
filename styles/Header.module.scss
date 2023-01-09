@@ -22,6 +22,11 @@
 
   transition: $transition-long;
 
+  &.dark {
+    background-color: transparent;
+    color: $white;
+  }
+
   &.open {
     height: 100vh;
     overflow: scroll;
@@ -42,6 +47,12 @@
 
 .logo {
   height: 24px;
+  fill: $primary;
+  transition: $transition-short;
+
+  &.dark {
+    fill: $white;
+  }
 }
 
 
@@ -54,6 +65,19 @@
 
   &:hover {
     fill: $grey-500t;
+  }
+}
+
+.dark {
+
+  .github,
+  .menu,
+  .close {
+    fill: $white;
+
+    &:hover {
+      fill: rgba($white, .8);
+    }
   }
 }
 
@@ -124,6 +148,26 @@
 
   p {
     margin: 0;
+  }
+}
+
+.dark .langswitcher {
+  &.desktop {
+    color: rgba($white, 0.6);
+
+    a {
+      &:hover {
+        color: $white;
+      }
+
+      &:active {
+        color: rgba($white, 0.6);
+      }
+
+      &.active {
+        color: $white;
+      }
+    }
   }
 }
 

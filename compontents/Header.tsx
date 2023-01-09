@@ -3,13 +3,13 @@ import router, { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import styles from '../styles/Header.module.scss'
 import { whatIsIt, gettingStarted } from "../content/content"
-import LogoLight from '../public/logo_light.svg'
+import Logo from '../public/logo.svg'
 import GithubIcon from '../public/icons/github.svg'
 import MenuIcon from '../public/icons/menu.svg'
 import CloseIcon from '../public/icons/close.svg'
 import { useMediaQuery } from "react-responsive";
 import { breakpointSidebar } from "./common";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import NavItem from "./NavItem";
 
 const NavButton = (props: { active: boolean, text: string, href: string }) => {
@@ -20,14 +20,14 @@ const NavButton = (props: { active: boolean, text: string, href: string }) => {
   )
 }
 
-const LangSwitcher = () => {
+const LangSwitcher = (props: {desktop: boolean}) => {
   const router = useRouter()
   const toggleLang = (newLocale: string) => {
     const { pathname, asPath, query } = router
     router.push({ pathname, query }, router.asPath, { locale: newLocale })
   }
   return (
-    <div className={styles.langswitcher}>
+    <div className={styles.langswitcher + ' ' + (props.desktop ? styles.desktop : '')}>
       <a className={router.locale == 'en' ? styles.active : ''} onClick={() => toggleLang('en')}>EN</a>
       <p>/</p>
       <a className={router.locale == 'ja' ? styles.active : ''} onClick={() => toggleLang('ja')}>JA</a>
@@ -35,7 +35,7 @@ const LangSwitcher = () => {
   )
 }
 
-const Header = () => {
+const Header = (props: {toppage: boolean}) => {
   const { t } = useTranslation('common')
   const router = useRouter()
   const isLarge = useMediaQuery({
@@ -44,16 +44,30 @@ const Header = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
   const headerRef = useRef<HTMLElement>(null)
 
+  const [isScrollTop, setIsScrollTop] = useState(false)
+  const checkScrollTop = useCallback(() => {
+    setIsScrollTop(window.scrollY == 0)
+  }, [])
+
   useEffect(() => {
     headerRef.current?.scrollTo(0, 0)
     setIsDrawerOpen(false)  
-  }, [router.asPath])
+    checkScrollTop()
+    if (props.toppage) {
+      window.addEventListener('scroll', checkScrollTop)
+      return () => window.removeEventListener('scroll', checkScrollTop)
+    }
+  }, [router.asPath, props.toppage, checkScrollTop])
 
   return (
-    <header className={styles.headerwrap + ' ' + (!isLarge && isDrawerOpen ? styles.open : '')} ref={headerRef}>
+    <header className={[
+      styles.headerwrap,
+      (props.toppage && isScrollTop && !isDrawerOpen) ? styles.dark : '',
+      !isLarge && isDrawerOpen ? styles.open : ''
+    ].join(' ')} ref={headerRef}>
       <div className={styles.header}>
         <Link className={styles.wraplink} href="/">
-          <LogoLight className={styles.logo} />
+          <Logo className={styles.logo + ' ' + (props.toppage && isScrollTop && !isDrawerOpen ? styles.dark : '')} />
         </Link>
         {isLarge && <div className={styles.nav}>
           <ul className={styles.navbuttons}>
@@ -76,7 +90,7 @@ const Header = () => {
           <a target="_blank" rel="noreferrer" className={styles.wraplink} href="https://github.com/zigen-project">
             <GithubIcon className={styles.github} />
           </a>
-          <LangSwitcher />
+          <LangSwitcher desktop/>
         </div>}
         {!isLarge && <a className={styles.wraplink} onClick={() => setIsDrawerOpen(!isDrawerOpen)}>
           {!isDrawerOpen && <MenuIcon className={styles.menu} />}
@@ -98,7 +112,7 @@ const MobileNav = () => {
     <div className={styles.mobilenav}>
       <div className={styles.mobilenavinner}>
         <div className={styles.toprow}>
-          <LangSwitcher />
+          <LangSwitcher desktop={false}/>
           <a target="_blank" rel="noreferrer" className={styles.wraplink} href="https://github.com/zigen-project">
             <GithubIcon className={styles.github} />
           </a>

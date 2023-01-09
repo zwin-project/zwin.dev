@@ -56,9 +56,12 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     if (!canvasRef.current) return
+    document.getElementById('body')?.classList.add('dark')
+    console.log(document.getElementById('body')?.classList)
     setContext(canvasRef.current.getContext("2d"))
     setCurrentIndex(1)
     preloadImages()
+    return () => document.getElementById('body')?.classList.remove('dark')
   }, [preloadImages])
 
   const setCanvasSize = useCallback(() => {
@@ -110,22 +113,13 @@ const Home: NextPage = () => {
     const wrapRect = stickyWrapRef.current.getBoundingClientRect()
     const percentage = Math.min(-wrapRect.top / spacerHeight, 1)
     const tempIndex = Math.max(1, Math.floor(percentage * frameCount))
-    console.log(tempIndex)
     setCurrentIndex(tempIndex)
   }, [])
 
   useEffect(() => {
-    console.log('setting onscroll')
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [onScroll])
-
-  // useEffect(() => {
-  //   if (!canvasLoaded) return
-  // }, [canvasLoaded])
-
-  // useEffect(() => {
-  // })
 
   return (
     <div className={styles.container}>
@@ -136,7 +130,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <Header />
+        <Header toppage/>
         <section className={styles.fv}>
           <h1 className={styles.title}>
             {t('fv.h1')}

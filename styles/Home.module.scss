@@ -11,20 +11,32 @@
 
 .button {
   padding: 10px 16px;
+  font-size: 16px;
   background: $primary;
   border: 1px solid;
   border-color: $white;
   border-radius: 8px;
+  transition: $transition-short;
+
+  &:hover {
+    background: $navy-600;
+    transform: translateY(4px);
+  }
 
   &.cta {
     border: none;
     font-weight: bold;
     background: $gradient-cta;
+
+    &:hover {
+      background: $gradient-cta-hover;
+    }
   }
 }
 
 .fv {
   height: 40vh;
+  min-height: 320px;
   background: $gradient-navy-vertical;
   padding: 0 32px;
   display: flex;

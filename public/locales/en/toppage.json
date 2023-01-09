@@ -2,8 +2,60 @@
   "fv": {
     "h1": "VR-native Desktop Environment",
     "open": "Fully open source",
-    "for": "For Ubuntu / Arch Linux • Meta Quest 2",
+    "for": "For",
+    "pc": "Ubuntu / Arch Linux",
+    "hmd": "Quest 2 / Pro",
     "cta": "Get it & install",
     "github": "GitHub"
+  },
+  "explainer": {
+    "desc": "Z Window System is a windowing system for XR which enables using multiple 3D apps side by side, just like you do in 2D desktops.",
+    "link": "What is a windowing system?"
+  },
+  "feature1": {
+    "title": "Feature - 2D Windows",
+    "heading": "Display any 2D apps in VR",
+    "desc": "Z Window System is an extension of Wayland, a popular 2D windowing system in Linux. This means you can open your favorite Linux apps in VR and place them wherever you want.",
+    "point1": "Increase/rearrange/resize monitors however you like. For free, without any hassle.",
+    "point2": "No more \"screen mirroring\" of your PC. Interact with windows directly in VR."
+  },
+  "feature2": {
+    "title": "Feature - 3D Windows",
+    "heading": "Open multiple 3D windows together",
+    "desc": "Z Window System enables opening multiple 3D apps side by side, as you do with 2D windows or real-world objects.",
+    "desc_bold": "In fact, it is not possible to do this with most current virtual reality systems!",
+    "point1": "View 3D models directly in 3D. Use Blender to edit and preview them. All inside VR.",
+    "point2": "The surrounding environment is also an “app.” Install another app, or customize it by placing any other 3D windows you want there.",
+    "whats": {
+      "title": "What's 3D window?",
+      "desc1": "Imagine you had to buy all of your furniture either at IKEA or Walmart, and you couldn't combine them. Pretty frustrating, right? That's the current VR.",
+      "desc2": "Almost all of the existing VR solutions can only display one app at once. So developers have no way but to build one giant app that shows everything, from the environment to objects. This induces monopoly, as only a massive company can create a compelling VR app. ",
+      "desc3": "Z Window System solves this problem by displaying several 3D apps together, like one for the sky and another for a chair.",
+      "desc4": "It's like you can use furniture from IKEA and appliances from Best Buy together!",
+      "link": "Learn more about 3D window"
+    }
+  },
+  "feature3": {
+    "title": "Feature - Continuity",
+    "heading1": "Go VR when eager",
+    "heading2": "Go 2D when relaxed",
+    "desc": "We know the current VR hardware is not perfect. Z Window System allows you to switch between 2D monitors and VR headsets whenever you like. The switch happens instantly, and the windows are preserved. ",
+    "point1": "Casually go VR when you're running out of screen space or you want to preview 3D stuff.",
+    "point2": "When you get tired, put off headsets and continue working."
+  },
+  "video": {
+    "desc": "How to use",
+    "heading": "See what it's capable of"
+  },
+  "try": {
+    "heading": "Try all of this today.",
+    "desc": "This is not Sci-fi or a concept design. It's real, and you can try it out now. "
+  },
+  "twitter": {
+    "heading": "Latest updates",
+    "link": "Follow us on Twitter"
+  },
+  "links": {
+    "heading": "Find out more"
   }
 }

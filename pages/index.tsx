@@ -8,6 +8,11 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Header from '../compontents/Header'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import useSize from '@react-hook/size'
+import Footer from '../compontents/Footer'
+import ChevronRight from '../public/icons/chevron_right.svg'
+import { useMediaQuery } from 'react-responsive'
+import { breakpointSidebar } from '../compontents/common'
+import { useRouter } from 'next/router'
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
@@ -26,6 +31,72 @@ const Cta = () => {
   )
 }
 
+const ChevronLink = (props: { text: string }) => {
+  return (
+    <div className={styles.chevronlink}>
+      <p>{props.text}</p>
+      <ChevronRight className={styles.chevron} />
+    </div>
+  )
+}
+
+type Text = {
+  text: string,
+  bold?: boolean
+}
+
+const Feature = (props: {
+  odd: boolean,
+  title: string,
+  heading: string[],
+  desc: Text[],
+  points: string[],
+  image: string
+}) => {
+  const isLarge = useMediaQuery({
+    query: `(min-width: ${breakpointSidebar}px)`
+  })
+  return (
+    <div className={styles.feature}>
+      {(isLarge && !props.odd) && <div className={styles.imagewrap}>
+        <Image alt={'Feature image: ' + props.heading.join(' ')} src={props.image} className={styles.image} fill />
+      </div>}
+      <div className={styles.vertical}>
+        {!isLarge && <div className={styles.imagewrap + ' ' + styles.mobile}>
+          <Image alt={'Feature image: ' + props.heading.join(' ')} src={props.image} className={styles.image} fill />
+        </div>}
+        <p className={styles.title}>{props.title}</p>
+        <h2 className={styles.heading}>{...props.heading.map((e) => (
+          <span key={e}>{e}</span>
+        ))}</h2>
+        <p className={styles.desc}>{...props.desc.map((e) => (
+          <span className={e.bold ? styles.bold : ''} key={e.text}>{e.text} </span>
+        ))}</p>
+        <ul className={styles.points}>
+          {...props.points.map((point) => (
+            <li key={point} className={styles.point}>{point}</li>
+          ))}
+        </ul>
+      </div>
+      {(isLarge && props.odd) && <div className={styles.imagewrap}>
+        <Image alt={'Feature image: ' + props.heading.join(' ')} src={props.image} className={styles.image} fill />
+      </div>}
+    </div>
+  )
+}
+
+const Card = (props: {
+  title: string,
+  desc: string
+}) => {
+  return (
+    <div className={styles.card}>
+      <h4>{props.title}</h4>
+      <p>{props.desc}</p>
+    </div>
+  )
+}
+
 interface Window {
   Image: {
     prototype: HTMLImageElement;
@@ -35,6 +106,10 @@ interface Window {
 
 const Home: NextPage = () => {
   const { t } = useTranslation(['toppage', 'common'])
+  const router = useRouter()
+  const isLarge = useMediaQuery({
+    query: `(min-width: ${breakpointSidebar}px)`
+  })
 
   const frameCount = 30
   const currentFrame = (index: number) => (
@@ -57,7 +132,6 @@ const Home: NextPage = () => {
   useEffect(() => {
     if (!canvasRef.current) return
     document.getElementById('body')?.classList.add('dark')
-    console.log(document.getElementById('body')?.classList)
     setContext(canvasRef.current.getContext("2d"))
     setCurrentIndex(1)
     preloadImages()
@@ -130,13 +204,19 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <Header toppage/>
+        <Header toppage />
         <section className={styles.fv}>
           <h1 className={styles.title}>
             {t('fv.h1')}
           </h1>
+          <p className={styles.for}>
+            {router.locale != 'ja' && <span>{t('fv.for')}</span>}
+            <span className={styles.box}>{t('fv.pc')}</span>
+            <span>+</span>
+            <span className={styles.box}>{t('fv.hmd')}</span>
+            {router.locale == 'ja' && <span>{t('fv.for')}</span>}
+          </p>
           <p className={styles.desc}>{t('fv.open')}</p>
-          <p className={styles.desc}>{t('fv.for')}</p>
           <div className={styles.buttonwrap}>
             <Cta />
             <a target="_blank" rel="noreferrer" className={styles.wraplink} href="https://github.com/zigen-project">
@@ -149,14 +229,116 @@ const Home: NextPage = () => {
             <canvas ref={canvasRef}></canvas>
           </div>
           <div className={styles.stickyspacer} ref={stickySpacerRef} />
-          <div className={styles.nextsection}>
-            <h2>Next section</h2>
-            <p>lorem ipsum</p>
+          <section className={styles.explainer}>
+            <p>{t('explainer.desc')}</p>
+            <Link className={styles.wraplink} href='/what_is_it/what_is_z_window_system'>
+              <ChevronLink text={t('explainer.link')} />
+            </Link>
+          </section>
+          <div className={styles.features}>
+            <section className={styles.featurewrap}>
+              <Feature
+                odd={true}
+                title={t('feature1.title')}
+                heading={[t('feature1.heading')]}
+                desc={[{ text: t('feature1.desc') }]}
+                points={[
+                  t('feature1.point1'),
+                  t('feature1.point2')
+                ]}
+                image='/top/feature/1.png'
+              />
+            </section>
+            <section className={styles.featurewrap}>
+              <Feature
+                odd={false}
+                title={t('feature2.title')}
+                heading={[t('feature2.heading')]}
+                desc={[{ text: t('feature2.desc') }, { text: t('feature2.desc_bold'), bold: true }]}
+                points={[
+                  t('feature2.point1'),
+                  t('feature2.point2')
+                ]}
+                image='/top/feature/2.png'
+              />
+              <section className={styles.feature3dwindow}>
+                <div className={styles.left}>
+                  <h3>{t('feature2.whats.title')}</h3>
+                  {!isLarge && <div className={styles.imagewrap + ' ' + styles.mobile}>
+                    <Image alt='3D window explanation' src={'/top/3dwindow/3dwindow_' + router.locale + '.png'} className={styles.image} fill />
+                  </div>}
+                  <p className={styles.bold}>{t('feature2.whats.desc1')}</p>
+                  <p>{t('feature2.whats.desc2')}</p>
+                  <p>{t('feature2.whats.desc3')}</p>
+                  <p>{t('feature2.whats.desc4')}</p>
+                </div>
+                <div className={styles.right}>
+                  {isLarge && <div className={styles.imagewrap}>
+                    <Image alt='3D window explanation' src={'/top/3dwindow/3dwindow_' + router.locale + '.png'} className={styles.image} fill />
+                  </div>}
+                  <Link className={styles.wraplink} href='/what_is_it/3d_window'>
+                    <ChevronLink text={t('feature2.whats.link')} />
+                  </Link>
+                </div>
+              </section>
+            </section>
+            <section className={styles.featurewrap}>
+              <Feature
+                odd={true}
+                title={t('feature3.title')}
+                heading={[t('feature3.heading1'), t('feature3.heading2')]}
+                desc={[{ text: t('feature3.desc') }]}
+                points={[
+                  t('feature3.point1'),
+                  t('feature3.point2')
+                ]}
+                image='/top/feature/3.png'
+              />
+            </section>
           </div>
+          <section className={styles.videowrap}>
+            <div className={styles.videoinner}>
+              <p>{t('video.desc')}</p>
+              <h2>{t('video.heading')}</h2>
+              <div className={styles.video} />
+            </div>
+          </section>
         </div>
-        <div className={styles.aftersticky}>
-          <p>After sticky</p>
-        </div>
+        <section className={styles.try}>
+          <div className={styles.tryinner}>
+            <h2>{t('try.heading')}</h2>
+            <p>{t('try.desc')}</p>
+            <Cta />
+          </div>
+        </section>
+        <section className={styles.twitter}>
+          <div className={styles.twitterinner}>
+            <div className={styles.head}>
+              <h2>{t('twitter.heading')}</h2>
+              <a target="_blank" rel="noreferrer" className={styles.wraplink} href="https://twitter.com/zigen_project">
+                <ChevronLink text={t('twitter.link')} />
+              </a>
+            </div>
+            <div className={styles.twitterembed} />
+          </div>
+        </section>
+        <section className={styles.links}>
+          <div className={styles.linksinner}>
+            <h2>{t('links.heading')}</h2>
+            <div className={styles.cardwrap}>
+              <Link className={styles.wraplink} href='/roadmap'>
+                <Card title={'Roadmap'} desc={'Don\'t miss our future releases'} />
+              </Link>
+              <Link className={styles.wraplink} href='/roadmap'>
+                <Card title={'Roadmap'} desc={'Don\'t miss our future releases'} />
+              </Link>
+              <Link className={styles.wraplink} href='/roadmap'>
+                <Card title={'Roadmap'} desc={'Don\'t miss our future releases'} />
+              </Link>
+            </div>
+          </div>
+        </section>
+        <Footer />
       </main>
     </div>
   )

@@ -12,13 +12,22 @@ body {
 
   font-family: 'Ubuntu', sans-serif;
   font-size: 14px;
-  letter-spacing: 0.04em;
-  line-height: 1.5em;
+  letter-spacing: $spacing-global;
+  line-height: 1.6em;
   color: $text;
 
   &.dark {
     background: $primary;
   }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  line-height: 1.6em;
 }
 
 a {

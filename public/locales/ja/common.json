@@ -23,7 +23,8 @@
       "setup": "セットアップ"
     },
     "articles": {
-      "system_requirements": "システム要件"
+      "system_requirements": "システム要件",
+      "installation": "インストール"
     }
   },
   "roadmap": "ロードマップ",

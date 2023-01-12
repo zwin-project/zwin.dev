@@ -47,6 +47,10 @@ export const gettingStarted: Folder = {
   articles: [{
     path: 'system_requirements',
     subsection: 'setup'
+  },
+  {
+    path: 'installation',
+    subsection: 'setup'
   }]
 }
 

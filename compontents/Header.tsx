@@ -78,7 +78,7 @@ const Header = (props: {toppage: boolean}) => {
             />
             <NavButton
               active={router.pathname.split('/')[1] == 'getting_started'}
-              href="/getting_started/system_requirement"
+              href="/getting_started/system_requirements"
               text={t('getting_started.getting_started')}
             />
             <NavButton

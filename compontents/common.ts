@@ -10,7 +10,8 @@ export type DocsProps = {
   tableOfContent: TableOfContent[],
   nextContent: string|null,
   previousContent: string|null,
-  id: string|null
+  id: string|null,
+  description: string,
 }
 
 export const breakpointSidebar = 780;

@@ -8,7 +8,7 @@ Zwinの中核をなす3D Windowについて説明します。
 3D Windowには大別してBounded 3D WindowとExpansive 3D Windowの2種類があります。
 
 Bounded 3D Windowは、空間内で大きさを持つ3D Windowです。移動、回転、リサイズなどが可能です。
-v0.1では、Bounded 3D Windowを持つZIGEN向けサンプルアプリとしてzen-object-viewerを用意しています。
+v0.1では、Bounded 3D Windowを持つZwin向けサンプルアプリとしてzen-object-viewerを用意しています。
 
 ![alt_text](image1.png "image_tooltip")
 

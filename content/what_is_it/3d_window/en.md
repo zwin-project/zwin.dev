@@ -8,7 +8,7 @@ This section describes the 3D window that is the core of Zwin.
 There are two types of 3D windows: bounded 3D windows and expansive 3D windows.
 
 A bounded 3D window is a 3D window that has a size in space. It can be moved, rotated, or resized.
-In v0.1, zen-object-viewer is provided as a sample application for ZIGEN with a bounded 3D window.
+In v0.1, zen-object-viewer is provided as a sample application for Zwin with a bounded 3D window.
 
 
 ![alt_text](image1.png "image_tooltip")

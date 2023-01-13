@@ -1,6 +1,6 @@
 # 3Dウィンドウ
 
-Z Window Systemの中核をなす3D Windowについて説明します。
+Zwinの中核をなす3D Windowについて説明します。
 
 
 ## 2つの種類：Bounded / Expansive

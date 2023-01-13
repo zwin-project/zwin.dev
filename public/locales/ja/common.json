@@ -2,15 +2,15 @@
   "hello": "こんにちは、世界！",
   "top": "トップ",
   "what_is_it": {
-    "what_is_it": "Z Window Systemとは",
+    "what_is_it": "Zwinとは",
     "subsections": {
       "basic_concept": "基本概念",
-      "z_window_system": "Z Window System",
+      "z_window_system": "Zwin",
       "zen": "Zen",
       "others": "その他"
     },
     "articles": {
-      "what_is_z_window_system": "Z Window Systemとは？",
+      "what_is_z_window_system": "Zwinとは？",
       "rendering_scheme": "レンダリング方式",
       "3d_window": "3Dウィンドウ",
       "interactions_on_zen": "Zenでのインタラクション",

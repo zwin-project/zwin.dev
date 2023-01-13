@@ -13,7 +13,7 @@ const Footer = () => {
   return (
     <footer className={styles.footerwrap}>
       <div className={styles.footer + ' ' + (!isLarge ? styles.mobile : '')}>
-        <p className={styles.copyright}>© Z Window System, 2023</p>
+        <p className={styles.copyright}>© Zwin, 2023</p>
         <ul className={styles.link}>
           <a target="_blank" rel="noreferrer" className={styles.wraplink} href="http://discord.gg/PPJEFrdE9f">
             <DiscordIcon className={styles.discord} />

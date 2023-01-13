@@ -15,7 +15,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## Update contents
 
 To add a new page, you have to
-- add markdown files (en, ja) to `content/{folder}/{title_of_page_in_snake_case}`
+- add markdown files (en, ja) to `content/{folder}/{title_of_page_in_snake_case}/{locale}.md`
 - add images to `public/images/{folder}/{title_of_page_in_snake_case}`
 - add properties to `content/content.ts`
 - add titles/translations to `public/locales/{locale}/common.json`

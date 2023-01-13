@@ -20,11 +20,13 @@
   "getting_started": {
     "getting_started": "はじめる",
     "subsections": {
-      "setup": "セットアップ"
+      "setup": "セットアップ",
+      "advanced_tutorial": "発展的なチュートリアル"
     },
     "articles": {
       "system_requirements": "システム要件",
-      "installation": "インストール"
+      "installation": "インストール",
+      "3d_app_development": "3Dアプリの開発"
     }
   },
   "roadmap": "ロードマップ",

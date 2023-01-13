@@ -20,11 +20,13 @@
   "getting_started": {
     "getting_started": "Getting Started",
     "subsections": {
-      "setup": "Setup"
+      "setup": "Setup",
+      "advanced_tutorial": "Advanced tutorial"
     },
     "articles": {
       "system_requirements": "System requirements",
-      "installation": "Installation"
+      "installation": "Installation",
+      "3d_app_development": "3d App development"
     }
   },
   "roadmap": "Roadmap",

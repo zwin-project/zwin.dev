@@ -42,7 +42,8 @@ export const whatIsIt: Folder = {
 export const gettingStarted: Folder = {
   path: 'getting_started',
   subsections: [
-    'setup'
+    'setup',
+    'advanced_tutorial'
   ],
   articles: [{
     path: 'system_requirements',
@@ -51,6 +52,9 @@ export const gettingStarted: Folder = {
   {
     path: 'installation',
     subsection: 'setup'
+  },{
+    path: '3d_app_development',
+    subsection: 'advanced_tutorial'
   }]
 }
 

@@ -8,8 +8,9 @@ export type TableOfContent = {
 export type DocsProps = {
   html: string,
   tableOfContent: TableOfContent[],
-  nextContent: string | null,
-  previousContent: string | null
+  nextContent: string|null,
+  previousContent: string|null,
+  id: string|null
 }
 
 export const breakpointSidebar = 780;

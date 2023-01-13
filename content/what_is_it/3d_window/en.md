@@ -1,6 +1,6 @@
 # 3D Window
 
-This section describes the 3D window that is the core of the Z Window System.
+This section describes the 3D window that is the core of Zwin.
 
 
 ## Bounded Window / Expansive Window

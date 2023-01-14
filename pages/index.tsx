@@ -238,6 +238,15 @@ const Home: NextPage = () => {
               <ChevronLink text={t('explainer.link')} />
             </Link>
           </section>
+          <section className={styles.videowrap}>
+            <div className={styles.videoinner}>
+              <p>{t('video.desc')}</p>
+              <h2>{t('video.heading')}</h2>
+              <iframe className={styles.videoembed}
+                // width="560" height="315"
+                src="https://www.youtube.com/embed/uZEDEfEZB1w" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+            </div>
+          </section>
           <div className={styles.features}>
             <section className={styles.featurewrap}>
               <Feature
@@ -299,13 +308,6 @@ const Home: NextPage = () => {
               />
             </section>
           </div>
-          <section className={styles.videowrap}>
-            <div className={styles.videoinner}>
-              <p>{t('video.desc')}</p>
-              <h2>{t('video.heading')}</h2>
-              <div className={styles.video} />
-            </div>
-          </section>
         </div>
         <section className={styles.try}>
           <div className={styles.tryinner}>

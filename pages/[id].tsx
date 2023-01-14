@@ -15,12 +15,30 @@ import Footer from "../compontents/Footer";
 import { useEffect, useRef } from "react";
 import DiscordSection from "../compontents/DiscordSection";
 import { useRouter } from 'next/router'
+import { standaloneArticles } from "../content/content";
+
+type PathParams = {
+  id: string
+}
+
+export const getStaticPaths: GetStaticPaths<PathParams> = async ({ locales }) => {
+  let paths: any = []
+  standaloneArticles.forEach((e) => {
+    locales?.forEach((l) => {
+      paths.push({ params: { id: e.path }, locale: l })
+    })
+  })
+  return {
+    paths: paths,
+    fallback: false
+  }
+}
 
 export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
   const content = fs.readFileSync(
-    `content/roadmap/${locale}.md`, 'utf-8')
+    `content/${params!.id}/${locale}.md`, 'utf-8')
   const rawHtmlContent = markdownToHtml(content)
-  const htmlContent = rawHtmlContent.replaceAll('<img src="', `<img src="/roadmap/`)
+  const htmlContent = rawHtmlContent.replaceAll('<img src="', `<img src="/${params!.id}/`)
   const domHtml = new JSDOM(htmlContent).window.document
 
   const headings = domHtml.querySelectorAll<HTMLElement>("h2")
@@ -42,12 +60,13 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
       ...(await serverSideTranslations(locale!, ['common'])),
       html: htmlContent,
       tableOfContent: tableOfContent,
+      id: params!.id,
       description,
     }
   }
 }
 
-const WhatIsIt: NextPage<DocsProps> = ({ html, tableOfContent, description}) => {
+const DefaultPage: NextPage<DocsProps> = ({ html, tableOfContent, description, id}) => {
   const { t } = useTranslation('common')
   const isLarge = useMediaQuery({
     query: `(min-width: ${breakpointSidebar}px)`
@@ -59,7 +78,7 @@ const WhatIsIt: NextPage<DocsProps> = ({ html, tableOfContent, description}) => 
   return (
     <div>
       <Head>
-        <title>{`${t('roadmap')} | Zwin`}</title>
+        <title>{`${t(id ? id : '')} | Zwin`}</title>
         <meta name="description" content={description} />
         <meta property="og:url" content={`https://zwin.dev${router.asPath}`} />
         <meta property="og:description" content={description} />
@@ -70,7 +89,6 @@ const WhatIsIt: NextPage<DocsProps> = ({ html, tableOfContent, description}) => 
 
         <main className={styles.main}>
           <section className={styles.body}>
-            {/* {isLarge && <Sidenav kind={SidenavPath.whatIsIt} />} */}
             <article className={styles.article} ref={articleRef}>
               <div className={styles.content}>
                 <div className={styles.markdowninjection}
@@ -88,4 +106,4 @@ const WhatIsIt: NextPage<DocsProps> = ({ html, tableOfContent, description}) => 
   )
 }
 
-export default WhatIsIt
+export default DefaultPage

@@ -87,7 +87,7 @@ const Header = (props: {toppage: boolean}) => {
               text={t('roadmap')}
             />
           </ul>
-          <a target="_blank" rel="noreferrer" className={styles.wraplink} href="https://github.com/zigen-project">
+          <a target="_blank" rel="noreferrer" className={styles.wraplink} href="https://github.com/zwin-project">
             <GithubIcon className={styles.github} />
           </a>
           <LangSwitcher desktop/>
@@ -113,7 +113,7 @@ const MobileNav = () => {
       <div className={styles.mobilenavinner}>
         <div className={styles.toprow}>
           <LangSwitcher desktop={false}/>
-          <a target="_blank" rel="noreferrer" className={styles.wraplink} href="https://github.com/zigen-project">
+          <a target="_blank" rel="noreferrer" className={styles.wraplink} href="https://github.com/zwin-project">
             <GithubIcon className={styles.github} />
           </a>
         </div>

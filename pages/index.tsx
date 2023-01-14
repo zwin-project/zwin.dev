@@ -221,7 +221,7 @@ const Home: NextPage = () => {
           <p className={styles.desc}>{t('fv.open')}</p>
           <div className={styles.buttonwrap}>
             <Cta />
-            <a target="_blank" rel="noreferrer" className={styles.wraplink} href="https://github.com/zigen-project">
+            <a target="_blank" rel="noreferrer" className={styles.wraplink} href="https://github.com/zwin-project">
               <p className={styles.button}>{t('fv.github')}</p>
             </a>
           </div>
@@ -317,7 +317,7 @@ const Home: NextPage = () => {
           <div className={styles.twitterinner}>
             <div className={styles.head}>
               <h2>{t('twitter.heading')}</h2>
-              <a target="_blank" rel="noreferrer" className={styles.wraplink} href="https://twitter.com/zigen_project">
+              <a target="_blank" rel="noreferrer" className={styles.wraplink} href="https://twitter.com/zwin_project">
                 <ChevronLink text={t('twitter.link')} />
               </a>
             </div>

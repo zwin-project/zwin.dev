@@ -18,10 +18,10 @@ const Footer = () => {
           <a target="_blank" rel="noreferrer" className={styles.wraplink} href="http://discord.gg/PPJEFrdE9f">
             <DiscordIcon className={styles.discord} />
           </a>
-          <a target="_blank" rel="noreferrer" className={styles.wraplink} href="https://github.com/zigen-project">
+          <a target="_blank" rel="noreferrer" className={styles.wraplink} href="https://github.com/zwin-project">
             <GithubIcon className={styles.github} />
           </a>
-          <a target="_blank" rel="noreferrer" className={styles.wraplink} href="https://twitter.com/zigen_project">
+          <a target="_blank" rel="noreferrer" className={styles.wraplink} href="https://twitter.com/zwin_project">
             <TwitterIcon className={styles.twitter} />
           </a>
         </ul>

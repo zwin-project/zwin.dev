@@ -80,6 +80,7 @@ const DefaultPage: NextPage<DocsProps> = ({ html, tableOfContent, description, i
       <Head>
         <title>{`${t(id ? id : '')} | Zwin`}</title>
         <meta name="description" content={description} />
+        <meta property="og:title" content={`${t(id ? id : '')} | Zwin`}/>
         <meta property="og:url" content={`https://zwin.dev${router.asPath}`} />
         <meta property="og:description" content={description} />
         <link rel="icon" href="/favicon.ico" />

@@ -201,6 +201,7 @@ const Home: NextPage = () => {
       <Head>
         <title>{`${t('top', {ns: 'common'})} | Zwin`}</title>
         <meta name="description" content={t('explainer.desc') || ""} />
+        <meta property="og:title" content={`${t('top', {ns: 'common'})} | Zwin`}/>
         <meta property="og:url" content={`https://zwin.dev${router.asPath}`} />
         <meta property="og:description" content={t('explainer.desc') || ""} />
         <link rel="icon" href="/favicon.ico" />

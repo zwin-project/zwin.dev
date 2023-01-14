@@ -73,7 +73,7 @@ const Header = (props: {toppage: boolean}) => {
           <ul className={styles.navbuttons}>
             <NavButton
               active={router.pathname.split('/')[1] == 'what_is_it'}
-              href="/what_is_it/what_is_z_window_system"
+              href="/what_is_it/what_is_zwin"
               text={t('what_is_it.what_is_it')}
             />
             <NavButton

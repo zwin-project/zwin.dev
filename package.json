@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@react-hook/size": "^2.1.2",
+    "@types/gtag.js": "^0.0.12",
     "@types/react-responsive": "^8.0.5",
     "i18next": "^22.4.8",
     "jsdom": "^20.0.3",

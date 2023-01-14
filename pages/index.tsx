@@ -13,6 +13,7 @@ import ChevronRight from '../public/icons/chevron_right.svg'
 import { useMediaQuery } from 'react-responsive'
 import { breakpointSidebar } from '../compontents/common'
 import { useRouter } from 'next/router'
+import TwitterTimeline from '../compontents/TwitterTimeline'
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
@@ -321,7 +322,7 @@ const Home: NextPage = () => {
                 <ChevronLink text={t('twitter.link')} />
               </a>
             </div>
-            <div className={styles.twitterembed} />
+            <TwitterTimeline />
           </div>
         </section>
         <section className={styles.links}>

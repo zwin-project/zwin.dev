@@ -2,7 +2,7 @@ import Link from "next/link";
 import router, { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import styles from '../styles/Header.module.scss'
-import { whatIsIt, gettingStarted } from "../content/content"
+import { whatIsIt, gettingStarted, standaloneArticles } from "../content/content"
 import Logo from '../public/logo.svg'
 import GithubIcon from '../public/icons/github.svg'
 import MenuIcon from '../public/icons/menu.svg'
@@ -125,12 +125,13 @@ const MobileNav = () => {
             href="/"
             text={t('top')}
           />
-          <NavItem
+          {...standaloneArticles.map((e) => <NavItem
+            key={e.path}
             isLarge={true}
-            active={router.pathname.split('/')[1] == 'roadmap'}
-            href="/roadmap"
-            text={t('roadmap')}
-          />
+            active={router.pathname.split('/')[1] == e.path}
+            href={'/' + e.path}
+            text={t(e.path)}
+          />)}
         </div>
         <div className={styles.divider} />
         <div className={styles.navitemwrap}>

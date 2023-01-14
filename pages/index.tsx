@@ -332,10 +332,10 @@ const Home: NextPage = () => {
             <h2>{t('links.heading')}</h2>
             <div className={styles.cardwrap}>
               <Link className={styles.wraplink} href='/roadmap'>
-                <Card title={'Roadmap'} desc={'Don\'t miss our future releases'} />
+                <Card title={t('roadmap', {ns: "common"})} desc={t('roadmap_desc', {ns: "common"})} />
               </Link>
-              <Link className={styles.wraplink} href='/roadmap'>
-                <Card title={'Roadmap'} desc={'Don\'t miss our future releases'} />
+              <Link className={styles.wraplink} href='/contact'>
+                <Card title={t('contact', {ns: "common"})} desc={t('contact_desc', {ns: "common"})} />
               </Link>
               <Link className={styles.wraplink} href='/roadmap'>
                 <Card title={'Roadmap'} desc={'Don\'t miss our future releases'} />

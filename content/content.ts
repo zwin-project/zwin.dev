@@ -29,6 +29,7 @@ export const gettingStarted: Folder = {
   ]
 }
 
-export const roadMap: Article = {
-  path: 'roadmap'
-}
+export const standaloneArticles: Article[] = [
+  { path: 'roadmap' },
+  { path: 'contact' }
+]

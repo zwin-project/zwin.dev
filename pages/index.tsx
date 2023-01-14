@@ -233,7 +233,7 @@ const Home: NextPage = () => {
           <div className={styles.stickyspacer} ref={stickySpacerRef} />
           <section className={styles.explainer}>
             <p>{t('explainer.desc')}</p>
-            <Link className={styles.wraplink} href='/what_is_it/what_is_z_window_system'>
+            <Link className={styles.wraplink} href='/what_is_it/what_is_zwin'>
               <ChevronLink text={t('explainer.link')} />
             </Link>
           </section>

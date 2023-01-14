@@ -1,6 +1,6 @@
 # Interactions on Zen
 
-Zen is our reference compositor for Zwin (See [What is Zwin?](/what_is_it/what_is_z_window_system)).
+Zen is our reference compositor for Zwin (See [What is Zwin?](/what_is_it/what_is_zwin)).
 
 We designed it for the prolonged and extensive workflow of mouse/keyboard VR. 
 

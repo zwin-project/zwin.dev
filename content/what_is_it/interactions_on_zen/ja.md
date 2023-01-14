@@ -1,6 +1,6 @@
 # Zenでのインタラクション
 
-ZenはZwinのリファレンスコンポジッターです([Zwin Systemとは？](/what_is_it/what_is_z_window_system)を参照)。
+ZenはZwinのリファレンスコンポジッターです([Zwin Systemとは？](/what_is_it/what_is_zwin)を参照)。
 長時間のマウス・キーボードでのVR作業に向けてデザインされています。
 
 

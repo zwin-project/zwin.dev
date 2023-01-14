@@ -5,7 +5,6 @@ const Document = () => {
       <Html>
         <Head>
           <meta name="twitter:card" content="summary_large_image"/>
-          <meta property="og:title" content="Zwin"/>
           <meta property="og:type" content="website"/>
           <meta property="og:image" content="https://zwin.dev/images/OGP.png"/>
         </Head>

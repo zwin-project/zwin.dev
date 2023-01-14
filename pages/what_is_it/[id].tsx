@@ -87,6 +87,7 @@ const WhatIsIt: NextPage<DocsProps> = ({ html, tableOfContent, nextContent, prev
       <Head>
         <title>{`${t(['what_is_it', 'articles', id].join('.'))} | Zwin`}</title>
         <meta name="description" content={description} />
+        <meta property="og:title" content={`${t(['what_is_it', 'articles', id].join('.'))} | Zwin`}/>
         <meta property="og:url" content={`https://zwin.dev${router.asPath}`} />
         <meta property="og:description" content={description} />
         <link rel="icon" href="/favicon.ico" />

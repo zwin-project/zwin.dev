@@ -87,6 +87,7 @@ const GettingStarted: NextPage<DocsProps> = ({ html, tableOfContent, nextContent
       <Head>
         <title>{`${t(['getting_started', 'articles', id].join('.'))} | Zwin`}</title>
         <meta name="description" content={description} />
+        <meta property="og:title" content={`${t(['getting_started', 'articles', id].join('.'))} | Zwin`}/>
         <meta property="og:url" content={`https://zwin.dev${router.asPath}`} />
         <meta property="og:description" content={description} />
         <link rel="icon" href="/favicon.ico" />

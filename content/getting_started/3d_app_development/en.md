@@ -1,18 +1,21 @@
-# 3d App development
+![earth_scroll](earth_scroll_app.gif "image_tooltip")
+
+# 3D App Development
 
 **TL;DR: On Zwin, you can modify, rebuild, and run 3D client apps that support the Zwin protocol in VR.**
 
 This tutorial is intended for those who have completed the steps in [installation](/en/getting_started/installation).
+You can do this tutorial in Zen!
 
 ## CAUTION
-The Beta version of Zwin is still incomplete and has the following caveats related to this document
+The Beta version of Zwin is still incomplete and has the following caveats related to this document.
 
 - 2D apps other than the Wayland client will not work.
   - In particular, apps such as VSCode will not work.
   - Instead, **use a CUI editor such as Vim or nano**.
 
 - Some functions of the Wayland client do not work.
-  - **Pop-up windows do not open when right-clicking, etc.**.
+  - **Pop-up windows do not open when right-clicking, etc.**
 
 - Copy-and-paste and drag-and-drop functions do not work.
   - **Commands in this document need to be entered with the keyboard**.
@@ -78,7 +81,7 @@ Click on it to open the terminal.
 ![launcher_terminal](launcher_terminal.png "image_tooltip")
 
 Once the terminal is open, type in the command.
-In the Beta version of Zwin, the following notes apply
+In the Beta version of Zwin, the following notes apply.
 - Non-Wayland client 2D apps such as VSCode are not yet supported, so please **use a CUI editor such as Vim or nano.**
 - Copy-and-paste is not yet supported, so **type your characters with the keyboard**.
 
@@ -260,7 +263,7 @@ With Zwin, you can modify, build and run the app like this all within the VR spa
 As implemented above, Zwin allows you to implement **small** apps that occupy a specific space.
 
 The benefits from a developer's perspective are as follows.
-- You can modify, rebuild, and run the app entirely within the VR space
+- You can modify, rebuild, and run the app entirely within the VR space.
 - Smaller apps can be created.
   - You don't have to build "everything" like you do with existing VR "Big Apps"!
   - In the current VR, for example, to make an app that displays a clock, you have to make a room. You want to make just a clock, right?

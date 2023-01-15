@@ -25,12 +25,11 @@ export const gettingStarted: Folder = {
   articles: [
     {path: 'system_requirements', subsection: 'setup'},
     {path: 'installation', subsection: 'setup'},
+    {path: 'zen_walkthrough', subsection: 'setup'},
     {path: '3d_app_development', subsection: 'advanced_tutorial'},
     {path: 'configuration', subsection: 'advanced_tutorial'}
   ]
 }
 
-export const standaloneArticles: Article[] = [
-  { path: 'roadmap' },
-  { path: 'contact' }
-]
+export const standaloneArticles: Article[] =
+    [{path: 'roadmap'}, {path: 'contact'}]

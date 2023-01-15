@@ -23,11 +23,11 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   }
 }
 
-const Cta = () => {
+const Cta = (props: {white: boolean}) => {
   const { t } = useTranslation(['toppage'])
   return (
     <Link className={styles.wraplink} href='getting_started/system_requirements'>
-      <p className={styles.button + ' ' + styles.cta}>{t('fv.cta')}</p>
+      <p className={[styles.button, styles.cta, props.white ? styles.white : ''].join(' ')}>{t('fv.cta')}</p>
     </Link>
   )
 }
@@ -221,13 +221,13 @@ const Home: NextPage = () => {
             {router.locale == 'ja' && <span>{t('fv.for')}</span>}
           </p>
           <p className={styles.desc}>{t('fv.open')}</p>
-          <div className={styles.buttonwrap}>
-            <Cta />
-            <a target="_blank" rel="noreferrer" className={styles.wraplink} href="https://github.com/zwin-project">
-              <p className={styles.button}>{t('fv.github')}</p>
-            </a>
-          </div>
         </section>
+        <div className={styles.buttonwrap}>
+          <Cta white={false}/>
+          <a target="_blank" rel="noreferrer" className={styles.wraplink} href="https://github.com/zwin-project">
+            <p className={styles.button}>{t('fv.github')}</p>
+          </a>
+        </div>
         <div className={styles.stickybgwrap} ref={stickyWrapRef}>
           <div className={styles.stickybg}>
             <canvas ref={canvasRef}></canvas>
@@ -314,7 +314,7 @@ const Home: NextPage = () => {
           <div className={styles.tryinner}>
             <h2>{t('try.heading')}</h2>
             <p>{t('try.desc')}</p>
-            <Cta />
+            <Cta white/>
           </div>
         </section>
         <section className={styles.twitter}>

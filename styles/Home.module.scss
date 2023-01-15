@@ -33,6 +33,15 @@ $blur: blur(12px);
     &:hover {
       background: $gradient-cta-hover;
     }
+
+    &.white {
+      background: $white;
+      color: $primary;
+
+      &:hover {
+        background: $navy-300;
+      }
+    }
   }
 }
 
@@ -64,13 +73,30 @@ $blur: blur(12px);
 .fv {
   height: 40vh;
   min-height: 440px;
-  background: $gradient-navy-vertical;
-  padding: 0 32px;
+  background: transparent;
+  overflow: hidden;
+
+  padding: 0 $global-padding;
+  padding-bottom: 48px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
   color: $white;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -24px;
+    bottom: -24px;
+    left: -24px;
+    right: -24px;
+    z-index: -1;
+    background: url('/top/gradient.png');
+    background-size: cover;
+    background-position: bottom;
+  }
 
   @include mq(withsidebar) {
     min-height: 360px;
@@ -92,7 +118,7 @@ $blur: blur(12px);
   }
 
   .desc {
-    color: rgba($white, 0.5);
+    color: rgba($white, 0.7);
     margin: 0;
     margin-bottom: 8px;
 
@@ -123,16 +149,17 @@ $blur: blur(12px);
     background-color: rgba($white, 12%);
     border-radius: 8px;
   }
+}
 
-  .buttonwrap {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    margin-top: -24px;
-    transform: translateY(40%);
-    z-index: 10;
-  }
+.buttonwrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: -48px 0;
+  color: $white;
+  // transform: translateY(40%);
+  z-index: 10;
 }
 
 .stickybgwrap {
@@ -184,7 +211,7 @@ $blur: blur(12px);
 }
 
 .featurewrap {
-  padding: 48px $global-padding;
+  padding: 80px $global-padding;
   backdrop-filter: $blur;
 
   &:nth-child(odd) {
@@ -196,7 +223,7 @@ $blur: blur(12px);
   }
 
   @include mq(withsidebar) {
-    padding: 48px calc($global-padding + 32px);
+    padding: 64px calc($global-padding + 32px);
   }
 }
 
@@ -215,7 +242,7 @@ $blur: blur(12px);
       font-size: 16px;
       letter-spacing: $spacing-medium;
       margin: 0;
-      margin-top: 24px;
+      margin-top: 48px;
 
       @include mq(withsidebar) {
         margin-top: 0;
@@ -225,7 +252,7 @@ $blur: blur(12px);
     .heading {
       margin: 0;
       font-weight: normal;
-      margin-top: 0;
+      margin-top: 8px;
       font-size: 24px;
       letter-spacing: $spacing-medium;
 
@@ -245,7 +272,7 @@ $blur: blur(12px);
       margin-top: 24px;
 
       @include mq(withsidebar) {
-        margin-top: 48px;
+        margin-top: 32px;
       }
 
       .bold {
@@ -254,24 +281,34 @@ $blur: blur(12px);
     }
 
     ul {
-      margin-top: 24px;
-      padding-left: 1em;
+      margin-top: 32px;
+      // padding-left: 1em;
+      padding-left: 0;
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 16px;
+
+      @include mq(withsidebar) {
+        margin-top: 24px;
+        gap: 8px;
+      }
     }
 
     li {
       padding-left: 1.5em;
 
       &::before {
-        content: "\2022";
-        color: $grey-text;
-        font-weight: bold;
+        content: "";
         display: inline-block;
-        width: 1.5em;
+        background-color: rgba($navy-700, 0.3);
+        vertical-align: center;
+        border-radius: 2px;
+        width: 0.5em;
+        height: 0.5em;
         margin-left: -1.5em;
+        margin-right: 1em;
+        transform: translateY(-2px);
       }
     }
   }
@@ -414,7 +451,7 @@ $blur: blur(12px);
     bottom: 0;
     left: 0;
     right: 0;
-    background: url('/top/texture.png');
+    background: url('/top/gradient_navy.png');
     background-size: cover;
     opacity: 0.8;
     z-index: 0;

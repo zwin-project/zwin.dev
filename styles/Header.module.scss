@@ -23,7 +23,9 @@
   transition: $transition-long;
 
   &.dark {
+    backdrop-filter: none;
     background-color: transparent;
+    border: none;
     color: $white;
   }
 

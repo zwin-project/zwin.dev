@@ -53,7 +53,7 @@ icon = "/path/to/icon" # svg / png / gltf
 ランチャーのGoogle Chromeのアイコンをクリックすればブラウザが開きます。
 ブラウザでこのドキュメントを開けば、VR空間から抜けずに、ドキュメントを見ながら作業できます！
 
-![3d ランチャーでこのページを開くGIF](image1.png "image_tooltip")
+![launcher_chrome](launcher_chrome.png "image_tooltip")
 
 ## ビルドとインストール
 まずビルドやインストール、コードの編集などの作業をするためのターミナルを開きましょう。
@@ -74,7 +74,7 @@ icon = "/path/to/icon" # svg / png / gltf
 この設定を保存して、Zenを起動すれば、ターミナルのアイコンが現れます。
 これをクリックして、ターミナルを開きます。
 
-![ランチャーでターミナルを開くGIF](image1.png "image_tooltip")
+![launcher_terminal](launcher_terminal.png "image_tooltip")
 
 ターミナルを開いたら、コマンドを入力していきます。
 Beta版のZwinでは、 以下の注意点があります。
@@ -99,7 +99,7 @@ $ ninja -C build install
 $ celestial-body-app
 ```
 
-![celestial-bodyの様子 moon](image1.png "image_tooltip")
+![moon](moon_app.png "image_tooltip")
 
 このように簡単にアプリを起動できます。
 
@@ -145,7 +145,7 @@ $ ninja -C build install
 $ celestial-body-app
 ```
 
-![celestial-bodyの様子 earth](image1.png "image_tooltip")
+![earth](earth_app.png "image_tooltip")
 
 地球に変わりました！
 
@@ -248,7 +248,7 @@ $ ninja -C build install
 $ celestial-body-app
 ```
 
-![celestial-bodyが回転する様子 earth](image1.png "image_tooltip")
+![earth_scroll](earth_scroll_app.gif "image_tooltip")
 
 これでスクロールで惑星を回すことができる、地球儀に近いアプリができました！
 Zwinでは、このようにアプリの修正とビルドと実行をVR空間の中で全て行うことができます。

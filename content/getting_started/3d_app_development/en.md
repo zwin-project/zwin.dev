@@ -53,7 +53,7 @@ icon = "/path/to/icon" # svg / png / gltf
 Click on the Google Chrome icon in the launcher to open a browser.
 Open this document in the browser and you can work through the document without ever leaving the VR space!
 
-![GIF of opening this page in the 3d launcher](image1.png "image_tooltip")
+![launcher_chrome](launcher_chrome.png "image_tooltip")
 
 ## Build and install
 First, open a terminal for building, installing, and editing code.
@@ -75,7 +75,7 @@ icon = "/path/to/icon" # svg / png / gltf
 If you save this configuration and start Zen, a terminal icon will appear.
 Click on it to open the terminal.
 
-![GIF opening terminal in launcher](image1.png "image_tooltip")
+![launcher_terminal](launcher_terminal.png "image_tooltip")
 
 Once the terminal is open, type in the command.
 In the Beta version of Zwin, the following notes apply
@@ -100,7 +100,7 @@ After successful build and installation, you should have a binary ``celestial-bo
 $ celestial-body-app
 ```
 
-![celestial-body's appearance moon](image1.png "image_tooltip")
+![moon](moon_app.png "image_tooltip")
 
 You can easily launch the app in this way.
 
@@ -146,7 +146,7 @@ $ ninja -C build install
 $ celestial-body-app
 ```
 
-![celestial-body earth](image1.png "image_tooltip")
+![earth](earth_app.png "image_tooltip")
 
 It's changed to earth!!!
 
@@ -250,7 +250,7 @@ $ ninja -C build install
 $ celestial-body-app
 ```
 
-![celestial-body spinning earth](image1.png "image_tooltip")
+![earth_scroll](earth_scroll_app.gif "image_tooltip")
 
 Now we have a near-globe app that lets you rotate the planets by scrolling!
 With Zwin, you can modify, build and run the app like this all within the VR space.

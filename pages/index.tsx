@@ -333,11 +333,11 @@ const Home: NextPage = () => {
               <Link className={styles.wraplink} href='/roadmap'>
                 <Card title={t('roadmap', {ns: "common"})} desc={t('roadmap_desc', {ns: "common"})} />
               </Link>
+              <Link className={styles.wraplink} href='/what_is_it/faq'>
+                <Card title={t('faq', {ns: "common"})} desc={t('faq_desc', {ns: "common"})} />
+              </Link>
               <Link className={styles.wraplink} href='/contact'>
                 <Card title={t('contact', {ns: "common"})} desc={t('contact_desc', {ns: "common"})} />
-              </Link>
-              <Link className={styles.wraplink} href='/roadmap'>
-                <Card title={'Roadmap'} desc={'Don\'t miss our future releases'} />
               </Link>
             </div>
           </div>

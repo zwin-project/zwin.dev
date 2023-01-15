@@ -122,11 +122,15 @@ const Home: NextPage = () => {
   const [canvasWidth, canvasHeight] = useSize(canvasRef);
   const [context, setContext] = useState<CanvasRenderingContext2D | null>(null)
   const [currentIndex, setCurrentIndex] = useState<number>(1)
+  const [imageArray, setImageArray] = useState<HTMLImageElement[]>([])
 
   const preloadImages = useCallback(() => {
+    let images: HTMLImageElement[] = []
     for (let i = 1; i < frameCount; i++) {
       const img = new window.Image()
       img.src = currentFrame(i)
+      images.push(img)
+      setImageArray(images)
     }
   }, [])
 
@@ -149,16 +153,14 @@ const Home: NextPage = () => {
     setCanvasSize()
 
     if (!context) return
-    let img: HTMLImageElement = new window.Image()
-    img.src = currentFrame(currentIndex)
-    img.onload = () => {
+    if (imageArray[currentIndex].complete) {
       const canvas = canvasRef.current
       if (!canvas) return
-      context.drawImage(img,
-        canvas.width / 2 - img.width / 2,
-        canvas.height / 2 - img.height / 2)
+      context.drawImage(imageArray[currentIndex],
+        canvas.width / 2 - imageArray[currentIndex].width / 2,
+        canvas.height / 2 - imageArray[currentIndex].height / 2)
     }
-  }, [context, setCanvasSize])
+  }, [context, setCanvasSize, imageArray])
 
   const drawCurrentFrame = useCallback(() => {
     if (!context) return
@@ -210,9 +212,6 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         <Header toppage />
         <section className={styles.fv}>
-          {/* <h1 className={styles.title}>
-            {t('fv.h1')}
-          </h1> */}
           <h1 className={styles.title} dangerouslySetInnerHTML={
             {__html: t('fv.h1', {interpolation: {escapeValue: false}})}
           }/>

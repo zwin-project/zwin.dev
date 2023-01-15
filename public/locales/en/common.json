@@ -26,7 +26,8 @@
     "articles": {
       "system_requirements": "System requirements",
       "installation": "Installation",
-      "3d_app_development": "3D App Development"
+      "3d_app_development": "3D App Development",
+      "configuration": "Configuration"
     }
   },
   "roadmap": "Roadmap",

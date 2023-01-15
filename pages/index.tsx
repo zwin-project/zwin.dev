@@ -126,7 +126,7 @@ const Home: NextPage = () => {
 
   const preloadImages = useCallback(() => {
     let images: HTMLImageElement[] = []
-    for (let i = 1; i < frameCount; i++) {
+    for (let i = 1; i <= frameCount; i++) {
       const img = new window.Image()
       img.src = currentFrame(i)
       images.push(img)
@@ -134,6 +134,22 @@ const Home: NextPage = () => {
     }
   }, [])
 
+  const setCanvasSize = useCallback(() => {
+    if (!canvasRef.current) return
+    canvasRef.current.width = canvasWidth
+    canvasRef.current.height = canvasHeight
+  }, [canvasHeight, canvasWidth])
+
+  const drawFrame = useCallback((image: HTMLImageElement) => {
+    if (!context) return
+    const canvas = canvasRef.current
+    if (!canvas) return
+    context.drawImage(image,
+      canvas.width / 2 - image.width / 2,
+      canvas.height / 2 - image.height / 2) 
+  }, [context])
+
+  // initial load
   useEffect(() => {
     if (!canvasRef.current) return
     document.getElementById('body')?.classList.add('dark')
@@ -142,38 +158,17 @@ const Home: NextPage = () => {
     preloadImages()
     return () => document.getElementById('body')?.classList.remove('dark')
   }, [preloadImages])
-
-  const setCanvasSize = useCallback(() => {
-    if (!canvasRef.current) return
-    canvasRef.current.width = canvasWidth
-    canvasRef.current.height = canvasHeight
-  }, [canvasHeight, canvasWidth])
-
-  useEffect(() => {
-    setCanvasSize()
-
-    if (!context) return
-    if (imageArray[currentIndex].complete) {
-      const canvas = canvasRef.current
-      if (!canvas) return
-      context.drawImage(imageArray[currentIndex],
-        canvas.width / 2 - imageArray[currentIndex].width / 2,
-        canvas.height / 2 - imageArray[currentIndex].height / 2)
-    }
-  }, [context, setCanvasSize, imageArray])
-
+  
   const drawCurrentFrame = useCallback(() => {
-    if (!context) return
-    let img: HTMLImageElement = new window.Image()
-    img.src = currentFrame(currentIndex)
-    img.onload = () => {
-      const canvas = canvasRef.current
-      if (!canvas) return
-      context.drawImage(img,
-        canvas.width / 2 - img.width / 2,
-        canvas.height / 2 - img.height / 2)
+    setCanvasSize()
+    const img = imageArray[currentIndex - 1]
+    if (!img) return
+    if (img.complete) {
+      drawFrame(img)
+    } else {
+      img.onload = () => { drawFrame(img) }
     }
-  }, [context, currentIndex])
+  }, [currentIndex, imageArray, drawFrame, setCanvasSize])
 
   useEffect(() => {
     requestAnimationFrame(() => drawCurrentFrame())

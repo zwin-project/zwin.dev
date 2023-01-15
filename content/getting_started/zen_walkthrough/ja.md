@@ -13,7 +13,7 @@ sudo systemctl restart gdm
 ```
 
 Ubuntuでは、その後にログイン画面が表示され、そこから利用するウィンドウシステムを選ぶことができます。"ZEN"をクリックしてからログインすると2DのZenが起動します。
-![choose_zen2](choose_zen2.png "image_tooltip")
+![choose_zen1](choose_zen1.png "image_tooltip")
 ![choose_zen2](choose_zen2.png "image_tooltip")
 
 

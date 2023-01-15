@@ -2,7 +2,7 @@
 
 ## Release coming soon 
 
-In ordered to improve the convenience of Zwin, we are planning to release the following features soon.
+In order to improve the convenience of Zwin, we are planning to release the following critical features very soon.
 
 #### XWayland support
 
@@ -10,9 +10,6 @@ XWayland runs on top of Wayland compositors and forward the windows from X11 app
 
 #### Popup / Subsurface
 Some wayland applications create another window on the main window. Right-click menu of Google Chrome is a good example. These are called Popup / Subsurface in Wayland, and Zen will support these features soon.
-
-#### Close button on 3D windows
-In the current implementation of Zen, unlike 2D windows, 3D windows cannot be closed with GUI close buttons. We are planning to release this feature soon to make the interaction with 3D apps much easier.
 
 #### Copy & Paste / Drag & Drop in 2D windows
 Some well-known features of 2D operations on 2D windows such as Copy & Paste / Drag & Drop are not supported by Zen. We plan to support them soon to let users use 2D apps in Zwin as in the existing 2D windowing systems.
@@ -33,9 +30,9 @@ In the current implementation, the positions of the windows in the VR world are 
 In the second release, we are planning to remove this restriction to put the applications anywhere in the world coordinate.
 
 #### Ray lock
-When you move Ray with mose/trackpad in current Zen, it moves parallely keeping its angle.
+When you move Ray with mose/trackpad in current Zen, it moves up, down, left and right corresponding to the movement of the device.
 
-We are planning to add a new mode, in which the user end of Ray is fixed to a point and mouse/trackpad moves the other end of Ray. Zwin protocol will allow the apps to chose one of these modes when interacting with Ray. That makes it easier to do some operations such as rotation on the 3D apps.
+We are planning to add a new mode, in which the user end of Ray is fixed to a point. Zwin protocol will allow the apps to chose one of these modes when interacting with Ray. That makes it easier to do some operations such as rotation on the 3D apps.
 
 #### Change in the number of boards
 In Zen, now users can only change the number of boards with the configuration file and it cannot be increased/decreased at runtime.

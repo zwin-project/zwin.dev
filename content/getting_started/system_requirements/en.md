@@ -34,6 +34,8 @@ Currently, Zwin requires a fast USB cable to reliably send the texture of window
 
 ## VR Headsets
 Compatible with the following headsets:
+
 - Meta Quest 2
 - Meta Quest Pro
+
 Although Quest 1 can also be used, it is not recommended due to rendering performance issues.

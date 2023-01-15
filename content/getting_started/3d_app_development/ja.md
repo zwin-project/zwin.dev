@@ -39,7 +39,7 @@ ZwinではOpenGL ESライクな比較的低いレイヤのプロトコルを通�
 
 ## ドキュメントをブラウザで開く
 Zenはデスクトップ環境なので、ブラウザを開くことができます。
-例えば[Google Chrome](https://www.google.com/chrome/)をインストールしている方は、以下のように、ランチャーのアイコンとしてChromeを追加してみてください。
+例えば[Google Chrome](https://www.google.com/chrome/)をインストールしている方は、以下のように、ランチャーのアイコンとしてChromeを追加してみてください。設定に関する詳細は[こちら](/ja/getting_started/configuration/)をご覧ください。
 
 ```:~/.config/zen-desktop/config.toml
 # ..

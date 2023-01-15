@@ -26,6 +26,7 @@
     "articles": {
       "system_requirements": "システム要件",
       "installation": "インストール",
+      "zen_walkthrough": "Zen ウォークスルー",
       "3d_app_development": "3Dアプリの開発"
     }
   },

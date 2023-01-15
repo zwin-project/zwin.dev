@@ -1,3 +1,6 @@
+
+![launcher](launcher.png "image_tooltip")
+
 # 設定
 
 ## Zenの設定
@@ -40,6 +43,29 @@ exec="zen-object-viewer"
 icon="/usr/local/share/zen-object-viewer/assets/icon/3d_viewer_icon.gltf"
 disable_2d=true # 2Dのランチャーでは表示しない。デフォルトはfalse。
 ```
+
+ランチャーは、自分が使いたいアプリを自由に並べることができるのでぜひ試してください。設定では`favorite_apps`という名前がランチャーに並べる1つのアプリに相当します。
+例えば、以下の設定を追記すると、
+```
+# ..
+#
+[[favorite_apps]]
+name = "Google Chrome"
+exec = "google-chrome-stable --enable-features=UseOzonePlatform --ozone-platform=wayland --disable-gpu"
+icon = "/usr/share/icons/hicolor/128x128/apps/google-chrome.png"
+
+[[favorite_apps]]
+name="Weston Terminal"
+exec="weston-terminal"
+icon="/usr/share/weston/terminal.png"
+#
+# ..
+```
+
+以下のような見た目になります。
+
+![launcher](launcher.png "image_tooltip")
+
 
 Zenが参照する設定ファイルの位置は以下です。
 - `$XDG_CONFIG_HOME/.config/zen-desktop/config.toml`

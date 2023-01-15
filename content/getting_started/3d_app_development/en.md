@@ -38,7 +38,7 @@ Here we will create an application using [Zukou](https://github.com/zwin-project
 
 ## Open the document in a browser
 Since Zen is a desktop environment, you can open a browser.
-For example, if you have [Google Chrome](https://www.google.com/chrome/) installed, try adding Chrome as a launcher icon as follows.
+For example, if you have [Google Chrome](https://www.google.com/chrome/) installed, try adding Chrome as a launcher icon as follows. You can check [Configuration](/en/getting_started/configuration/) in detail.
 
 ```:~/.config/zen-desktop/config.toml
 # ..

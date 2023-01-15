@@ -12,10 +12,10 @@ const TwitterTimeline = () => {
     <a
       className="twitter-timeline"
       data-height="800"
-      href="https://twitter.com/zigen_project"
+      href="https://twitter.com/zwin_project"
       target="_blank"
       rel="noreferrer">
-      Tweets by zigen_project
+      Tweets by zwin_project
     </a> 
   )
 }

@@ -310,7 +310,8 @@ const Home: NextPage = () => {
         <section className={styles.try}>
           <div className={styles.tryinner}>
             <h2>{t('try.heading')}</h2>
-            <p>{t('try.desc')}</p>
+            <p className={styles.trydesc}>{t('try.desc')}</p>
+            <p className={styles.trybeta}>{t('try.beta')} <Link className={styles.trylink} href={'/roadmap'}>{t('try.link')}</Link></p>
             <Cta white/>
           </div>
         </section>

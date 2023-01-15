@@ -49,7 +49,9 @@
   },
   "try": {
     "heading": "Try all of this today.",
-    "desc": "This is not Sci-fi or a concept design. It's real, and you can try it out now. "
+    "desc": "This is not Sci-fi or a concept design. It's real, and you can try it out now. ",
+    "beta": "On v0.1 beta release, there are some limitations and uncomplete funcitons.",
+    "link": "See future roadmap"
   },
   "twitter": {
     "heading": "Latest updates",

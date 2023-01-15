@@ -28,7 +28,7 @@ The purpose of this tutorial is to learn **how to develop 3D apps on Zwin** by m
 This tutorial does **NOT** aim to **build a 3D app from scratch**.
 Instead, you will make modifications to already existing resources and learn how the changes are reflected.
 We will be preparing a tutorial on creating a 3D app from scratch in the near future, so please wait a bit!
-You can find updates on [Twitter](https://twitter.com/zigen_project).
+You can find updates on [Twitter](https://twitter.com/zwin_project).
 
 With Zwin, instead of making a "Big App" that takes up the entire space, you can make a **small** app that takes up part of the space. Being small, you can focus on only a few features.
 

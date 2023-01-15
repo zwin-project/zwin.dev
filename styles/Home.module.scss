@@ -479,6 +479,23 @@ $blur: blur(12px);
 
   p {
     text-align: center;
+    margin: 0;
+  }
+
+  .trydesc {
+    font-size: 16px;
+  }
+
+  .trybeta {
+    font-size: 13px;
+    color: rgba($white, 0.7);
+    margin: 8px 0 32px 0;
+  }
+
+  .trylink {
+    font-weight: bold;
+    color: $link;
+    // text-shadow: 0 0 2px $grey-300t;
   }
 }
 

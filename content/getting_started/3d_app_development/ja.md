@@ -36,17 +36,18 @@ ZwinではOpenGL ESライクな比較的低いレイヤのプロトコルを通�
 ## ドキュメントをブラウザで開く
 Zenはデスクトップ環境なので、ブラウザを開くことができます。
 例えば[Google Chrome](https://www.google.com/chrome/)をインストールしている方は、以下のように、ランチャーのアイコンとしてChromeを追加してみてください。
+
 ```:~/.config/zen-desktop/config.toml
-.
-.
+# ..
+#
 
 [[favorite_apps]]
 name = "Google Chrome"
 exec = "google-chrome 'https://google.com' --enable-features=UseOzonePlatform --ozone-platform=wayland --window-size=1000,800 --disable-gpu" # required
 icon = "/path/to/icon" # svg / png / gltf
 
-.
-.
+#
+# ..
 ```
 
 ランチャーのGoogle Chromeのアイコンをクリックすればブラウザが開きます。
@@ -59,16 +60,16 @@ icon = "/path/to/icon" # svg / png / gltf
 
 もしターミナルのアイコンがなければ、アイコンをセットアップしましょう。例えば以下です。
 ```:~/.config/zen-desktop/config.toml
-.
-.
+# ..
+#
 
 [[favorite_apps]]
 name = "Terminal"
 exec = "weston-terminal" # required
 icon = "/path/to/icon" # svg / png / gltf
 
-.
-.
+#
+# ..
 ```
 この設定を保存して、Zenを起動すれば、ターミナルのアイコンが現れます。
 これをクリックして、ターミナルを開きます。
@@ -115,8 +116,9 @@ $ vim ./src/main.cc # vimじゃなくても構いません。好きなCUIエデ�
 
 `main`関数を以下のように修正します。
 ```:src/main.cc
-.
-.
+// ..
+//
+
 int
 main(int argc, char const* argv[])
 {
@@ -159,10 +161,12 @@ Zwinでアプリを作る上での制約となるのは、OpenGL ESライクな�
 そのためには、Regionという入力領域を3DアプリにSetします。
 これはUnityなどのゲームエンジンにおけるColliderのようなものです。
 コード上では次の変更を加えます。
+
 ```:src/main.cc
-.
-.
-.
+// ..
+//
+//
+
 class CelestialBody final : public zukou::IBoundedDelegate,
                             public zukou::ISystemDelegate
 {
@@ -188,10 +192,12 @@ class CelestialBody final : public zukou::IBoundedDelegate,
     return true;
   }
 };
-.
-.
-.
+
+//
+//
+// ..
 ```
+
 Regionには直方体や球の領域を追加することができます。
 （今後もっと複雑な入力領域を定義できるようにする予定です！）
 
@@ -201,8 +207,10 @@ Regionには直方体や球の領域を追加することができます。
 
 Regionをつけたことで、その領域とRayが交差してスクロールのイベントが発生した時に`RayAxisFrame`が呼ばれます。これはZukouというライブラリによる抽象化で、実際には[Zwinプロトコル](https://github.com/zwin-project/zwin/tree/draft/protocol)から生成されたヘッダファイルを使って振る舞いを記述できます。プロトコルは特定の言語に依存していないので、別の言語で3Dアプリを実装することも可能です。
 ```
-.
-.
+// ..
+//
+//
+
   // 関数の中身を実装
   void RayAxisFrame(const zukou::RayAxisEvent& event) override
   {
@@ -216,12 +224,16 @@ Regionをつけたことで、その領域とRayが交差してスクロール�
 
     bounded_.Commit();
   }
-.
-.
+
+//
+//
+
 private:
  int spin_angle_ = 0; // この行を追加
-.
-.
+
+//
+//
+// ..
 ```
 上記のように、現在の回転角（Degree）を`spin_angle_`として保持して、スクロールの値を足していきます。
 この値からラジアンの回転角`theta`を求め、惑星`sphere_`を回転させる行列を算出し、`sphere_`の位置を設定する行列を更新しています。

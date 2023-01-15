@@ -1,8 +1,8 @@
-# What is Z Window System?
+# What is Zwin?
 
 **TL;DR: It’s a compositor and a protocol for an XR windowing system built on top of Wayland.**
 
-If you understand the above, please jump to "Z Window System core concepts". Otherwise, stay with us.
+If you understand the above, please jump to "Zwin core concepts". Otherwise, stay with us.
 
 
 ## What is a windowing system?
@@ -27,13 +27,13 @@ Your OS must have the above software. For example, on Ubuntu with Wayland protoc
 
 
 
-## Z Window System core concepts
+## Zwin core concepts
 
-To realize an XR windowing system, we built **ZIGEN** (a protocol) and **Zen** (a compositor).
+To realize an XR windowing system, we are building **Zwin** (named the same as the entire system) as the protocol. We are also developing **Zen** as the corresponding compositor.
 
 ![alt_text](image3.png "image_tooltip")
 
 
-ZIGEN is a protocol. Zen does all the actual work, including communication with 2D Wayland apps. **So if you want to try out our windowing system, Zen is what you should install.** You can switch your compositor easily; you can keep your existing OS (Ubuntu/Arch Linux).
+Zwin is a protocol. Zen does all the actual work, including communication with 2D Wayland apps. **So if you want to try out our windowing system, Zen is what you should install.** You can switch your compositor easily; you can keep your existing OS (Ubuntu/Arch Linux).
 
-Since ZIGEN is open-sourced, you can build 3D apps compatible with ZIGEN or develop another compositor which works like Zen.
+Since Zwin is open-sourced, you can build 3D apps compatible with Zwin or develop another compositor which works like Zen.

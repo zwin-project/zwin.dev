@@ -5,12 +5,12 @@
     "what_is_it": "What is it?",
     "subsections": {
       "basic_concept": "Basic Concept",
-      "z_window_system": "Z Window System",
+      "z_window_system": "Zwin",
       "zen": "Zen",
       "others": "Others"
     },
     "articles": {
-      "what_is_z_window_system": "What is Z Window System?",
+      "what_is_zwin": "What is Zwin?",
       "rendering_scheme": "Rendering scheme",
       "3d_window": "3D Window",
       "interactions_on_zen": "Interactions on Zen",

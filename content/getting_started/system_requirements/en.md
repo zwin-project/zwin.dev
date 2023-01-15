@@ -18,14 +18,8 @@ The PC's GPU must support OpenGL ES 3.2. The following laptop PCs have been conf
  - GPU: TigerLake-LP GT2 [Iris Xe Graphics]
 
 ## Wired Connection
-現状のZwinでは、ウィンドウのテクスチャを高速で送る必要があるためPCとヘッドセットを高速なUSBケーブルで接続する必要があります。
-ワイヤレスにも対応中ですが、まだ問題が多いため有線が推奨です。（→[ロードマップ](/roadmap)）
 Currently, Zwin requires a fast USB cable to reliably send the texture of windows between the PC and headset. Although wireless support is in development, wired connection is currently recommended due to several issues (→[Roadmap](/roadmap)).
 
-- PC側のポートはUSB3.0より速いものが推奨です。
-- 高品質で充電可能なケーブルが必要です。
-  - [Metaの純正のケーブル](https://www.meta.com/ja-jp/help/quest/articles/headsets-and-accessories/oculus-link/)が最もおすすめです。
-  - 品質の悪いケーブルでも使用は可能ですが、ウィンドウを複数開くとRayの動きが遅くなるなどの問題が発生します。
 - A port faster than USB3.0 is recommended on the PC side.
 - A high-quality cable with enough power supply is required.
   - [Meta's certified cable](https://www.meta.com/ja-jp/help/quest/articles/headsets-and-accessories/oculus-link/) is the most recommended.

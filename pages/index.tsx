@@ -210,9 +210,12 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         <Header toppage />
         <section className={styles.fv}>
-          <h1 className={styles.title}>
+          {/* <h1 className={styles.title}>
             {t('fv.h1')}
-          </h1>
+          </h1> */}
+          <h1 className={styles.title} dangerouslySetInnerHTML={
+            {__html: t('fv.h1', {interpolation: {escapeValue: false}})}
+          }/>
           <p className={styles.for}>
             {router.locale != 'ja' && <span>{t('fv.for')}</span>}
             <span className={styles.box}>{t('fv.pc')}</span>

@@ -71,13 +71,11 @@ $blur: blur(12px);
 }
 
 .fv {
-  height: 40vh;
-  min-height: 440px;
+  min-height: 40vh;
   background: transparent;
   overflow: hidden;
 
-  padding: 0 $global-padding;
-  padding-bottom: 48px;
+  padding: calc($header-height + 48px) $global-padding 48px $global-padding;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -111,6 +109,9 @@ $blur: blur(12px);
     text-align: center;
     letter-spacing: $spacing-medium;
     line-height: 1.4em;
+
+    word-break: keep-all;
+    overflow-wrap: break-word;
 
     @include mq(withsidebar) {
       font-size: 44px;
@@ -490,6 +491,10 @@ $blur: blur(12px);
   margin: 0 auto;
   padding: 64px 0;
   max-width: $docs-content-max-width;
+
+  div {
+    overflow: scroll;
+  }
 
   .head {
     display: flex;

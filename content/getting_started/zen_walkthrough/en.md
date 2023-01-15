@@ -10,7 +10,7 @@ To use Zen, you only need a PC running Ubuntu or Arch Linux, and a Meta Quest 2 
 To begin with, stop the existing Ubuntu windowing system session with the following command.
 
 ```
-sudo systemctl stop gdm
+sudo systemctl restart gdm
 ```
 
 In Ubuntu, in the login screen shown after that, you can choose the Windowing system to use. Click "ZEN" and login, then you can launch 2D Zen.

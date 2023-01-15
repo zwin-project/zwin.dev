@@ -9,7 +9,7 @@ Zenを使うには、UbuntuかArch LinuxのパソコンとMeta Quest 2かPro、�
 ## 2DスクリーンでZenを使う
 まずはUbunutu上の既存のウィンドウシステムのセッションを以下のコマンドで終了してください。
 ```
-sudo systemctl stop gdm
+sudo systemctl restart gdm
 ```
 
 Ubuntuでは、その後にログイン画面が表示され、そこから利用するウィンドウシステムを選ぶことができます。"ZEN"をクリックしてからログインすると2DのZenが起動します。

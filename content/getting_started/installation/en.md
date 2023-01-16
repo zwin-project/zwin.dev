@@ -9,8 +9,8 @@ In this page, we have two objectives,
 
 <!-- TODO: Link to the description of Zen and Zen Mirror -->
 
-## CAUTION
-Zwin and Zen are all beta versions. Some of them do not work well.
+**CAUTION**
+Zwin and Zen are all beta versions. Some of them may not work well in your environment.
 We will improve the quality of these in future development and add new features according to the [Roadmap](/en/roadmap).
 
 ## Install packages

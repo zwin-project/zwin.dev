@@ -21,13 +21,14 @@ export const whatIsIt: Folder = {
 
 export const gettingStarted: Folder = {
   path: 'getting_started',
-  subsections: ['setup', 'advanced_tutorial'],
+  subsections: ['setup', 'advanced_tutorial', 'others'],
   articles: [
     {path: 'system_requirements', subsection: 'setup'},
     {path: 'installation', subsection: 'setup'},
     {path: 'zen_walkthrough', subsection: 'setup'},
     {path: 'configuration', subsection: 'advanced_tutorial'},
     {path: '3d_app_development', subsection: 'advanced_tutorial'},
+    {path: 'uninstallation', subsection: 'others'},
   ]
 }
 

@@ -18,7 +18,7 @@ To begin with, stop the existing Ubuntu windowing system session with the follow
 *Caution*: Once you execute the following command, this page on Ubuntu gets closed. Continue the walkthrough by switching to other devices such as smartphone.
 
 ```
-sudo systemctl restart gdm
+$ sudo systemctl restart gdm
 ```
 
 In Ubuntu, in the login screen shown after that, you can choose the Windowing system to use. Click "ZEN" and login, then you can launch 2D Zen.
@@ -42,10 +42,12 @@ To use Zen in VR, follow the steps below to open Zen Mirror on Quest connected t
 
 - Run the following command to get Quest recognized by Zen.
 ```
-adb forward tcp:50051 tcp:50051
+$ adb forward tcp:50051 tcp:50051
 ```
 
-- Open the app library in Quest, select "Unknown sources" from the dropdown on the top-rigtht corner.
+When this command worked correctly, `50051` is displayed on your terminal. If not, please refer to [Install Zen Mirror](https://www.zwin.dev/getting_started/installation#install-zen-mirror) and check again that ADB recognize your Meta Quest.
+
+- Open the app library in Quest, select "Unknown Sources" from the dropdown on the top-rigtht corner.
 - Launch Zen Mirror from the list.
 ![choose_zen_mirror](choose_zen_mirror.png "image_tooltip")
 

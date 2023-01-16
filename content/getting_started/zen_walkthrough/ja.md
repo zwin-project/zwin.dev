@@ -38,12 +38,11 @@ adb forward tcp:50051 tcp:50051
 - 中にあるZen Mirrorを起動します。
 ![choose_zen_mirror](choose_zen_mirror.png "image_tooltip")
 
-これらの手順を完了することでZenがこのヘッドセットを認識し、ヘッドセットが一覧に追加されます。
+これらの手順を完了することでZenがこのヘッドセットを認識し、"Wired"ヘッドセットが一覧に追加されます。
 
 ![headset_found](headset_found.png "image_tooltip")
 
-右側の"Connect"ボタンをクリックすることで、ヘッドセットを使ってVRモードでZenを使い始めることができます。
-
+右側の"Connect"ボタンをクリックすることで、ヘッドセットを使ってVRモードでZenを使い始めることができます。このとき、IPアドレスと共にヘッドセットも同時に表示される場合がありますが、こちらは無線での接続を表しています。Beta版のZwinでは無線よりも**有線が推奨されています**。
 
 ## VRでの操作
 VRでは、2Dで使っていた画面がそのまま表示されます。

@@ -45,7 +45,7 @@ After completing these steps, Zen recognizes the headset, and it is added to the
 Once you open Zen Mirror with Quest connected to the PC, Zen recognizes the headset, and the headset is added to the list.
 ![headset_found](headset_found.png "image_tooltip")
 
-By clicking "Connect" button on the right, you can start Zen in VR mode with the headset.
+By clicking on the "Connect" button on the right, you can start using Zen in VR mode using a headset. In this case, the IP address and headset may also be displayed together, which represents a wireless connection. In the beta version of Zwin, **wired connections are recommended** over wireless.
 
 ## Interactions in VR
 In VR, the windows you were using in 2D are displayed as-is. 

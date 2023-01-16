@@ -18,7 +18,7 @@ $ sudo ldconfig
 *注意* ：以下のコマンドを実行すると、Ubuntu上で開かれていたこのページは閉じられてしまいます。このページは一旦スマートフォンなどに切り替えて引き続きご覧ください。
 
 ```
-sudo systemctl restart gdm
+$ sudo systemctl restart gdm
 ```
 
 Ubuntuでは、その後にログイン画面が表示され、そこから利用するウィンドウシステムを選ぶことができます。"ZEN"をクリックしてからログインすると2DのZenが起動します。
@@ -41,8 +41,10 @@ VRでZenを使うには、以下の手順にしたがってPCに接続されたQ
 - ZenにQuestを認識させるために、以下のコマンドをターミナルから実行します。
 
 ```
-adb forward tcp:50051 tcp:50051
+$ adb forward tcp:50051 tcp:50051
 ```
+
+正常に動作した場合は、ターミナル上に `50051` と表示されます。もし正常に表示されなかった場合は、[Zen Mirror をインストールする](https://www.zwin.dev/ja/getting_started/installation#zen-mirror-) を参考に、Meta Quest が認識されているかを再度確認してください。
 
 - Questのアプリ一覧を開き、右上のドロップダウンから"提供元不明"を選択します。
 - 中にあるZen Mirrorを起動します。

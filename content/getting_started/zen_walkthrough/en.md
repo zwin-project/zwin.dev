@@ -19,6 +19,7 @@ In Ubuntu, in the login screen shown after that, you can choose the Windowing sy
 ![choose_zen2](choose_zen2.png "image_tooltip")
 
 In 2D Zen, you can use regular Linux apps as-is, such as Google Chrome and terminal. 
+*Caution*: The default file explorer of Ubuntu (Nautilus) takes a very long time to open (~5 min) in current environment. Wait patiently!
 
 ![2d_apps](2d_apps.png "image_tooltip")
 

@@ -4,8 +4,8 @@
 
 このページでは二つのゴールをめざします。
 
-- Ubuntu 22.04 に私たちのデスクトップ環境 **Zen** をインストールする。
 - Meta Quest 2 / Pro に **Zen Mirror** をインストールする。
+- Ubuntu 22.04 に私たちのデスクトップ環境 **Zen** をインストールする。
 
 <!-- TODO: Link to the description of Zen and Zen Mirror -->
 
@@ -13,8 +13,8 @@
 
 ```shell
 $ sudo apt-get update
-$ sudo apt-get install android-tools-adb clang cmake git \
-      libcairo2-dev libcglm-dev libdrm-dev libgbm-dev \
+$ sudo apt-get install adb clang cmake git libcairo2-dev \
+      libcglm-dev libdrm-dev libegl-mesa0 libgbm-dev \
       libgles-dev libglm-dev libglu1-mesa-dev libjpeg-dev \
       librsvg2-dev libwayland-dev libwlroots-dev meson pkg-config \
       wayland-protocols
@@ -57,7 +57,7 @@ List of devices attached
 1WMHH815K10424 device # OK
 ```
 
-以下のような出力の場合は Meta Quest 側でパソコンを認証する必要があります。
+以下のような出力の場合は Meta Quest 側でUSBデバッグを許可する必要があります。
 
 ```shell
 List of devices attached
@@ -81,7 +81,7 @@ $ ./zen-release build protocol
 $ sudo ./zen-release install protocol
 ```
 
-依存ライブラリのビルドとインストール
+依存ライブラリのビルドとインストール (10分以上かかるかもしれません)
 
 ```shell
 $ ./zen-release build deps

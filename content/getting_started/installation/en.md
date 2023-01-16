@@ -4,8 +4,8 @@
 
 In this page, we have two objectives,
 
-- Install our desktop environment, **Zen** to Ubuntu 22.04
 - Install **Zen Mirror** to Meta Quest 2 / Pro
+- Install our desktop environment, **Zen** to Ubuntu 22.04
 
 <!-- TODO: Link to the description of Zen and Zen Mirror -->
 
@@ -13,11 +13,6 @@ In this page, we have two objectives,
 
 ```shell
 $ sudo apt-get update
-$ sudo apt-get install android-tools-adb clang cmake git \
-      libcairo2-dev libcglm-dev libdrm-dev libgbm-dev \
-      libgles-dev libglm-dev libglu1-mesa-dev libjpeg-dev \
-      librsvg2-dev libwayland-dev libwlroots-dev meson pkg-config \
-      wayland-protocols
 ```
 
 It might be a good idea to install applications that work in Zen.
@@ -43,13 +38,13 @@ From this point forward, we will work in the `zen-release-manager` directory.
 
 ## Install Zen Mirror
 
-Download APK file
+Download APK file.
 
 ```shell
 $ ./zen-release download zen-mirror
 ```
 
-Check that ADB recognize your Meta Quest
+Check that ADB recognize your Meta Quest.
 
 ```shell
 $ adb devices
@@ -57,14 +52,14 @@ List of devices attached
 1WMHH815K10424 device # OK
 ```
 
-If you see following output, you need to trust your PC on Meta Quest
+If you see following output, you need to allow USB debugging on Meta Quest.
 
 ```shell
 List of devices attached
 1WMHH815K10424 unauthorized # NG
 ```
 
-Install APK file to Meta Quest
+Install APK file to Meta Quest.
 
 ```shell
 $ adb install ./build/zen-mirror/zen-mirror.apk
@@ -74,21 +69,23 @@ Did you find Zen Mirror in "Unknown Source" apps? Well done!
 
 ## Build Zen
 
-Build and install protocols
+Build and install protocol.
 
 ```shell
 $ ./zen-release build protocol
 $ sudo ./zen-release install protocol
 ```
 
-Build and install dependent libraries
+Build and install dependent libraries.
+
+This may take more than 10 minutes.
 
 ```shell
 $ ./zen-release build deps
 $ sudo ./zen-release install deps
 ```
 
-Build and install Zen
+Build and install Zen.
 
 ```shell
 $ ./zen-release build desktop

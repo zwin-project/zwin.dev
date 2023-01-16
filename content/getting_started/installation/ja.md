@@ -87,6 +87,9 @@ $ adb install ./build/zen-mirror/zen-mirror.apk
 
 ```shell
 $ ./zen-release build protocol
+```
+
+```shell
 $ sudo ./zen-release install protocol
 ```
 
@@ -94,6 +97,9 @@ $ sudo ./zen-release install protocol
 
 ```shell
 $ ./zen-release build deps
+```
+
+```shell
 $ sudo ./zen-release install deps
 ```
 
@@ -101,6 +107,9 @@ Zenのビルドとインストールをします。
 
 ```shell
 $ ./zen-release build desktop
+```
+
+```shell
 $ sudo ./zen-release install desktop
 ```
 

@@ -21,14 +21,16 @@
     "getting_started": "はじめる",
     "subsections": {
       "setup": "セットアップ",
-      "advanced_tutorial": "発展的なチュートリアル"
+      "advanced_tutorial": "発展的なチュートリアル",
+      "others": "その他"
     },
     "articles": {
       "system_requirements": "システム要件",
       "installation": "インストール",
       "zen_walkthrough": "Zen ウォークスルー",
       "configuration": "設定",
-      "3d_app_development": "3Dアプリの開発"
+      "3d_app_development": "3Dアプリの開発",
+      "uninstallation": "アンインストール"
     }
   },
   "roadmap": "ロードマップ",

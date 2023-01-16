@@ -21,14 +21,16 @@
     "getting_started": "Getting Started",
     "subsections": {
       "setup": "Setup",
-      "advanced_tutorial": "Advanced tutorial"
+      "advanced_tutorial": "Advanced tutorial",
+      "others": "Others"
     },
     "articles": {
       "system_requirements": "System requirements",
       "installation": "Installation",
       "zen_walkthrough": "Zen walkthrough",
       "configuration": "Configuration",
-      "3d_app_development": "3D App Development"
+      "3d_app_development": "3D App Development",
+      "uninstallation": "Uninstallation"
     }
   },
   "roadmap": "Roadmap",

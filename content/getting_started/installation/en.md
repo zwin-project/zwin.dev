@@ -24,7 +24,7 @@ $ sudo apt-get install adb clang cmake git libcairo2-dev \
       wayland-protocols
 ```
 
-It might be a good idea to install applications that work in Zen.
+It might be a good idea to install applications that work in Zen. To complete [Zen walkthrough](/en/getting_started/zen_walkthrough), you need `weston` to start the terminal, so it is highly recommended to install it.
 
 ```shell
 # Optional

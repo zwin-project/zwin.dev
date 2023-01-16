@@ -24,7 +24,7 @@ $ sudo apt-get install adb clang cmake git libcairo2-dev \
       wayland-protocols
 ```
 
-私たちのデスクトップ環境で動作するアプリケーションをインストールしておくのも良いかもしれません。
+私たちのデスクトップ環境で動作するアプリケーションをインストールしておくのも良いかもしれません。[Zenウォークスルー](/ja/getting_started/zen_walkthrough)を完了するためには、`weston`に含まれるターミナルが必要なので、インストールを特に強く推奨します。
 
 ```shell
 # Optional

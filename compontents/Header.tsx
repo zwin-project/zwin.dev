@@ -128,7 +128,7 @@ const MobileNav = () => {
           {...standaloneArticles.map((e) => <NavItem
             key={e.path}
             isLarge={true}
-            active={router.pathname.split('/')[1] == e.path}
+            active={router.pathname == '/[id]' && id == e.path}
             href={'/' + e.path}
             text={t(e.path)}
           />)}

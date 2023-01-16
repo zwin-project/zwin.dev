@@ -1,4 +1,4 @@
-## Configuration
+# Configuration
 
 ![launcher](launcher.png "image_tooltip")
 
@@ -46,7 +46,7 @@ disable_2d=true # Do not display in 2D launcher. Default is false.
 ```
 
 The launcher allows you to arrange the apps you want to use in any way you want, so please try it. In the settings, the name `favorite_apps` corresponds to one app to arrange in the launcher.
-For example, if you add the following settings
+For example, if you add the following settings...
 ```
 # ...
 #
@@ -63,7 +63,7 @@ icon="/usr/share/weston/terminal.png"
 # ...
 ```
 
-It will look something like this
+it will look something like this.
 
 ![launcher](launcher.png "image_tooltip")
 

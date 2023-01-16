@@ -1,5 +1,5 @@
 # Zen walkthrough
-This page shows how to use Zen, following the real use case in the [Walkthrough of Zwin](https://www.youtube.com/watch?v=uZEDEfEZB1w&t=2s)
+This page shows how to use Zen, following the real use case in the [Walkthrough of Zwin](https://www.youtube.com/watch?v=uZEDEfEZB1w&t=2s).
 
 ## System Requirement
 To use Zen, you only need a PC running Ubuntu or Arch Linux, and a Meta Quest 2 or Pro headset, along with a cable to connect them. The PC doesn't have to be gaming PCs; just a regular laptop is enough.

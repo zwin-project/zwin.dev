@@ -15,6 +15,7 @@ $ sudo ldconfig
 ```
 
 To begin with, stop the existing Ubuntu windowing system session with the following command.
+*Caution*: Once you execute the following command, this page on Ubuntu gets closed. Continue the walkthrough by switching to other devices such as smartphone.
 
 ```
 sudo systemctl restart gdm
@@ -50,7 +51,6 @@ adb forward tcp:50051 tcp:50051
 
 After completing these steps, Zen recognizes the headset, and it is added to the list of available headsets.
 
-Once you open Zen Mirror with Quest connected to the PC, Zen recognizes the headset, and the headset is added to the list.
 ![headset_found](headset_found.png "image_tooltip")
 
 By clicking on the "Connect" button on the right, you can start using Zen in VR mode using a headset. In this case, the IP address and headset may also be displayed together, which represents a wireless connection. In the beta version of Zwin, **wired connections are recommended** over wireless.

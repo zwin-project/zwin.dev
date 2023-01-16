@@ -19,6 +19,7 @@ Ubuntuでは、その後にログイン画面が表示され、そこから利�
 
 2Dでは、Chrome、ターミナルなどの普通のLinux用Waylandアプリがそのまま使えます。
 ![2d_apps](2d_apps.png "image_tooltip")
+*注意* ：Ubunutuのデフォルトファイルマネージャ（Nautilus）は、現在の環境では開くのに非常に長い時間がかかります（~5分程度）。気長にお待ち下さい。
 
 ## VR への切り替え
 画面の右下にある"VR"ボタンをクリックすると、接続できるヘッドセットの一覧が表示されます。
@@ -55,9 +56,11 @@ VRでの操作は[Ray](https://www.zwin.dev/ja/what_is_it/interactions_on_zen#ra
 
 ## 3Dウィンドウ
 インストールスクリプトによって生成されたデフォルトの設定ファイルを利用している場合、nautilus ファイルエクスプローラーのランチャーアイコンがDockに表示されています。
-[STLファイルをZen Object Viewerで開く](/ja/getting_started/configuration#stlファイルをzen-object-viewerで開く)設定をすれば、 ファイルエクスプローラーをアイコンから開き、stlファイルをダブルクリックすると、そのファイルを私達の作った3Dアプリケーションである"Zen Object Viewer"で開くことができます。
+[STLファイルをZen Object Viewerで開く](/ja/getting_started/configuration#stlファイルをzen-object-viewerで開く)設定をすれば、 ファイルエクスプローラーをアイコンから開き、STLファイルをダブルクリックすると、そのファイルを私達の作った3Dアプリケーションである"Zen Object Viewer"で開くことができます。
 
 ![3d_app](3d_app.png "image_tooltip")
+
+（一部開けないSTLファイルがあります。動作確認済みのSTLファイルのサンプルは[Zen Object Viewerのassets](https://github.com/zwin-project/zen-object-viewer/tree/main/assets)をご覧ください。）
 
 このアプリケーションは3DモデルをVR空間内に表示します。Rayをモデルに合わせてスクロールすると、モデルを回転させることができます。モデルは3Dウィンドウとして動作するので、ドラッグ&ドロップで位置を動かすこともできます。
 

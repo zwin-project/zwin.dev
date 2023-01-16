@@ -7,6 +7,13 @@ To use Zen, you only need a PC running Ubuntu or Arch Linux, and a Meta Quest 2 
 ![system requirement](system_requirement.png "imahge_tooltip")
 
 ## Using Zen in 2D screen
+If you are using Arch Linux, please execute following command beforehand.
+
+```shell
+$ echo "/usr/local/lib64" | sudo tee /etc/ld.so.conf.d/local-lib64.conf
+$ sudo ldconfig
+```
+
 To begin with, stop the existing Ubuntu windowing system session with the following command.
 
 ```

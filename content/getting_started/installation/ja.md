@@ -5,7 +5,7 @@
 このページでは二つのゴールをめざします。
 
 - Meta Quest 2 / Pro に **Zen Mirror** をインストールする。
-- Ubuntu 22.04 に私たちのデスクトップ環境 **Zen** をインストールする。
+- Ubuntu 22.04 / Arch Linux に私たちのデスクトップ環境 **Zen** をインストールする。
 
 <!-- TODO: Link to the description of Zen and Zen Mirror -->
 
@@ -14,6 +14,8 @@ ZwinやZenは全てベータ版です。環境によってはうまく動かな�
 今後の開発でこれらのクオリティを上げていき、[ロードマップ](/ja/roadmap)に従って新しい機能を追加していく予定です。
 
 ## パッケージのインストール
+
+### Ubuntu 22.04
 
 ```shell
 $ sudo apt-get update
@@ -29,6 +31,27 @@ $ sudo apt-get install adb clang cmake git libcairo2-dev \
 ```shell
 # Optional
 $ sudo apt-get install weston google-chrome-stable
+```
+
+### Arch Linux
+
+任意のAURヘルパーを用いてください。このページでは、 `yay` による例を示します。
+
+```shell
+$ yay -Syu
+```
+
+```shell
+$ yay -S --needed \
+  git sudo clang make cmake meson ninja python python-pip curl unzip pkgconf \
+  wayland wayland-protocols wlroots0.15 glm glew librsvg ttf-ubuntu-font-family
+```
+
+私たちのデスクトップ環境で動作するアプリケーションをインストールしておくのも良いかもしれません。
+
+```shell
+# Optional
+$ yay -S --needed weston google-chrome nautilus
 ```
 
 ## ビルドスクリプトの準備
@@ -82,6 +105,12 @@ $ adb install ./build/zen-mirror/zen-mirror.apk
 「提供元不明のアプリケーション」一覧に Zen Mirror が表示されていれば完了です。
 
 ## Zen をビルドする
+
+Arch Linux をお使いの場合、事前に以下のコマンドを実行して下さい。
+
+```shell
+$ export PKG_CONFIG_PATH="/usr/lib/wlroots0.15/pkgconfig:/usr/local/lib/pkgconfig:/usr/local/lib64/pkgconfig:${PKG_CONFIG_PATH}"
+```
 
 プロトコルのビルドとインストールをします。
 

@@ -102,7 +102,7 @@ Install APK file to Meta Quest.
 $ adb install ./build/zen-mirror/zen-mirror.apk
 ```
 
-Did you find Zen Mirror in "Unknown Source" apps? Well done!
+Did you find Zen Mirror in "Unknown Sources" apps? Well done!
 
 ## Build Zen
 

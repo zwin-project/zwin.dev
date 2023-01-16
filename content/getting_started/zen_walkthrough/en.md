@@ -45,7 +45,7 @@ To use Zen in VR, follow the steps below to open Zen Mirror on Quest connected t
 adb forward tcp:50051 tcp:50051
 ```
 
-- Open the app library in Quest, select "Unknown sources" from the dropdown on the top-rigtht corner.
+- Open the app library in Quest, select "Unknown Sources" from the dropdown on the top-rigtht corner.
 - Launch Zen Mirror from the list.
 ![choose_zen_mirror](choose_zen_mirror.png "image_tooltip")
 

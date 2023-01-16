@@ -43,7 +43,7 @@ $ ./zen-release configure ./release/latest.yaml
 
 ## Zen Mirror をインストールする
 
-APK ファイルのダウンロード
+APK ファイルをダウンロードします。
 
 ```shell
 $ ./zen-release download zen-mirror
@@ -64,31 +64,31 @@ List of devices attached
 1WMHH815K10424 unauthorized # NG
 ```
 
-APK ファイルのインストール
+APK ファイルをインストールします。
 
 ```shell
 $ adb install ./build/zen-mirror/zen-mirror.apk
 ```
 
-提供元不明のアプリケーション一覧に Zen Mirror が表示されていればおっけーです。
+「提供元不明のアプリケーション」一覧に Zen Mirror が表示されていれば完了です。
 
 ## Zen をビルドする
 
-プロトコルのビルドとインストール
+プロトコルのビルドとインストールをします。
 
 ```shell
 $ ./zen-release build protocol
 $ sudo ./zen-release install protocol
 ```
 
-依存ライブラリのビルドとインストール (10分以上かかるかもしれません)
+依存ライブラリのビルドとインストールをします。このステップは10分以上かかるかもしれません。
 
 ```shell
 $ ./zen-release build deps
 $ sudo ./zen-release install deps
 ```
 
-Zenのビルドとインストール
+Zenのビルドとインストールをします。
 
 ```shell
 $ ./zen-release build desktop

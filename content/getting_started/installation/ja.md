@@ -28,7 +28,8 @@ $ sudo apt-get install adb clang cmake git libcairo2-dev \
 
 ```shell
 # Optional
-$ sudo apt-get install weston google-chrome-stable
+$ sudo apt-get install weston
+$ sudo apt-get install google-chrome-stable
 ```
 
 ## ビルドスクリプトの準備

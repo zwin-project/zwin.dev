@@ -28,7 +28,8 @@ It might be a good idea to install applications that work in Zen.
 
 ```shell
 # Optional
-$ sudo apt-get install weston google-chrome-stable
+$ sudo apt-get install weston
+$ sudo apt-get install google-chrome-stable
 ```
 
 ## Prepare build scripts

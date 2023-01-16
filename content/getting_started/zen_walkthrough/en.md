@@ -8,6 +8,7 @@ To use Zen, you only need a PC running Ubuntu or Arch Linux, and a Meta Quest 2 
 
 ## Using Zen in 2D screen
 To begin with, stop the existing Ubuntu windowing system session with the following command.
+*Caution*: Once you execute the following command, this page on Ubuntu gets closed. Continue the walkthrough by switching to other devices such as smartphone.
 
 ```
 sudo systemctl restart gdm

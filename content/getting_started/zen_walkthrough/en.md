@@ -63,6 +63,8 @@ After setup [Open STL File in Zen Object Viewer](/en/getting_started/configurati
 
 ![3d_app](3d_app.png "image_tooltip")
 
+(Some STL files can't be opened with Zen Object Viewer. See [the asset folder of Zen Object Viewer](https://github.com/zwin-project/zen-object-viewer/tree/main/assets) for sample stl files that were confirmed working properly.)
+
 If you point Ray to the 3D model and scroll, the models rotate. The model works as a 3D window, so you can also move it by dragging the app name plate shown below the app.
 
 ## Coming back to 2D screen

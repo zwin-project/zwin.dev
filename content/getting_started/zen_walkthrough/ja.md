@@ -7,6 +7,12 @@ Zenを使うには、UbuntuかArch LinuxのパソコンとMeta Quest 2かPro、�
 ![system requirement](system_requirement.png "imahge_tooltip")
 
 ## 2DスクリーンでZenを使う
+Arch Linux をお使いの場合、事前に以下のコマンドを実行して下さい。
+
+```shell
+$ echo "/usr/local/lib64" | sudo tee /etc/ld.so.conf.d/local-lib64.conf
+```
+
 まずはUbunutu上の既存のウィンドウシステムのセッションを以下のコマンドで終了してください。
 ```
 sudo systemctl restart gdm

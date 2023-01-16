@@ -5,7 +5,7 @@
 In this page, we have two objectives,
 
 - Install **Zen Mirror** to Meta Quest 2 / Pro
-- Install our desktop environment, **Zen** to Ubuntu 22.04
+- Install our desktop environment, **Zen** to Ubuntu 22.04 / Arch Linux
 
 <!-- TODO: Link to the description of Zen and Zen Mirror -->
 
@@ -14,6 +14,8 @@ Zwin and Zen are all beta versions. Some of them may not work well in your envir
 We will improve the quality of these in future development and add new features according to the [Roadmap](/en/roadmap).
 
 ## Install packages
+
+### Ubuntu 22.04
 
 ```shell
 $ sudo apt-get update
@@ -29,6 +31,27 @@ It might be a good idea to install applications that work in Zen.
 ```shell
 # Optional
 $ sudo apt-get install weston google-chrome-stable
+```
+
+### Arch Linux
+
+You can use any AUR helper. In this page, we will show examples using `yay`.
+
+```shell
+$ yay -Syu
+```
+
+```shell
+$ yay -S --needed \
+  git sudo clang make cmake meson ninja python python-pip curl unzip pkgconf \
+  wayland wayland-protocols wlroots0.15 glm glew librsvg ttf-ubuntu-font-family
+```
+
+It might be a good idea to install applications that work in Zen.
+
+```shell
+# Optional
+$ yay -S --needed weston google-chrome nautilus
 ```
 
 ## Prepare build scripts
@@ -81,6 +104,12 @@ $ adb install ./build/zen-mirror/zen-mirror.apk
 Did you find Zen Mirror in "Unknown Source" apps? Well done!
 
 ## Build Zen
+
+If you are using Arch Linux, please execute following command beforehand.
+
+```shell
+$ export PKG_CONFIG_PATH="/usr/lib/wlroots0.15/pkgconfig:/usr/local/lib/pkgconfig:/usr/local/lib64/pkgconfig:${PKG_CONFIG_PATH}"
+```
 
 Build and install protocol.
 

@@ -4,6 +4,8 @@
 ### What is Zwin?
 Zwin is a XR windowing system, which displays multiple XR / 2D apps on VR headset / 2D screen. It is named as a "win"dowing system with "Z" axis!
 The word "Zwin" also refers to the protocol used in the system.
+See [What is Zwin?](/en/what_is_it/what_is_zwin).
+
 
 ### Is Zwin an operating system?
 No. Zwin is a windowing system, which works on operating systems and coordinate the application windows.

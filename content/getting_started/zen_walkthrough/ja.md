@@ -55,7 +55,7 @@ VRでの操作は[Ray](https://www.zwin.dev/ja/what_is_it/interactions_on_zen#ra
 
 ## 3Dウィンドウ
 インストールスクリプトによって生成されたデフォルトの設定ファイルを利用している場合、nautilus ファイルエクスプローラーのランチャーアイコンがDockに表示されています。
-ファイルエクスプローラーをアイコンから開き、stlファイルをダブルクリックすると、そのファイルを私達の作った3Dアプリケーションである"Zen Object Viewer"で開くことができます。
+[STLファイルをZen Object Viewerで開く](/ja/getting_started/configuration#stlファイルをzen-object-viewerで開く)設定をすれば、 ファイルエクスプローラーをアイコンから開き、stlファイルをダブルクリックすると、そのファイルを私達の作った3Dアプリケーションである"Zen Object Viewer"で開くことができます。
 
 ![3d_app](3d_app.png "image_tooltip")
 

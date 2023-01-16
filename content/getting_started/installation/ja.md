@@ -9,6 +9,10 @@
 
 <!-- TODO: Link to the description of Zen and Zen Mirror -->
 
+## 注意
+ZwinやZenは全てベータ版です。中にはうまく動かないものがあります。
+今後の開発でこれらのクオリティを上げていき、[ロードマップ](/ja/roadmap)に従って新しい機能を追加していく予定です。
+
 ## パッケージのインストール
 
 ```shell
@@ -39,7 +43,12 @@ $ ./zen-release configure ./release/latest.yaml
 
 ## Meta Quest の開発者モードを有効にする
 
-[Meta Quest Developer Center](https://developer.oculus.com/documentation/native/android/mobile-device-setup/ "デバイスの設定")
+詳しくは[Meta Quest Developer Center](https://developer.oculus.com/documentation/native/android/mobile-device-setup/ "デバイスの設定")をご覧ください。
+
+- [組織の参加・作成](https://developer.oculus.com/documentation/native/android/mobile-device-setup/#joining-or-creating-an-organization)
+- [アカウントの認証](https://developer.oculus.com/documentation/native/android/mobile-device-setup/#verify-your-account)
+- [開発者モードの有効化](https://developer.oculus.com/documentation/native/android/mobile-device-setup/#enable-developer-mode)
+
 
 ## Zen Mirror をインストールする
 
@@ -97,7 +106,7 @@ $ sudo ./zen-release install desktop
 
 ## デフォルトの設定ファイルを作成する
 
-適切な場所におすすめの設定ファイルを生成します。
+適切な場所におすすめの設定ファイルを生成します。[設定](/ja/getting_started/configuration)で詳細をご覧ください。
 
 ```shell
 $ ./zen-release generate-config

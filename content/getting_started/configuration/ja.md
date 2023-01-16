@@ -1,7 +1,6 @@
+# 設定
 
 ![launcher](launcher.png "image_tooltip")
-
-# 設定
 
 ## Zenの設定
 
@@ -93,6 +92,7 @@ MimeType=model/stl
 ```:~/.config/mimeapps.list
 # ..
 #
+[Default Applications]
 model/stl=zen-object-viewer.desktop
 #
 # ..

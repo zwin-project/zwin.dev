@@ -2,7 +2,7 @@
 The following environments have been confirmed for running Zen (→[What is Zwin?](/what_is_it/what_is_zwin)).
 
 ## PC
-### OS
+### Operating System
 Supported operating systems are:
 - Ubuntu22.04 LTS
 - Arch Linux
@@ -14,8 +14,8 @@ This is because the headset handles rendering in Zwin (→[Rendering Scheme](/wh
 The PC's GPU must support OpenGL ES 3.2. The following laptop PCs have been confirmed for operation:
 
 - Lenovo ThinkPad X13 Gen2
- - CPU: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80 GHz
- - GPU: TigerLake-LP GT2 [Iris Xe Graphics]
+  - CPU: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80 GHz
+  - GPU: TigerLake-LP GT2 [Iris Xe Graphics]
 
 ## Wired Connection
 Currently, Zwin requires a fast USB cable to reliably send the texture of windows between the PC and headset. Although wireless support is in development, wired connection is currently recommended due to several issues (→[Roadmap](/roadmap)).

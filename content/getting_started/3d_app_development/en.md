@@ -1,6 +1,6 @@
-![earth_scroll](earth_scroll_app.gif "image_tooltip")
-
 # 3D App Development
+
+![earth_scroll](earth_scroll_app.gif "image_tooltip")
 
 **TL;DR: On Zwin, you can modify, rebuild, and run 3D client apps that support the Zwin protocol in VR.**
 
@@ -94,7 +94,7 @@ $ cd celestial-body-app
 Build and install.
 ```
 $ meson build
-$ ninja -C build install
+$ sudo ninja -C build install
 ```
 
 ## Running the 3D app
@@ -143,7 +143,7 @@ main(int argc, char const* argv[])
 
 Build and run again with the following command.
 ```
-$ ninja -C build install
+$ sudo ninja -C build install
 ```
 ```
 $ celestial-body-app
@@ -247,7 +247,7 @@ This instruction exists to control when the state is reflected, for example, whe
 
 Build and execute the following command again.
 ```
-$ ninja -C build install
+$ sudo ninja -C build install
 ```
 ```
 $ celestial-body-app

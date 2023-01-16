@@ -159,7 +159,7 @@ $blur: blur(12px);
   gap: 12px;
   margin: -48px 0;
   color: $white;
-  // transform: translateY(40%);
+  position: relative;
   z-index: 10;
 }
 

@@ -2,7 +2,7 @@
 以下の環境でZenの動作を確認しています（→[Zwinとは？](/what_is_it/what_is_zwin)）。
 
 ## PC
-### OS
+### オペレーティングシステム
 以下のOSに対応しています。
 - Ubuntu22.04 LTS
 - Arch Linux
@@ -15,8 +15,8 @@ PCのGPUはOpenGL ES 3.2をサポートする必要があります。
 以下のラップトップPCで動作を確認済みです。
 
 - Lenovo ThinkPad X13 Gen2
- - CPU: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80 GHz
- - GPU: TigerLake-LP GT2 [Iris Xe Graphics]
+  - CPU: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80 GHz
+  - GPU: TigerLake-LP GT2 [Iris Xe Graphics]
 
 ## 有線接続
 現状のZwinでは、ウィンドウのテクスチャを高速で送る必要があるためPCとヘッドセットを高速なUSBケーブルで接続する必要があります。

@@ -2,17 +2,18 @@
 
 ## Zwin
 ### Zwinとはなんですか?
-Zwinは複数のXR/2DアプリケーションをVRヘッドセット/2Dスクリーン上に表示するXRウィンドウシステムです。"Z"軸のある"win"dowing systemとして名付けられました。  
+Zwinは複数のXR/2DアプリケーションをVRヘッドセット/2Dスクリーン上に表示するXRウィンドウシステムです。"Z"軸のある"win"dowing systemとして名付けられました。
 "Zwin"はシステムで使われるプロトコルの名前でもあります。
+詳しくは、[Zwinとは？](/ja/what_is_it/what_is_zwin)をご覧ください。
 
 ### Zwinはオペレーディングシステムですか?
 違います。Zwinはウィンドウシステムであり、オペレーティングシステムの上でアプリケーションのウィンドウをうまく表示するために使われます。
 
 ### Zwinのインストールは難しいのでしょうか?
-全くそんなことはありません。[インストール](/ja/getting_started/installation) 上のインストール手順に従ってください。
+全くそんなことはありません。[インストール](/ja/getting_started/installation)上のインストール手順に従ってください。
 
 ### Zwinを動かすにはどのようなデバイスが必要ですか?
-[システム要件](/ja/getting_started/system_requirements).
+[システム要件](/ja/getting_started/system_requirements)をご覧ください。
 
 ### Zwinとその他のVRワークスペース (Virtual Desktop, Immersed, Horizon Workroomsなど)の違いはなんですか?
 他のVRシステムにおいては、視野のすべてがひとつのアプリケーションによって占められており、複数の3Dアプリケーションを同時に使うことは不可能です。Zwinは3Dアプリケーションを表示するための3Dウィンドウシステムなので、複数の3Dアプリケーションを同時に横に並べて使うことができます。さらに、Zwinはオープンソースなので、誰でも自由に小さな3Dアプリケーションを開発することができるので、小規模開発者でもVRでのアプリケーション開発に参加できます。
@@ -46,7 +47,7 @@ Zen MirrorはOculus Questヘッドセットで動作するアプリケーショ�
 可能ですが、動作が不安定なので非推奨です。次のリリースまでに問題を解消し、公式に無線接続をサポートする予定です。
 
 ### Quest 1/2/Proを使うことはできますか?
-Quest 2/Proは公式にサポートされています. Quest 1も利用可能ですが、処理能力が不足しているため推奨されていません。
+Quest 2とQuest Proは公式にサポートされています。 Quest 1も利用可能ですが、処理能力が不足しているため推奨されていません。
 
 ### 他のVRヘッドセットを使うことはできますか?
 #### スタンドアロンヘッドセット
@@ -86,7 +87,7 @@ Waylandプロトコルに対応したアプリケーション(Google Chromeな�
 - `abd forward`コマンドは実行されていますか？[2DスクリーンでZenを使う](/ja/getting_started/zen_walkthrough#2dスクリーンでzenを使う)をご覧ください。
 - 最新のZen Mirrorが使われていますか？ `zen-desktop`とZen Mirrorのバージョンのミスマッチが問題を引き起こす可能性があります。
 
-他にも、[インストール](/ja/getting_started/installation), [Zen ウォークスルー](/ja/getting_started/zen_walkthrough)をご覧ください。
+他にも、[インストール](/ja/getting_started/installation)、[Zen ウォークスルー](/ja/getting_started/zen_walkthrough)をご覧ください。
 
 ### zen-desktopをターミナルから実行できません
 他のウィンドウシステム上で`zen-desktop`コマンドを実行することはできません。現在のセッションを[Zen ウォークスルー](/ja/getting_started/zen_walkthrough#2dスクリーンでzenを使う)を参考に現在のセッションを終了してください。

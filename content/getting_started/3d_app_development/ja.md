@@ -1,6 +1,6 @@
-![earth_scroll](earth_scroll_app.gif "image_tooltip")
-
 # 3Dアプリの開発
+
+![earth_scroll](earth_scroll_app.gif "image_tooltip")
 
 **要約：Zwin上では、Zwinプロトコルをサポートする3Dのクライアントアプリの修正・再ビルド・実行をVR内で完結して行えます。**
 
@@ -94,7 +94,7 @@ $ cd celestial-body-app
 ビルドとインストールをしましょう。
 ```
 $ meson build
-$ ninja -C build install
+$ sudo ninja -C build install
 ```
 
 ## 3Dアプリの実行
@@ -143,7 +143,7 @@ main(int argc, char const* argv[])
 
 再度以下のコマンドでビルドして、実行します。
 ```
-$ ninja -C build install
+$ sudo ninja -C build install
 ```
 ```
 $ celestial-body-app
@@ -246,7 +246,7 @@ private:
 
 再度以下のコマンドでビルドして、実行します。
 ```
-$ ninja -C build install
+$ sudo ninja -C build install
 ```
 ```
 $ celestial-body-app

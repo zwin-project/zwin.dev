@@ -9,10 +9,19 @@ In this page, we have two objectives,
 
 <!-- TODO: Link to the description of Zen and Zen Mirror -->
 
+## CAUTION
+Zwin and Zen are all beta versions. Some of them do not work well.
+We will improve the quality of these in future development and add new features according to the [Roadmap](/en/roadmap).
+
 ## Install packages
 
 ```shell
 $ sudo apt-get update
+$ sudo apt-get install adb clang cmake git libcairo2-dev \
+      libcglm-dev libdrm-dev libegl-mesa0 libgbm-dev \
+      libgles-dev libglm-dev libglu1-mesa-dev libjpeg-dev \
+      librsvg2-dev libwayland-dev libwlroots-dev meson pkg-config \
+      wayland-protocols
 ```
 
 It might be a good idea to install applications that work in Zen.
@@ -34,7 +43,11 @@ From this point forward, we will work in the `zen-release-manager` directory.
 
 ## Enable developer mode on Meta Quest
 
-[Meta Quest Developer Center](https://developer.oculus.com/documentation/native/android/mobile-device-setup/ "Device Setup")
+See [Meta Quest Developer Center](https://developer.oculus.com/documentation/native/android/mobile-device-setup/ "Device Setup").
+
+- [Joining or Creating an Organization](https://developer.oculus.com/documentation/native/android/mobile-device-setup/#joining-or-creating-an-organization)
+- [Verify Your Account](https://developer.oculus.com/documentation/native/android/mobile-device-setup/#verify-your-account)
+- [Enable Developer Mode](https://developer.oculus.com/documentation/native/android/mobile-device-setup/#enable-developer-mode)
 
 ## Install Zen Mirror
 
@@ -95,7 +108,7 @@ $ sudo ./zen-release install desktop
 ## Generate default config.toml
 
 A recommended configuration file will be generated in the appropriate location.
-
+See [Configuration](/en/getting_started/configuration).
 ```shell
 $ ./zen-release generate-config
 ```

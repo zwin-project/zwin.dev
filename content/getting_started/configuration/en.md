@@ -1,7 +1,6 @@
+## Configuration
 
 ![launcher](launcher.png "image_tooltip")
-
-## Configuration
 
 ## Zen Settings
 
@@ -93,11 +92,12 @@ MimeType=model/stl
 Then specify Zen Object Viewer as the desktop entry to launch for the STL file type.
 
 ```:~/.config/mimeapps.list
-# ...
+# ..
 #
+[Default Applications]
 model/stl=zen-object-viewer.desktop
 #
-# ...
+# ..
 ```
 
 Now you can reflect this setting by rebooting, etc.

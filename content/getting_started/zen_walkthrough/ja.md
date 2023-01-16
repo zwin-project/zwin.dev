@@ -4,7 +4,7 @@
 ## システム要件
 Zenを使うには、UbuntuかArch LinuxのパソコンとMeta Quest 2かPro、それを接続するケーブルが必要です。パソコンは普通のラップトップで構いません。
 
-![system requirement](system_requirement.png "imahge_tooltip")
+![system requirement](system_requirement.png "image_tooltip")
 
 ## 2DスクリーンでZenを使う
 まずはUbunutu上の既存のウィンドウシステムのセッションを以下のコマンドで終了してください。
@@ -28,7 +28,7 @@ Ubuntuでは、その後にログイン画面が表示され、そこから利�
 VRでZenを使うには、以下の手順にしたがってPCに接続されたQuest上でZen Mirrorを開いてください。
 
 - ケーブルを使ってQuestとPCを接続してください。
-  - "接続したデバイスにファイルへのアクセスを許可しますか?"のダイアログがQuest内で表示されるので忘れずに許可してください。
+  - "接続したデバイスにファイルへのアクセスを許可しますか？"のダイアログがQuest内で表示されるので忘れずに許可してください。
 - ZenにQuestを認識させるために、以下のコマンドをターミナルから実行します。
 
 ```

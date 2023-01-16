@@ -86,6 +86,9 @@ Build and install protocol.
 
 ```shell
 $ ./zen-release build protocol
+```
+
+```shell
 $ sudo ./zen-release install protocol
 ```
 
@@ -95,6 +98,9 @@ This may take more than 10 minutes.
 
 ```shell
 $ ./zen-release build deps
+```
+
+```shell
 $ sudo ./zen-release install deps
 ```
 
@@ -102,6 +108,9 @@ Build and install Zen.
 
 ```shell
 $ ./zen-release build desktop
+```
+
+```shell
 $ sudo ./zen-release install desktop
 ```
 

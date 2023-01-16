@@ -4,7 +4,7 @@
 ## システム要件
 Zenを使うには、UbuntuかArch LinuxのパソコンとMeta Quest 2かPro、それを接続するケーブルが必要です。パソコンは普通のラップトップで構いません。
 
-![system requirement](system_requirement.png "imahge_tooltip")
+![system requirement](system_requirement.png "image_tooltip")
 
 ## 2DスクリーンでZenを使う
 まずはUbunutu上の既存のウィンドウシステムのセッションを以下のコマンドで終了してください。

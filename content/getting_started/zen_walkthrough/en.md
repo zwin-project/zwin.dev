@@ -11,6 +11,7 @@ If you are using Arch Linux, please execute following command beforehand.
 
 ```shell
 $ echo "/usr/local/lib64" | sudo tee /etc/ld.so.conf.d/local-lib64.conf
+$ sudo ldconfig
 ```
 
 To begin with, stop the existing Ubuntu windowing system session with the following command.

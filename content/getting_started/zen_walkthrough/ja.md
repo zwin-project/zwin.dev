@@ -11,6 +11,7 @@ Arch Linux をお使いの場合、事前に以下のコマンドを実行して
 
 ```shell
 $ echo "/usr/local/lib64" | sudo tee /etc/ld.so.conf.d/local-lib64.conf
+$ sudo ldconfig
 ```
 
 まずはUbunutu上の既存のウィンドウシステムのセッションを以下のコマンドで終了してください。

@@ -33,7 +33,7 @@ It might be a good idea to install applications that work in Zen. To complete [Z
 $ sudo apt-get install weston
 $ sudo apt-get install google-chrome-stable
 # If apt-get does not work, you can also download Chrome from
-# https://www.google.com/chrome/
+# https://www.google.com/chrome/?platform=linux
 ```
 
 ### Arch Linux

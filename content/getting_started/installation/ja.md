@@ -33,7 +33,7 @@ $ sudo apt-get install adb clang cmake git libcairo2-dev \
 $ sudo apt-get install weston
 $ sudo apt-get install google-chrome-stable
 # apt-get でうまくインストールができない場合は、以下のURLからもChromeをインストールできます。
-# https://www.google.com/chrome/
+# https://www.google.com/chrome/?platform=linux
 ```
 
 ### Arch Linux

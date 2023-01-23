@@ -14,9 +14,6 @@ The Beta version of Zwin is still incomplete and has the following caveats relat
   - In particular, apps such as VSCode will not work.
   - Instead, **use a CUI editor such as Vim or nano**.
 
-- Some functions of the Wayland client do not work.
-  - **Pop-up windows do not open when right-clicking, etc.**
-
 - Copy-and-paste and drag-and-drop functions do not work.
   - **Commands in this document need to be entered with the keyboard**.
 

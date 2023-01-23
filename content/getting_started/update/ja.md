@@ -17,6 +17,13 @@
 
 必要なパッケージが更新されている可能性がありますので、インストールページの[パッケージのインストール](/ja/getting_started/installation#パッケージのインストール)に従って、パッケージをインストールしてください。
 
+## zen-release-managerの更新
+
+```shell
+$ cd /path/to/zen-release-manager
+$ git pull
+```
+
 ## ビルドディレクトリのクリーンアップ
 
 ビルドディレクトリをクリーンアップします。

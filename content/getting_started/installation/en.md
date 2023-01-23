@@ -106,7 +106,7 @@ $ adb install ./build/zen-mirror/zen-mirror.apk
 
 Did you find Zen Mirror in "Unknown Sources" apps? Well done!
 
-## Build Zen
+## Build and install Zen
 
 If you are using Arch Linux, please execute following command beforehand.
 

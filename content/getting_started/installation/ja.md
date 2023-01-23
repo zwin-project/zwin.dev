@@ -107,7 +107,7 @@ $ adb install ./build/zen-mirror/zen-mirror.apk
 
 「提供元不明のアプリケーション」一覧に Zen Mirror が表示されていれば完了です。
 
-## Zen をビルドする
+## Zen をビルド・インストールする
 
 Arch Linux をお使いの場合、事前に以下のコマンドを実行して下さい。
 

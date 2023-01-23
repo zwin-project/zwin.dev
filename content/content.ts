@@ -28,6 +28,7 @@ export const gettingStarted: Folder = {
     {path: 'zen_walkthrough', subsection: 'setup'},
     {path: 'configuration', subsection: 'advanced_tutorial'},
     {path: '3d_app_development', subsection: 'advanced_tutorial'},
+    {path: 'update', subsection: 'advanced_tutorial'},
     {path: 'uninstallation', subsection: 'others'},
   ]
 }

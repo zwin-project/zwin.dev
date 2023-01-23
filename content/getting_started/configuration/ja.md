@@ -99,3 +99,47 @@ model/stl=zen-object-viewer.desktop
 ```
 
 これで再起動などによって、この設定を反映させることができます。
+
+## Zenの3Dの背景のテーマ
+
+Zenの3Dの背景（Space）でデフォルトで指定されているのは[Zennist](https://github.com/zwin-project/zennist)という[Expansive](/ja/what_is_it/3d_window#2つの種類：bounded-%2F-expansive)です。
+
+
+Zennistでは、**Nami（デフォルト、波）**、**Oka（丘）**、**Kumo（雲）** の三種類のテーマを指定できます。
+`config.toml`の`default_app`には実際に実行される文字列を指定します。
+Zennistはコマンドラインから実行できるバイナリであり、バイナリにオプションを渡すことでテーマを変更できます。
+
+### Nami
+```
+# ..
+#
+[[space]]
+default_app = "zennist"
+#
+# ..
+```
+![zennist_nami](zennist_nami.png "image_tooltip")
+
+### Oka
+```
+# ..
+#
+[[space]]
+default_app = "zennist --theme Oka"
+#
+# ..
+```
+
+![zennist_oka](zennist_oka.png "image_tooltip")
+
+### Kumo
+```
+# ..
+#
+[[space]]
+default_app = "zennist --theme Kumo"
+#
+# ..
+```
+
+![zennist_kumo](zennist_kumo.png "image_tooltip")

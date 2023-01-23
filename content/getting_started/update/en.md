@@ -18,6 +18,13 @@ We recommend uninstalling Zen that is already installed on your system.
 
 Since required packages may have been updated, please install the packages again by following the [Install packages](/en/getting_started/installation#install-packages) section of the installation page.
 
+## Update zen-release-manager
+
+```shell
+$ cd /path/to/zen-release-manager
+$ git pull
+```
+
 ## Cleanup build directory
 
 To reduce build time, some build targets are not removed.

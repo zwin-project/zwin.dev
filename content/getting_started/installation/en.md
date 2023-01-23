@@ -34,7 +34,7 @@ $ sudo apt-get install weston
 $ sudo apt-get install google-chrome-stable
 # If apt-get does not work, you can download Chrome from
 # https://www.google.com/chrome/?platform=linux
-# or install chromium instead.
+# or install Chromium instead.
 ```
 
 ### Arch Linux

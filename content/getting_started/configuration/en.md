@@ -101,3 +101,46 @@ model/stl=zen-object-viewer.desktop
 ```
 
 Now you can reflect this setting by rebooting, etc.
+
+## Zen 3D background theme
+
+The 3D background ([Expansive](/en/what_is_it/3d_window#bounded-window-%2F-expansive-window)) specified by default on Zen is [Zennist](https://github.com/zwin-project/zennist).
+
+In Zennist, three types of themes can be specified: **Nami (default, waves in Japanese)**, **Oka (hills)**, and **Kumo (clouds)**.
+The `default_app` in `config.toml` is the actual string to be executed.
+Zennist is a binary that can be run from the command line, and the theme can be changed by passing options to the binary.
+
+### Nami
+```
+# ..
+#
+[[space]]
+default_app = "zennist"
+#
+# ..
+```
+![zennist_nami](zennist_nami.png "image_tooltip")
+
+### Oka
+```
+# ..
+#
+[[space]]
+default_app = "zennist --theme Oka"
+#
+# ..
+```
+
+![zennist_oka](zennist_oka.png "image_tooltip")
+
+### Kumo
+```
+# ..
+#
+[[space]]
+default_app = "zennist --theme Kumo"
+#
+# ..
+```
+
+![zennist_kumo](zennist_kumo.png "image_tooltip")

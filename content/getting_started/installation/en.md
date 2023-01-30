@@ -32,8 +32,9 @@ It might be a good idea to install applications that work in Zen. To complete [Z
 # Optional
 $ sudo apt-get install weston
 $ sudo apt-get install google-chrome-stable
-# If apt-get does not work, you can also download Chrome from
-# https://www.google.com/chrome/
+# If apt-get does not work, you can download Chrome from
+# https://www.google.com/chrome/?platform=linux
+# or install Chromium instead.
 ```
 
 ### Arch Linux
@@ -106,7 +107,7 @@ $ adb install ./build/zen-mirror/zen-mirror.apk
 
 Did you find Zen Mirror in "Unknown Sources" apps? Well done!
 
-## Build Zen
+## Build and install Zen
 
 If you are using Arch Linux, please execute following command beforehand.
 

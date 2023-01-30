@@ -1,5 +1,7 @@
 # Roadmap
 
+Updates will be announced on [our Twitter account](https://twitter.com/zwin_project)!
+
 ## Release coming soon 
 
 In order to improve the convenience of Zwin, we are planning to release the following critical features very soon.
@@ -10,6 +12,7 @@ XWayland runs on top of Wayland compositors and forward the windows from X11 app
 
 #### Popup / Subsurface
 Some wayland applications create another window on the main window. Right-click menu of Google Chrome is a good example. These are called Popup / Subsurface in Wayland, and Zen will support these features soon.
+✅ *2022/01/23 - Popup has been implemented!*
 
 #### Copy & Paste / Drag & Drop in 2D windows
 Some well-known features of 2D operations on 2D windows such as Copy & Paste / Drag & Drop are not supported by Zen. We plan to support them soon to let users use 2D apps in Zwin as in the existing 2D windowing systems.

@@ -82,6 +82,11 @@ const Header = (props: {toppage: boolean}) => {
               text={t('getting_started.getting_started')}
             />
             <NavButton
+              active={router.pathname.split('/')[1] == 'contribution'}
+              href="/contribution"
+              text={t('contribution')}
+            />
+            <NavButton
               active={router.pathname.split('/')[1] == 'roadmap'}
               href="/roadmap"
               text={t('roadmap')}

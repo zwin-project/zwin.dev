@@ -4,7 +4,7 @@
 私たちはオープンソースプロジェクトであり、現状どの企業にも属していません。
 
 ## 寄付について
-寄付をOpenCollectiveやPateronなどを使って集めることを検討しています。しばらくお待ち下さい。ご興味のある方は、それまでは下記のメールアドレスにお問い合わせください。
+GitHub Sponsorsより寄付を受け付けております、詳しくは[Zwin GitHub Sponsors](https://github.com/sponsors/zwin-project)をご覧ください。
 
 ## メールアドレス
 [zwindowingsystem@gmail.com](mailto:zwindowingsystem@gmail.com)

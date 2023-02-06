@@ -4,7 +4,7 @@
 We are an open source project and do not currently belong to any company.
 
 ## Donation
-We are considering collecting donations using OpenCollective, Pateron, etc. Please wait for a little while. If you are interested, please contact us at the email address below.
+We accept donations through GitHub Sponsors. Please see [Zwin GitHub Sponsors](https://github.com/sponsors/zwin-project) for details.
 
 ## Email
 [zwindowingsystem@gmail.com](mailto:zwindowingsystem@gmail.com)

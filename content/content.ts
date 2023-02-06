@@ -34,4 +34,4 @@ export const gettingStarted: Folder = {
 }
 
 export const standaloneArticles: Article[] =
-    [{path: 'roadmap'}, {path: 'contact'}]
+    [{path: 'roadmap'}, {path: 'contact'}, {path: 'contribution'}]

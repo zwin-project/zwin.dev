@@ -63,6 +63,7 @@ $ yay -S --needed weston google-chrome nautilus
 ```shell
 $ git clone https://github.com/zwin-project/zen-release-manager.git
 $ cd zen-release-manager
+$ pip3 install -r requirements.txt
 $ ./zen-release configure ./release/latest.yaml
 ```
 

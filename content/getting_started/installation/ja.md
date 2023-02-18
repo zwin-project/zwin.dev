@@ -48,7 +48,7 @@ $ yay -Syu
 ```shell
 $ yay -S --needed \
   git sudo clang make cmake meson ninja python python-pip curl unzip pkgconf \
-  wayland wayland-protocols wlroots0.15 glm glew librsvg ttf-ubuntu-font-family
+  wayland wayland-protocols wlroots0.15 glm cglm glew librsvg ttf-ubuntu-font-family
 ```
 
 私たちのデスクトップ環境で動作するアプリケーションをインストールしておくのも良いかもしれません。

@@ -48,7 +48,7 @@ $ yay -Syu
 ```shell
 $ yay -S --needed \
   git sudo clang make cmake meson ninja python python-pip curl unzip pkgconf \
-  wayland wayland-protocols wlroots0.15 glm glew librsvg ttf-ubuntu-font-family
+  wayland wayland-protocols wlroots0.15 glm cglm glew librsvg ttf-ubuntu-font-family
 ```
 
 It might be a good idea to install applications that work in Zen.

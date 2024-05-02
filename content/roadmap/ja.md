@@ -109,4 +109,4 @@ Zwinエコシステムをより広げていくために、私達は将来的に�
 
 
 さらなる機能追加のご要望については、Discordからご連絡ください。
-[http://discord.gg/PPJEFrdE9f](http://discord.gg/PPJEFrdE9f)
+[http://discord.gg/necXjRNhTs](http://discord.gg/necXjRNhTs)

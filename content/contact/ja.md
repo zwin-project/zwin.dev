@@ -11,7 +11,7 @@ GitHub Sponsorsより寄付を受け付けております、詳しくは[Zwin Gi
 
 ## Discord
 Discordに入っていただくのが最も速く確実な連絡手段です。
-[http://discord.gg/PPJEFrdE9f](http://discord.gg/PPJEFrdE9f)
+[http://discord.gg/necXjRNhTs](http://discord.gg/necXjRNhTs)
 
 ## Twitter
 [https://twitter.com/zwin_project](https://twitter.com/zwin_project)

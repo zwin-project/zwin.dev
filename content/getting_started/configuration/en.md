@@ -73,7 +73,7 @@ The location of the configuration file referenced by Zen is as follows.
 - `~/.config/zen-desktop/config.toml`
 
 
-Ideally, these settings should be dynamically modifiable via GUI, so we will support this in the near future. If you are interested in development and release, please follow [Twitter](https://twitter.com/zwin_project), [GitHub](https://github.com/zwin-project), [Discord](http://discord.gg/PPJEFrdE9f), check it out!
+Ideally, these settings should be dynamically modifiable via GUI, so we will support this in the near future. If you are interested in development and release, please follow [Twitter](https://twitter.com/zwin_project), [GitHub](https://github.com/zwin-project), [Discord](http://discord.gg/necXjRNhTs), check it out!
 
 ## Open STL file in Zen Object Viewer
 

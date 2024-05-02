@@ -15,7 +15,7 @@ const Footer = () => {
       <div className={styles.footer + ' ' + (!isLarge ? styles.mobile : '')}>
         <p className={styles.copyright}>© Zwin, 2023</p>
         <ul className={styles.link}>
-          <a target="_blank" rel="noreferrer" className={styles.wraplink} href="http://discord.gg/PPJEFrdE9f">
+          <a target="_blank" rel="noreferrer" className={styles.wraplink} href="http://discord.gg/necXjRNhTs">
             <DiscordIcon className={styles.discord} />
           </a>
           <a target="_blank" rel="noreferrer" className={styles.wraplink} href="https://github.com/zwin-project">

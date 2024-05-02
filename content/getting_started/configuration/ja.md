@@ -71,7 +71,7 @@ Zenが参照する設定ファイルの位置は以下です。
 - `~/.config/zen-desktop/config.toml`
 
 
-これらの設定はGUIで動的に変更可能であることが理想ですので、近い将来サポートしていきます。開発やリリースに興味がある方は[Twitter](https://twitter.com/zwin_project)や[GitHub](https://github.com/zwin-project)、[Discord](http://discord.gg/PPJEFrdE9f)をチェックしてみてください！
+これらの設定はGUIで動的に変更可能であることが理想ですので、近い将来サポートしていきます。開発やリリースに興味がある方は[Twitter](https://twitter.com/zwin_project)や[GitHub](https://github.com/zwin-project)、[Discord](http://discord.gg/necXjRNhTs)をチェックしてみてください！
 
 ## STLファイルをZen Object Viewerで開く
 

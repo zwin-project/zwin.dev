@@ -112,4 +112,4 @@ To expand the Zwin ecosystem more, we are also trying to support the following i
 
 
 For further feature requests, please contact as via Discord.  
-[http://discord.gg/PPJEFrdE9f](http://discord.gg/PPJEFrdE9f)
+[http://discord.gg/necXjRNhTs](http://discord.gg/necXjRNhTs)

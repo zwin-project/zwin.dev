@@ -11,7 +11,7 @@ We accept donations through GitHub Sponsors. Please see [Zwin GitHub Sponsors](h
 
 ## Discord
 Discord is our primary messaging tool. It's the quickest and most reliable way to reach us.
-[http://discord.gg/PPJEFrdE9f](http://discord.gg/PPJEFrdE9f)
+[http://discord.gg/necXjRNhTs](http://discord.gg/necXjRNhTs)
 
 ## Twitter
 [https://twitter.com/zwin_project](https://twitter.com/zwin_project)
